@@ -476,12 +476,12 @@
       "getBonuses": ["saw", "workbench"]
     },
     {"typeName": "Boards", "craftAmount": 10, "resources": { "Wood": {"amount": 10}},
-      "toolRequired": "saw", "craftTime": 10000, "staminaDrain": 10,
-      "getBonuses": ["saw", "workbench"]
+      "toolRequired": "hatchet", "craftTime": 10000, "staminaDrain": 10,
+      "getBonuses": ["hatchet", "workbench"]
     },
     {"typeName": "LogPeeled", "craftAmount": 1, "resources": { "Log": {"amount": 1}},
-      "toolRequired": "saw", "nearRequired": "workbench", "craftTime": 10000, "staminaDrain": 10,
-      "getBonuses": ["saw", "workbench"]
+      "toolRequired": "hatchet",  "craftTime": 10000, "staminaDrain": 10,
+      "getBonuses": ["hatchet", "workbench"]
     },
     {"typeName": "CuttingThread", "craftAmount": 10, "resources": { "Wood": {"amount": 10}},
       "toolRequired": "hatchet", "craftTime": 5000, "staminaDrain": 20,
