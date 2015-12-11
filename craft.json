@@ -28,7 +28,7 @@
     {"typeName": "IronIngot", "onPerform": { "typeName": "CastIronIngot", "chance": 0.1 }, "resources": { "IronOre": {"amount": 6} }, "hidden": true,  "inside": { "BigSmelter":1, "BrickSmelter":1 } }
   ]},
   {"name": "Survival", "children": [
-    {"typeName": "StoneKnife", "resources": { "Stone": {"amount": 2000}}, "craftTime": 5000, "staminaDrain": 0,
+    {"typeName": "StoneKnife", "resources": { "Stone": {"amount": 2}}, "craftTime": 5000, "staminaDrain": 0,
       "getBonuses": ["hammer", "workbench"]
     },
     {"typeName": "StoneAxe", "resources": { "Stone": {"amount": 2}, "Wood": {"amount": 3} }, "craftTime": 5000, "staminaDrain": 0,
