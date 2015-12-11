@@ -1,0 +1,380 @@
+[
+  {"name": "Debug", "debugChestFlag":true, "children": [
+    {"typeName": "DebugChest", "resources": { "BearHead": {"amount": 1000} }}
+  ]},
+  {"name": "Survival", "children": [
+    {"typeName": "BattleChest", "battleChestFlag":true, "resources": {}, "buildTime": 5000},
+    {"typeName": "Campfire", "resources": { "Wood": {"amount": 3},  "Stone": {"amount": 3} }, "buildTime": 5000, "staminaDrain": 0,
+      "getBonuses": ["hatchet"]
+    },
+    {"typeName": "BoughBed", "resources": { "Wood": {"amount": 5} }, "buildTime": 5000},
+    {"typeName": "DominiumBasic", "resources": { "Stone": {"amount": 10}, "Clay": {"amount": 3} }, "buildTime": 5000},
+    {"typeName": "BranchCabinComplex", "buildTime": 20000, "staminaDrain": 20},
+    {"typeName": "BranchDoor", "resources": { "RawHide": {"amount": 2}, "Boards": {"amount": 5} }, "buildTime": 4000,
+      "toolRequired": "hatchet", "getBonuses": ["hatchet"]
+    },
+    {"typeName": "SmallWoodenBasket", "resources": { "Hay": {"amount": 5} }, "buildTime": 5000,
+      "getBonuses": ["hatchet"]
+    },
+    {"name": "BranchHouseAndFenceParts", "children": [
+      {"typeName": "BranchWall", "resources": { "Wood": {"amount": 4} }, "buildTime": 10000, "staminaDrain": 2,
+        "toolRequired": "hatchet", "getBonuses": ["hatchet"]
+      },
+      {"typeName": "BranchDoorway", "resources": { "Wood": {"amount": 2} }, "buildTime": 10000, "staminaDrain": 2,
+        "toolRequired": "hatchet", "getBonuses": ["hatchet"]
+      },
+      {"typeName": "BranchWindow", "resources": { "Wood": {"amount": 3} }, "buildTime": 10000, "staminaDrain": 2,
+        "toolRequired": "hatchet", "getBonuses": ["hatchet"]
+      },
+      {"typeName": "BranchRoof713", "resources": { "Wood": {"amount": 3} }, "buildTime": 10000, "staminaDrain": 2,
+        "toolRequired": "hatchet", "getBonuses": ["hatchet"]
+      },
+      {"typeName": "BranchFence", "resources": { "Wood": {"amount": 4} }, "buildTime": 10000, "staminaDrain": 2,
+        "toolRequired": "hatchet", "getBonuses": ["hatchet"]
+      },
+      {"typeName": "BranchFenceGate", "resources": { "Wood": {"amount": 4}, "RawHide": {"amount": 1} }, "buildTime": 10000, "staminaDrain": 2,
+        "toolRequired": "hatchet", "getBonuses": ["hatchet"]
+      }
+    ]}
+  ]},
+  {"name": "Structures", "children": [
+    {"name": "BaseStructures", "children": [
+      {"typeName": "WorkBench", "resources": { "Wood": {"amount": 20}, "Boards": {"amount": 10}, "Handles": {"amount": 5}, "CuttingThread": {"amount": 5},"BeltRaw": {"amount": 1}, "BoulderHewn": {"amount": 1} },
+        "toolRequired": "hatchet", "getBonuses": ["hatchet"]
+      },
+      {"typeName": "DryingFrame", "resources": { "Wood": {"amount": 15}, "RawHide": {"amount": 1} },
+        "toolRequired": "hatchet", "getBonuses": ["hatchet"]
+      },
+      {"typeName": "DryingFrame", "resources": { "Wood": {"amount": 15}, "RawHide": {"amount": 1} },
+        "toolRequired": "hatchet", "getBonuses": ["hatchet"]
+      },
+      {"typeName": "Smelter711", "resources": { "BoulderHewn": {"amount": 50}, "Cement": {"amount": 5}, "Bellows": {"amount": 1}}, "staminaDrain": 25},
+      {"typeName": "StoneAnvil", "resources": { "Boulder": {"amount": 2}, "Handles": {"amount": 10}, "Cement": {"amount": 1} },
+        "toolRequired": "hatchet", "getBonuses": ["hatchet"]
+      },
+      {"typeName": "Millstones", "resources": { "BoulderHewn": {"amount": 2}, "BigHide": {"amount": 2}, "Handles": {"amount": 1}, "staminaDrain": 4},
+        "toolRequired": "hammer", "getBonuses": ["hammer"]
+      },
+      {"typeName": "Well", "resources": { "Stone": {"amount": 30}, "Clay": {"amount": 10}, "BeltRaw": {"amount": 3}, "Boards": {"amount": 10}},
+        "staminaDrain": 30,
+        "toolRequired": "shovel", "getBonuses": ["shovel"]
+      },
+      {"typeName": "Oven711", "resources": { "BoulderHewn": {"amount": 20}, "Cement": {"amount": 2} }},
+      {"typeName": "ClayTanning", "resources": { "ClayPrepared": {"amount": 5}, "Boards": {"amount": 5}, "RawHide": {"amount": 1} }, "staminaDrain": 14},
+      {"typeName": "ClayBoiler", "resources": { "ClayPrepared": {"amount": 10} }, "staminaDrain": 30},
+      {"typeName": "RoastFurnace", "resources": { "Log": {"amount": 10}, "Boulder": {"amount": 20}, "Stone": {"amount": 50}, "Cement": {"amount": 2}, "Bellows": {"amount": 1} },
+        "staminaDrain": 50,
+        "toolRequired": "hammer", "getBonuses": ["hammer"]
+      },
+      {"typeName": "Roost", "resources": {"Hay": {"amount": 5}, "Boards": {"amount": 10}, "Handles": {"amount": 5}, "RawHide": {"amount": 2}},
+        "toolRequired": "hatchet", "getBonuses": ["hatchet"]
+      }
+    ]},
+    {"name": "Dominiums", "children": [
+      {"typeName": "DominiumSmall", "resources": { "BoulderHewn": {"amount": 5}, "Clay": {"amount": 10}, "RawHide": {"amount": 3}}, "buildTime": 10000,
+        "toolRequired": "hammer", "getBonuses": ["hammer"]
+      },
+      {"typeName": "DominiumMedium", "resources": { "BoulderHewn": {"amount": 10}, "Cement": {"amount": 2}, "BigHide": {"amount": 5} }, "buildTime": 10000,
+        "toolRequired": "hammer", "getBonuses": ["hammer"]
+      },
+      {"typeName": "DominiumLarge", "resources": { "Boulder": {"amount": 20}, "Clay": {"amount": 20}, "IronIngot": {"amount": 30}, "BearHide": {"amount": 1} }, "buildTime": 10000,
+        "toolRequired": "hammer", "getBonuses": ["hammer"]
+      },
+      {"typeName": "DominiumNoble", "resources": { "Bricks": {"amount": 20}, "Cement": {"amount": 10}, "SteelIngot": {"amount": 10}, "FlaxCloth": {"amount": 10} }, "buildTime": 10000,
+        "toolRequired": "hammer", "getBonuses": ["hammer"]
+      }
+    ]},
+    {"name": "Containers", "children": [
+      {"typeName": "LargeWoodenBox", "resources": { "Boards": {"amount": 20}, "Veins": {"amount": 5} },
+        "staminaDrain": 20,
+        "toolRequired": "hatchet", "getBonuses": ["hatchet"]
+      },
+      {"typeName": "Cupboard", "resources": { "Planks": {"amount": 8}, "Handles": {"amount": 20}, "Glue": {"amount": 3}},
+        "staminaDrain": 30,
+        "toolRequired": "saw", "getBonuses": ["saw"]
+      },
+      {"typeName": "LargeChest", "resources": { "Wood": {"amount": 10}, "IronIngot": {"amount": 10} },
+        "toolRequired": "hammer", "getBonuses": ["hammer"]
+      },
+      {"typeName": "SteelChest", "resources": { "SteelIngot": {"amount": 30} },
+        "toolRequired": "hammer", "getBonuses": ["hammer"]
+      }
+    ]},
+    {"name": "Stores", "children": [
+      {"typeName": "WoodenShed", "resources": { "Log": {"amount": 2}, "Wood": {"amount": 40} },
+        "toolRequired": "hatchet", "getBonuses": ["hatchet"]
+      },
+      {"typeName": "LogShed", "resources": { "Log": {"amount": 20}, "IronIngot": {"amount": 50} },
+        "toolRequired": "saw", "getBonuses": ["saw"]
+      },
+      {"typeName": "StoneShed",
+        "resources": {"Log": {"amount": 20}, "Boulder": {"amount": 30}, "Clay": {"amount": 30}, "IronIngot": {"amount": 50} },
+        "toolRequired": "hammer", "getBonuses": ["hammer"]
+      }
+    ]},
+    {"name": "Weaving", "children": [
+      {"typeName": "FlaxStack", "resources": {"RawFlax": {"amount": 8}}},
+      {"typeName": "FlaxBreak", "resources": {"Log": {"amount": 3}, "Handles": {"amount": 5}},
+        "toolRequired": "hatchet", "getBonuses": ["hatchet"]
+      },
+      {"typeName": "SpinningWheel", "resources": {"Wood": {"amount": 40}},
+        "toolRequired": "knife", "getBonuses": ["knife"]
+      },
+      {"typeName": "Loom", "resources": {"Planks": {"amount": 20}, "Nails": {"amount": 5}},
+        "toolRequired": "hammer", "getBonuses": ["hammer"]
+      }
+    ]},
+    {"name": "AfterIronStructures", "children": [
+      {"typeName": "IronAnvil", "resources": { "IronIngot": {"amount": 20}, "Wood": {"amount": 20} },
+        "toolRequired": "hammer", "getBonuses": ["hammer"]
+      },
+      {"typeName": "HTMill", "resources": { "Boulder": {"amount": 10}, "Clay": {"amount": 10}, "Log": {"amount": 10}, "IronIngot": {"amount": 20}},
+        "toolRequired": "saw", "getBonuses": ["saw"]
+      },
+      {"typeName": "BigSmelter", "resources": { "Log": {"amount": 20}, "Boulder": {"amount": 20}, "Clay": {"amount": 10}, "IronIngot": {"amount": 50} },
+        "toolRequired": "hammer", "getBonuses": ["hammer"]
+      },
+      {"typeName": "HenHouse712", "resources": { "Wood": {"amount": 30}, "Log": {"amount": 5}, "IronIngot": {"amount": 20}},
+        "toolRequired": "saw", "getBonuses": ["saw"]
+      },
+      {"typeName": "WoodenTanning", "resources": { "Wood": {"amount": 50}, "IronIngot": {"amount": 15} },
+        "toolRequired": "saw", "getBonuses": ["saw"]
+      },
+      {"typeName": "CrucibleShop", "resources": { "Log": {"amount": 50}, "Boulder": {"amount": 50}, "Clay": {"amount": 20}, "IronIngot": {"amount": 100} },
+        "toolRequired": "hammer", "getBonuses": ["hammer"]
+      },
+      {"typeName": "SteelAnvil", "resources": { "SteelIngot": {"amount": 50}, "Log": {"amount": 20} },
+        "toolRequired": "hammer", "getBonuses": ["hammer"]
+      },
+      {"typeName": "BrickOven", "resources": { "Bricks": {"amount": 20}, "Cement": {"amount": 5}, "IronIngot": {"amount": 10} }},
+      {"typeName": "BrickKiln", "resources": { "Bricks": {"amount": 25}, "Cement": {"amount": 10}, "IronIngot": {"amount": 15} }},
+      {"typeName": "BrickSmelter", "resources": { "Bricks": {"amount": 30}, "Cement": {"amount": 15}, "IronIngot": {"amount": 30} }},
+      {"typeName": "TownFountain", "resources": { "Boulder": {"amount": 10}, "Stone": {"amount": 30}, "Cement": {"amount": 10} },
+        "toolRequired": "shovel", "getBonuses": ["shovel"]
+      }
+    ]},
+    {"name": "BedStructures", "children": [
+      {"typeName": "KipBench", "resources": { "Wood": {"amount": 10}, "Boards": {"amount": 10}, "Hide": {"amount": 3} }, "buildTime": 5000},
+      {"typeName": "HunterBed", "resources": { "Boards": {"amount": 10}, "LogPeeled": {"amount": 3}, "BigHide": {"amount": 4}, "BeddingRaw": {"amount": 1} },
+        "staminaDrain": 20,
+        "toolRequired": "hatchet", "getBonuses": ["hatchet"]
+      },
+      {"typeName": "Bed", "resources": { "Planks": {"amount": 6}, "Boards": {"amount": 20}, "BigHide": {"amount": 10}, "IronIngot": {"amount": 10} },
+        "toolRequired": "saw", "getBonuses": ["saw"]
+      }
+    ]}
+  ]},
+  {"name": "Ground works", "children": [
+    {"typeName": "PloughedGround", "resources": {}, "staminaDrain": 3, "buildTime": 5000,
+      "toolRequired": "shovel", "getBonuses": ["shovel"]
+    },
+    {"typeName": "PloughedGround3x3", "staminaDrain": 25, "buildTime": 25000},
+    {"typeName": "PavedGround", "resources": { "Stone": {"amount": 2} }, "staminaDrain": 3, "buildTime": 5000,
+      "getBonuses": ["shovel"]
+    },
+    {"typeName": "PavedGround3x3", "staminaDrain": 25, "buildTime": 25000},
+    {"typeName": "GrassedGround", "resources": { "WoodenBucketWater": {"amount": 1} }, "staminaDrain": 3, "buildTime": 5000,
+      "getBonuses": ["shovel"]
+    },
+    {"typeName": "GrassedGround3x3", "staminaDrain": 25, "buildTime": 25000},
+    {"typeName": "SoiledGround", "resources": {}, "staminaDrain": 3, "buildTime": 5000,
+      "getBonuses": ["shovel"]
+    },
+    {"typeName": "SoiledGround3x3", "staminaDrain": 25, "buildTime": 25000}
+  ]},
+  {"name": "Houses", "children": [
+    {"name": "LogHouses", "children": [
+      {"typeName": "LogFoundation", "resources": { "Wood": {"amount": 10} },
+        "toolRequired": "hatchet", "getBonuses": ["hatchet"]
+      },
+      {"typeName": "LogWall", "resources": { "LogPeeled": {"amount": 5}, "Hay": {"amount": 1} },
+        "toolRequired": "hatchet", "getBonuses": ["hatchet"]
+      },
+      {"typeName": "LogWallCorner", "resources": { "LogPeeled": {"amount": 5}, "Hay": {"amount": 1} },
+        "toolRequired": "hatchet", "getBonuses": ["hatchet"]
+      },
+      {"typeName": "LogDoorway", "resources": { "LogPeeled": {"amount": 5}, "Hay": {"amount": 1} },
+        "toolRequired": "hatchet", "getBonuses": ["hatchet"]
+      },
+      {"typeName": "LogWindow", "resources": { "LogPeeled": {"amount": 5}, "Hay": {"amount": 1} },
+        "toolRequired": "hatchet", "getBonuses": ["hatchet"]
+      },
+      {"typeName": "LogPillar", "resources": { "Log": {"amount": 1} },
+        "toolRequired": "hatchet", "getBonuses": ["hatchet"]
+      },
+      {"typeName": "LogRoofSlope", "resources": { "Wood": {"amount": 10} },
+        "toolRequired": "hatchet", "getBonuses": ["hatchet"]
+      },
+      {"typeName": "LogRoofSlopeHigh", "resources": { "Wood": {"amount": 10} },
+        "toolRequired": "hatchet", "getBonuses": ["hatchet"]
+      },
+      {"typeName": "LogRoofCorner", "resources": { "Wood": {"amount": 10} },
+        "toolRequired": "hatchet", "getBonuses": ["hatchet"]
+      },
+      {"typeName": "LogRoofCornerHigh", "resources": { "Wood": {"amount": 10} },
+        "toolRequired": "hatchet", "getBonuses": ["hatchet"]
+      },
+      {"typeName": "LogRoofFlat", "resources": { "Wood": {"amount": 10} },
+        "toolRequired": "hatchet", "getBonuses": ["hatchet"]
+      }
+    ]},
+    {"name": "HalfTimbering", "children": [
+      {"typeName": "HTFoundation", "resources": { "Wood": {"amount": 10} },
+        "toolRequired": "saw", "getBonuses": ["saw"]
+      },
+      {"typeName": "HTWall", "resources": { "Log": {"amount": 3}, "IronIngot": {"amount": 5}, "Stone": {"amount": 10}, "Clay": {"amount": 5} },
+        "toolRequired": "saw", "getBonuses": ["saw"]
+      },
+      {"typeName": "HTDoorway", "resources": { "Log": {"amount": 3}, "IronIngot": {"amount": 5}, "Stone": {"amount": 10}, "Clay": {"amount": 5} },
+        "toolRequired": "saw", "getBonuses": ["saw"]
+      },
+      {"typeName": "HTWindow", "resources": { "Log": {"amount": 3}, "IronIngot": {"amount": 5}, "Stone": {"amount": 10}, "Clay": {"amount": 5} },
+        "toolRequired": "saw", "getBonuses": ["saw"]
+      },
+      {"typeName": "HTRoof", "resources": { "Log": {"amount": 3}, "IronIngot": {"amount": 5}, "Stone": {"amount": 10}, "Clay": {"amount": 5} },
+        "toolRequired": "saw", "getBonuses": ["saw"]
+      }
+    ]},
+    {"name": "DoorsHouses", "children": [
+      {"typeName": "WoodenDoor", "resources": { "Boards": {"amount": 20}, "BeltRaw": {"amount": 2}, "RawHide":{"amount": 3} },
+        "toolRequired": "hatchet", "getBonuses": ["hatchet"]
+      },
+      {"typeName": "RobustDoor", "resources": { "Wood": {"amount": 15}, "IronIngot": {"amount": 5} },
+        "toolRequired": "hammer", "getBonuses": ["hammer"]
+      },
+      {"typeName": "WoodenIronedDoor", "resources": { "Wood": {"amount": 20}, "IronIngot": {"amount": 10} },
+        "toolRequired": "saw", "getBonuses": ["saw"]
+      },
+      {"typeName": "IronDoor", "resources": { "IronIngot": {"amount": 20} },
+        "toolRequired": "hammer", "getBonuses": ["hammer"]
+      }
+    ]}
+  ]},
+  {"name": "Fences", "children": [
+    {"name": "FencesWooden", "children": [
+      {"typeName": "WoodenFence", "resources": { "Boards": {"amount": 10}, "RawHide": {"amount": 1} },
+        "getBonuses": ["saw"]
+      },
+      {"typeName": "WoodenFenceSection"},
+      {"typeName": "FenceGate", "resources": { "Wood": {"amount": 10} },
+        "getBonuses": ["saw"]
+      },
+      {"typeName": "FenceGateSection"}
+    ]},
+    {"name": "Palisade", "children": [
+      {"typeName": "Palisade", "resources": { "LogPeeled": {"amount": 8}, "Ropes": {"amount": 2} },
+        "staminaDrain": 23,
+        "toolRequired": "shovel", "getBonuses": ["shovel"]
+      },
+      {"typeName": "PalisadeSection"},
+      {"typeName": "PalisadeGate", "resources": { "LogPeeled": {"amount": 12}, "Ropes": {"amount": 5} },
+        "staminaDrain": 30,
+        "toolRequired": "shovel", "getBonuses": ["shovel"]
+      },
+      {"typeName": "PalisadeGateSection"}
+    ]},
+    {"name": "StoneFenceIronGates", "children": [
+      {"typeName": "StoneFence", "resources": { "BoulderHewn": {"amount": 10}, "Cement": {"amount": 1}, "Plaster": {"amount": 1} },
+        "getBonuses": ["pickaxe"]
+      },
+      {"typeName": "StoneSlit", "resources": { "BoulderHewn": {"amount": 5}, "Cement": {"amount": 1}, "Plaster": {"amount": 1} },
+        "getBonuses": ["pickaxe"]
+      },
+      {"typeName": "IronedGate", "resources": { "Wood": {"amount": 30}, "IronIngot": {"amount": 30}, "Log": {"amount": 3} },
+        "toolRequired": "saw", "getBonuses": ["saw"]
+      },
+      {"typeName": "IronedGateSection"},
+      {"typeName": "FullIronGate", "resources": { "IronIngot": {"amount": 70} },
+        "toolRequired": "hammer", "getBonuses": ["hammer"]
+      },
+      {"typeName": "FullIronGateSection"}
+    ]},
+    {"name": "StoneBlocksFences", "children": [
+      {"typeName": "StoneBlock", "resources": { "BoulderHewn": {"amount": 15}, "Cement": {"amount": 2}, "Plaster": {"amount": 1} },
+        "getBonuses": ["pickaxe"]
+      },
+      {"typeName": "StoneSlope", "resources": { "BoulderHewn": {"amount": 10}, "Cement": {"amount": 1}, "Plaster": {"amount": 1} },
+        "getBonuses": ["pickaxe"]
+      },
+      {"typeName": "StoneArchComplex"},
+      {"typeName": "StoneArch", "resources": { "BoulderHewn": {"amount": 30}, "Cement": {"amount": 3}, "Plaster": {"amount": 2} },
+        "hidden": true,
+        "getBonuses": ["pickaxe"]
+      }
+    ]},
+    {"name": "SteelGates", "children": [
+      {"typeName": "SteelGate", "resources": { "SteelIngot": {"amount": 70} },
+        "toolRequired": "hammer", "getBonuses": ["hammer"]
+      },
+      {"typeName": "SteelGateSection"}
+    ]}
+  ]},
+  {"name": "CastleBuildings", "children": [
+    {"typeName": "BrickBlock", "resources": {"Bricks": {"amount": 20}, "Cement": {"amount": 5}, "Planks": {"amount": 1}},
+      "toolRequired": "shovel", "getBonuses": ["shovel"]
+    },
+    {"typeName": "BrickSlope", "resources": { "Bricks": {"amount": 15}, "Cement": {"amount": 3}},
+      "toolRequired": "shovel", "getBonuses": ["shovel"]
+    },
+    {"typeName": "BrickTower", "resources": {"Bricks": {"amount": 30}, "Cement": {"amount": 7}, "Planks": {"amount": 3}},
+      "toolRequired": "shovel", "getBonuses": ["shovel"]
+    },
+    {"typeName": "BarbicanTower", "resources": {"Bricks": {"amount": 35}, "Cement": {"amount": 10}, "Planks": {"amount": 5}},
+      "toolRequired": "shovel", "getBonuses": ["shovel"]
+    },
+    {"typeName": "IronGrate", "resources": { "IronIngot": {"amount": 90} },
+      "toolRequired": "hammer", "getBonuses": ["hammer"]},
+    {"typeName": "Drawbridge", "resources": {"Log": {"amount": 20}, "IronIngot": {"amount": 50}},
+      "toolRequired": "hammer", "getBonuses": ["hammer"]}
+  ]},
+  {"name": "SiegeGuns", "noBallistaFlag":false, "children": [
+    {"typeName": "BatteringRam", "resources": { "Log": {"amount": 25}, "IronIngot": {"amount": 20}, "Ropes": {"amount": 20}, "HardenedLeather": {"amount": 20}},
+      "buildTime": 30000, "staminaDrain": 95,
+      "toolRequired": "saw", "getBonuses": ["saw"]
+    },
+    {"typeName": "Ballista", "resources": { "Planks": {"amount": 30}, "Nails": {"amount": 20}, "BigLeather": {"amount": 40}, "Ropes": {"amount": 10}},
+      "buildTime": 30000, "staminaDrain": 95,
+      "toolRequired": "saw", "getBonuses": ["saw"]
+    }
+  ]},
+  {"name": "Decorations", "children": [
+    {"name": "Statues", "children": [
+      {"typeName": "KnightStatue", "resources": { "IronCuirass": {"amount": 1}, "IronSword": {"amount": 1}, "Planks": {"amount": 3}, "Nails": {"amount": 5} },
+        "toolRequired": "hammer", "getBonuses": ["hammer"]},
+      {"typeName": "StoneStatueGargoyle", "resources": { "Boulder": {"amount": 5}, "Stone": {"amount": 50} },
+        "getBonuses": ["pickaxe"]
+      },
+      {"typeName": "StoneStatueChimera", "resources": { "Boulder": {"amount": 5}, "Stone": {"amount": 50} },
+        "getBonuses": ["pickaxe"]
+      },
+      {"typeName": "StoneStatueLion", "resources": { "Boulder": {"amount": 5}, "Stone": {"amount": 50} },
+        "getBonuses": ["pickaxe"]
+      }
+    ]},
+    {"name": "DecorativeFurniture", "children": [
+      {"typeName": "WoodenChair", "resources": { "Wood": {"amount": 10} },
+        "toolRequired": "saw", "getBonuses": ["saw"]
+      },
+      {"typeName": "WoodenTable", "resources": { "Wood": {"amount": 20} },
+        "toolRequired": "saw", "getBonuses": ["saw"]
+      },
+      {"typeName": "NobleBench", "resources": { "Planks": {"amount": 10}, "Nails": {"amount": 5} },
+        "toolRequired": "saw", "getBonuses": ["saw"]},
+      {"typeName": "NobleTable", "resources": { "Planks": {"amount": 20}, "Nails": {"amount": 10} },
+        "toolRequired": "saw", "getBonuses": ["saw"]}
+    ]},
+    {"typeName": "HalloweenTree", "resources": { "HalloweenSpider": {"amount": 2}, "Pumpkin": {"amount": 1}, "Wood": {"amount": 10}, "Log": {"amount": 3}},
+      "toolRequired": "hatchet", "getBonuses": ["hatchet"]
+    },
+    {"typeName": "Gobelin", "resources": {"FlaxCloth": {"amount": 1}, "Boards": {"amount": 4}, "FlaxThreads": {"amount": 5}, "NeedleIron": {"amount": 3}}},
+    {"typeName": "SkullStick", "resources": {"Skulls": {"amount": 1}, "Handles": {"amount": 1}}},
+    {"typeName": "SkullHump", "resources": {"Skulls": {"amount": 10}}},
+    {"typeName": "SkullPile", "resources": {"Skulls": {"amount": 20}}},
+    {"typeName": "Scarecrow", "resources": { "Log": {"amount": 2}, "BigHide": {"amount": 3}, "Hay": {"amount": 3} },
+      "getBonuses": ["hatchet"]
+    },
+    {"typeName": "PumpkinScarecrow", "resources": { "Log": {"amount": 1}, "Wood": {"amount": 20}, "BigHide": {"amount": 2}},
+      "getBonuses": ["hatchet"]
+    }
+  ]}
+]
