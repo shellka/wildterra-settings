@@ -1,0 +1,547 @@
+[
+  {"name": "Hidden", "hidden": true, "children": [
+    {"typeName": "RoastMeat", "resources": { "Meat": {"amount": 1} }, "hidden": true,  "inside": { "Campfire": 1, "Oven711":1, "BrickOven":1 } },
+    {"typeName": "Hide", "resources": { "RawHide": {"amount": 1} }, "hidden": true,  "inside": { "DryingFrame": 1 } },
+    {"typeName": "BigHide", "resources": { "BigRawHide": {"amount": 1} }, "hidden": true,  "inside": { "DryingFrame": 1 } },
+    {"typeName": "Leather", "resources": { "Hide": {"amount": 1} }, "hidden": true,  "inside": { "ClayTanning": 1, "WoodenTanning":1 } },
+    {"typeName": "BigLeather", "resources": { "BigHide": {"amount": 1} }, "hidden": true,  "inside": { "ClayTanning": 1, "WoodenTanning":1 } },
+    {"typeName": "HardenedLeather", "resources": { "GluedLeather": {"amount": 1} }, "hidden": true,  "inside": { "ClayBoiler": 1 } },
+    {"typeName": "BearHide", "resources": { "BearRawHide": {"amount": 1} }, "hidden": true,  "inside": { "DryingFrame": 1 } },
+    {"typeName": "Bannock", "resources": { "Dough": {"amount": 1} }, "hidden": true,  "inside": { "Oven711":1, "BrickOven":1 } },
+    {"typeName": "MeatCarrotPottage", "resources": { "RawMeatCarrotPottage": {"amount": 1} }, "hidden": true,  "inside": { "Oven711":1, "BrickOven":1 } },
+    {"typeName": "VegetableStew", "resources": { "RawVegetableStew": {"amount": 1} }, "hidden": true,  "inside": { "Oven711":1, "BrickOven":1 } },
+    {"typeName": "ShirredEggs", "resources": { "Eggs": {"amount": 1} }, "hidden": true,  "inside": { "Campfire": 1, "Oven711":1, "BrickOven":1 } },
+    {"typeName": "BakedCeps", "resources": { "Eggs": {"cepRawMushrooms": 1} }, "hidden": true,  "inside": { "Campfire": 1, "Oven711":1, "BrickOven":1 } },
+    {"typeName": "BakedChanterelles", "resources": { "chanterelleRawMushrooms": {"amount": 1} }, "hidden": true,  "inside": { "Campfire": 1, "Oven711":1, "BrickOven":1 } },
+    {"typeName": "Flour", "resources": { "GrainWheat": {"amount": 5} }, "hidden": true,  "inside": { "HTMill":1 } },
+    {"typeName": "Eggs", "craftAmount": 5, "resources": { "HenInCage": {"amount": 1} }, "hidden": true,  "inside": { "Roost":1 }},
+    {"typeName": "Eggs", "craftAmount": 10, "resources": { "HenInCage": {"amount": 2} }, "hidden": true,  "inside": { "HenHouse712":1 },
+      "spawn": { "typeName": "Hen", "amount": 3, "startRange": 2 }
+    },
+    {"typeName": "CharCoal", "resources": { "Log": {"amount": 1} }, "hidden": true,  "inside": { "RoastFurnace":1, "BrickKiln":1 }},
+    {"typeName": "ClayPot", "resources": { "UnfiredClayPot": {"amount": 1} }, "hidden": true,  "inside": { "RoastFurnace":1, "BrickKiln":1 }},
+    {"typeName": "Bricks", "resources": { "UnfiredBricks": {"amount": 1} }, "hidden": true,  "inside": { "RoastFurnace":1, "BrickKiln":1 }},
+    {"typeName": "SteelIngot", "resources": { "IronIngot": {"amount": 5} }, "hidden": true,  "inside": { "CrucibleShop":1 }},
+    {"typeName": "SteelIngot", "onPerform": { "typeName": "CastIronIngot", "chance": 0.5 }, "resources": { "IronIngot": {"amount": 5} }, "hidden": true,  "inside": { "CrucibleShop":1 }},
+    {"typeName": "IronIngot", "resources": { "IronOre": {"amount": 10} }, "hidden": true,  "inside": { "Smelter711":1 } },
+    {"typeName": "IronIngot", "resources": { "CastIronIngot": {"amount": 4} }, "hidden": true,  "inside": { "BigSmelter":1, "BrickSmelter":1 } },
+    {"typeName": "IronIngot", "onPerform": { "typeName": "CastIronIngot", "chance": 0.1 }, "resources": { "IronOre": {"amount": 6} }, "hidden": true,  "inside": { "BigSmelter":1, "BrickSmelter":1 } }
+  ]},
+  {"name": "Survival", "children": [
+    {"typeName": "StoneKnife", "resources": { "Stone": {"amount": 2000}}, "craftTime": 5000, "staminaDrain": 0,
+      "getBonuses": ["hammer", "workbench"]
+    },
+    {"typeName": "StoneAxe", "resources": { "Stone": {"amount": 2}, "Wood": {"amount": 3} }, "craftTime": 5000, "staminaDrain": 0,
+      "getBonuses": ["hammer", "workbench"]
+    },
+    {"typeName": "WoodenSpear", "craftAmount": 5, "resources": { "Wood": {"amount": 5} }, "toolRequired": "knife", "staminaDrain": 0,
+      "getBonuses": ["knife", "workbench"]
+    },
+    {"typeName": "HideSling", "resources": { "RawHide": {"amount": 1}}, "toolRequired": "knife",
+      "getBonuses": ["knife", "workbench"]
+    },
+    {"typeName": "Bow", "resources": { "Wood": {"amount": 5}, "RawHide": {"amount": 3} },
+      "toolRequired": "knife",
+      "getBonuses": ["knife", "workbench"]
+    },
+    {"typeName": "StoneTippedArrow", "craftAmount": 10, "resources": { "Stone": {"amount": 5}, "Wood": {"amount": 5} },
+      "toolRequired": "knife",
+      "getBonuses": ["knife", "workbench"],
+      "craftTime": 5000
+    },
+    {"typeName": "Torch", "resources": { "Wood": {"amount": 2}}, "craftTime": 5000,
+      "getBonuses": ["knife", "workbench"]
+    },
+    {"typeName": "NeedleBone", "resources": { "Bones": {"amount": 1}}, "craftTime": 5000,
+      "toolRequired": "knife",
+      "getBonuses": ["knife", "workbench"]
+    }
+  ]},
+  {"name": "Tools", "children": [
+    {"name": "BasicTools", "children": [
+      {"typeName": "StonePick", "resources": { "Stone": {"amount": 10}, "Wood": {"amount": 3} },
+        "getBonuses": ["workbench", "hammer"]
+      },
+      {"typeName": "WoodenShovel", "resources": { "LogPeeled": {"amount": 1} },
+        "toolRequired": "hatchet", "nearRequired": "workbench",  "staminaDrain": 20,
+        "getBonuses": ["hatchet", "workbench"]
+      },
+      {"typeName": "StoneHammer", "resources": { "Stone": {"amount": 5}, "Wood": {"amount": 3} },
+        "getBonuses": ["knife", "workbench", "hammer"]
+      }
+    ]},
+    {"name": "SnareTools", "children": [
+      {"typeName": "WoodenSnare", "resources": { "Wood": {"amount": 10}, "RawHide": {"amount": 5}, "GrainWheat": {"amount": 1} },
+        "toolRequired": "knife", "nearRequired": "workbench",
+        "getBonuses": ["knife", "workbench"]
+      }
+    ]},
+    {"name": "IronTools", "children": [
+      {"typeName": "IronKnife", "resources": { "IronIngot": {"amount": 4}, "Wood": {"amount": 2} },
+        "toolRequired": "hammer", "nearRequired": "anvil",
+        "getBonuses": ["hammer", "anvil", "workbench"]
+      },
+      {"typeName": "IronAxe", "resources": { "IronIngot": {"amount": 7}, "Wood": {"amount": 10} },
+        "toolRequired": "hammer", "nearRequired": "anvil",
+        "getBonuses": ["hammer", "anvil", "workbench"]
+      },
+      {"typeName": "IronHammer", "resources": { "IronIngot": {"amount": 8}, "Wood": {"amount": 6} },
+        "toolRequired": "hammer", "nearRequired": "anvil",
+        "getBonuses": ["hammer", "anvil", "workbench"]
+      },
+      {"typeName": "IronPickaxe", "resources": { "IronIngot": {"amount": 12}, "Wood": {"amount": 6} },
+        "toolRequired": "hammer", "nearRequired": "anvil",
+        "getBonuses": ["hammer", "anvil", "workbench"]
+      },
+      {"typeName": "IronSaw", "resources": { "IronIngot": {"amount": 5}, "Wood": {"amount": 5} },
+        "toolRequired": "hammer", "nearRequired": "anvil",
+        "getBonuses": ["hammer", "anvil", "workbench"]
+      },
+      {"typeName": "IronShovel", "resources": { "IronIngot": {"amount": 5}, "Wood": {"amount": 10} },
+        "toolRequired": "hammer", "nearRequired": "anvil",
+        "getBonuses": ["hammer", "anvil", "workbench"]
+      },
+      {"typeName": "IronSickle", "resources": { "IronIngot": {"amount": 5}, "Wood": {"amount": 4} },
+        "toolRequired": "hammer", "nearRequired": "anvil",
+        "getBonuses": ["hammer", "anvil", "workbench"]
+      },
+      {"typeName": "ForgedBucket", "resources": { "IronIngot": {"amount": 10} },
+        "toolRequired": "hammer", "nearRequired": "anvil",
+        "getBonuses": ["hammer", "anvil", "workbench"]
+      },
+      {"typeName": "NeedleIron", "craftAmount": 10, "resources": { "IronIngot": {"amount": 10} },
+        "toolRequired": "hammer", "nearRequired": "anvil",
+        "getBonuses": ["hammer", "anvil", "workbench"]
+      }
+    ]},
+    {"name": "SteelTools", "children": [
+      {"typeName": "SteelKnife", "resources": { "SteelIngot": {"amount": 4}, "Wood": {"amount": 2}},
+        "toolRequired": "hammer", "nearRequired": "anvil",
+        "getBonuses": ["hammer", "anvil", "workbench"]
+      },
+      {"typeName": "SteelAxe", "resources": { "SteelIngot": {"amount": 12}, "Wood": {"amount": 6}},
+        "toolRequired": "hammer", "nearRequired": "anvil",
+        "getBonuses": ["hammer", "anvil", "workbench"]
+      },
+      {"typeName": "SteelHammer", "resources": { "SteelIngot": {"amount": 8}, "Wood": {"amount": 6} },
+        "toolRequired": "hammer", "nearRequired": "anvil",
+        "getBonuses": ["hammer", "anvil", "workbench"]
+      },
+      {"typeName": "SteelPickaxe", "resources": { "SteelIngot": {"amount": 12}, "Wood": {"amount": 6} },
+        "toolRequired": "hammer", "nearRequired": "anvil",
+        "getBonuses": ["hammer", "anvil", "workbench"]
+      },
+      {"typeName": "SteelSaw", "resources": { "SteelIngot": {"amount": 5}, "Wood": {"amount": 5} },
+        "toolRequired": "hammer", "nearRequired": "anvil",
+        "getBonuses": ["hammer", "anvil", "workbench"]
+      },
+      {"typeName": "SteelSickle", "resources": { "SteelIngot": {"amount": 5}, "Wood": {"amount": 4} },
+        "toolRequired": "hammer", "nearRequired": "anvil",
+        "getBonuses": ["hammer", "anvil", "workbench"]
+      }
+    ]}
+  ]},
+  {"name": "Weapons", "children": [
+    {"name": "HuntingWeapons", "children": [
+      {"typeName": "HuntingBow", "resources": { "Wood": {"amount": 6}, "Veins": {"amount": 6}, "Bones": {"amount": 10}, "BeltRaw": {"amount": 2}, "Glue": {"amount": 1}, "FlaxThreads": {"amount": 2} },
+        "toolRequired": "knife", "nearRequired": "workbench",
+        "getBonuses": ["knife", "workbench"]
+      },
+      {"typeName": "HuntingSling", "resources": { "BigLeather": {"amount": 1}, "BeltFine": {"amount": 2}, "FlaxThreads":{"amount": 1}, "NeedleBone": {"amount": 5} },
+        "toolRequired": "knife", "nearRequired": "workbench",
+        "getBonuses": ["knife", "workbench"]
+      },
+      {"typeName": "ShortBow", "resources": { "IronIngot": {"amount": 3}, "Wood": {"amount": 20}, "BigHide": {"amount": 1} },
+        "toolRequired": "knife", "nearRequired": "workbench",
+        "getBonuses": ["knife", "workbench"]
+      },
+      {"typeName": "CompositeBow", "resources": { "SteelIngot": {"amount": 4}, "Wood": {"amount": 20}, "BigHide": {"amount": 1} },
+        "toolRequired": "knife", "nearRequired": "workbench",
+        "getBonuses": ["knife", "workbench"]
+      },
+      {"typeName": "IronTippedArrow", "craftAmount": 10, "resources": { "IronIngot": {"amount": 2}, "Wood": {"amount": 10}, "Feathers": {"amount": 20}},
+        "toolRequired": "hammer", "nearRequired": "anvil",
+        "getBonuses": ["hammer", "anvil", "workbench"]
+      },
+      {"typeName": "SteelTippedArrow", "craftAmount": 10, "resources": { "SteelIngot": {"amount": 2}, "Wood": {"amount": 10}, "Feathers": {"amount": 30}},
+        "toolRequired": "hammer", "nearRequired": "anvil",
+        "getBonuses": ["hammer", "anvil", "workbench"]
+      }
+    ]},
+    {"name": "IronWeapons", "children": [
+      {"typeName": "IronSword", "resources": { "Hide": {"amount": 6}, "IronIngot": {"amount": 15} },
+        "toolRequired": "hammer", "nearRequired": "anvil",
+        "getBonuses": ["hammer", "anvil", "workbench"]
+      }
+    ]},
+    {"name": "SteelWeapons", "children": [
+      {"typeName": "SteelSword", "resources": { "Hide": {"amount": 6}, "SteelIngot": {"amount": 15} },
+        "toolRequired": "hammer", "nearRequired": "anvil",
+        "getBonuses": ["hammer", "anvil", "workbench"]
+      }
+    ]}
+  ]},
+  {"name": "Armors", "children": [
+    {"name": "RawHideArmor", "children": [
+      {"typeName": "RawHideVest", "resources": { "RawHide": {"amount": 10}, "Veins":{"amount": 3}, "NeedleBone":{"amount": 1} },
+        "toolRequired": "knife",
+        "getBonuses": ["knife", "workbench"]
+      },
+      {"typeName": "RawHideLoincloth", "resources": { "RawHide": {"amount": 8}, "Veins":{"amount": 2}, "NeedleBone":{"amount": 1} },
+        "toolRequired": "knife",
+        "getBonuses": ["knife", "workbench"]
+      },
+      {"typeName": "RawHideBoots", "resources": { "RawHide": {"amount": 4}, "Veins":{"amount": 1}, "NeedleBone":{"amount": 1} },
+        "toolRequired": "knife",
+        "getBonuses": ["knife", "workbench"]
+      },
+      {"typeName": "RawHideGloves", "resources": { "RawHide": {"amount": 4}, "Veins":{"amount": 1}, "NeedleBone":{"amount": 1} },
+        "toolRequired": "knife",
+        "getBonuses": ["knife", "workbench"]
+      },
+      {"typeName": "RawHideCap", "resources": { "RawHide": {"amount": 5}, "Veins":{"amount": 1}, "NeedleBone":{"amount": 1} },
+        "toolRequired": "knife",
+        "getBonuses": ["knife", "workbench"]
+      }
+    ]},
+    {"name": "HideArmor", "children": [
+      {"typeName": "HideBoots", "resources": { "Hide": {"amount": 12}, "FlaxThreads":{"amount": 2}, "NeedleBone":{"amount": 3}},
+        "toolRequired": "knife", "nearRequired": "workbench",
+        "getBonuses": ["knife", "workbench"]
+      },
+      {"typeName": "HideGloves", "resources": { "Hide": {"amount": 10}, "FlaxThreads":{"amount": 2}, "NeedleBone":{"amount": 3} },
+        "toolRequired": "knife",
+        "getBonuses": ["knife", "workbench"]
+      },
+      {"typeName": "HideHelmet", "resources": { "Hide": {"amount": 9}, "BigHide": {"amount": 1}, "FlaxThreads":{"amount": 3}, "NeedleBone":{"amount": 3} },
+        "toolRequired": "knife", "nearRequired": "workbench",
+        "getBonuses": ["knife", "workbench"]
+      },
+      {"typeName": "HideJacket", "resources": { "Hide": {"amount": 8}, "BigHide": {"amount": 5}, "FlaxThreads":{"amount": 3}, "NeedleBone":{"amount": 3} },
+        "toolRequired": "knife", "nearRequired": "workbench",
+        "getBonuses": ["knife", "workbench"]
+      },
+      {"typeName": "HidePants", "resources": { "Hide": {"amount": 8}, "BigHide": {"amount": 4}, "FlaxThreads":{"amount": 3}, "NeedleBone":{"amount": 3} },
+        "toolRequired": "knife", "nearRequired": "workbench",
+        "getBonuses": ["knife", "workbench"]
+      },
+      {"typeName": "BearHideCloak", "resources": { "BearHide": {"amount": 1}, "FlaxThreads":{"amount": 3}, "NeedleBone":{"amount": 3} }, "craftTime": 20000,
+        "toolRequired": "knife", "nearRequired": "workbench",
+        "getBonuses": ["knife", "workbench"]
+      },
+      {"typeName": "HareHeadHelmet", "resources": { "Hide": {"amount": 10}, "HareHead": {"amount": 1}, "FlaxThreads":{"amount": 1}, "NeedleBone":{"amount": 3} },
+        "toolRequired": "knife", "nearRequired": "workbench",
+        "getBonuses": ["knife", "workbench"]
+      },
+      {"typeName": "DeerHeadHelmet", "resources": { "Hide": {"amount": 3}, "BigHide": {"amount": 1}, "DeerHead": {"amount": 1}, "FlaxThreads":{"amount": 1}, "NeedleBone":{"amount": 3} },
+        "toolRequired": "knife", "nearRequired": "workbench",
+        "getBonuses": ["knife", "workbench"]
+      },
+      {"typeName": "BoarHeadHelmet", "resources": { "Hide": {"amount": 3}, "BigHide": {"amount": 1}, "BoarHead": {"amount": 1}, "FlaxThreads":{"amount": 1}, "NeedleBone":{"amount": 3} },
+        "toolRequired": "knife", "nearRequired": "workbench",
+        "getBonuses": ["knife", "workbench"]
+      },
+      {"typeName": "WolfHeadHelmet", "resources": { "Hide": {"amount": 3}, "BigHide": {"amount": 1}, "WolfHead": {"amount": 1}, "FlaxThreads":{"amount": 1}, "NeedleBone":{"amount": 3} },
+        "toolRequired": "knife", "nearRequired": "workbench",
+        "getBonuses": ["knife", "workbench"]
+      },
+      {"typeName": "BearHeadHelmet", "resources": { "Hide": {"amount": 3}, "BigHide": {"amount": 2}, "BearHead": {"amount": 1}, "FlaxThreads":{"amount": 1}, "NeedleBone":{"amount": 3} },
+        "toolRequired": "knife", "nearRequired": "workbench",
+        "getBonuses": ["knife", "workbench"]
+      }
+    ]},
+    {"name": "LeatherArmor", "children": [
+      {"typeName": "LeatherBoots", "resources": { "Leather": {"amount": 12}, "BuckleWood": {"amount": 4}, "BeltFine": {"amount": 3}, "NeedleBone":{"amount": 3} },
+        "toolRequired": "knife", "nearRequired": "workbench",
+        "getBonuses": ["knife", "workbench"]
+      },
+      {"typeName": "LeatherGloves", "resources": { "Leather": {"amount": 10}, "BuckleWood": {"amount": 4}, "BeltFine": {"amount": 3}, "NeedleBone":{"amount": 3} },
+        "toolRequired": "knife",
+        "getBonuses": ["knife", "workbench"]
+      },
+      {"typeName": "LeatherHelmet", "resources": { "Leather": {"amount": 9}, "BigLeather": {"amount": 1}, "BuckleWood": {"amount": 6}, "BeltFine": {"amount": 3}, "NeedleBone":{"amount": 3} },
+        "toolRequired": "knife", "nearRequired": "workbench",
+        "getBonuses": ["knife", "workbench"]
+      },
+      {"typeName": "LeatherJacket", "resources": { "Leather": {"amount": 8}, "BigLeather": {"amount": 5}, "BuckleWood": {"amount": 12}, "BeltFine": {"amount": 3}, "NeedleBone":{"amount": 3} },
+        "toolRequired": "knife", "nearRequired": "workbench",
+        "getBonuses": ["knife", "workbench"]
+      },
+      {"typeName": "LeatherPants", "resources": { "Leather": {"amount": 8}, "BigLeather": {"amount": 4}, "BuckleWood": {"amount": 10}, "BeltFine": {"amount": 3}, "NeedleBone":{"amount": 3} },
+        "toolRequired": "knife", "nearRequired": "workbench",
+        "getBonuses": ["knife", "workbench"]
+      }
+    ]},
+    {"name": "IronArmor", "children": [
+      {"typeName": "IronCuirass", "resources": { "Hide": {"amount": 6}, "BigHide": {"amount": 2}, "IronIngot": {"amount": 20} },
+        "toolRequired": "hammer", "nearRequired": "anvil",
+        "getBonuses": ["hammer", "anvil", "workbench"]
+      },
+      {"typeName": "IronLeggings", "resources": { "Hide": {"amount": 4}, "BigHide": {"amount": 2}, "IronIngot": {"amount": 18} },
+        "toolRequired": "hammer", "nearRequired": "anvil",
+        "getBonuses": ["hammer", "anvil", "workbench"]
+      },
+      {"typeName": "IronGreaves", "resources": { "Hide": {"amount": 10}, "IronIngot": {"amount": 8} },
+        "toolRequired": "hammer", "nearRequired": "anvil",
+        "getBonuses": ["hammer", "anvil", "workbench"]
+      },
+      {"typeName": "IronGloves", "resources": { "Hide": {"amount": 8}, "IronIngot": {"amount": 6} },
+        "toolRequired": "hammer", "nearRequired": "anvil",
+        "getBonuses": ["hammer", "anvil", "workbench"]
+      },
+      {"typeName": "IronHelmet", "resources": { "Hide": {"amount": 5}, "BigHide": {"amount": 1}, "IronIngot": {"amount": 9} },
+        "toolRequired": "hammer", "nearRequired": "anvil",
+        "getBonuses": ["hammer", "anvil", "workbench"]
+      }
+    ]},
+    {"name": "SteelArmor", "children": [
+      {"typeName": "SteelCuirass", "resources": { "Hide": {"amount": 6}, "BigHide": {"amount": 2}, "SteelIngot": {"amount": 20} },
+        "toolRequired": "hammer", "nearRequired": "anvil",
+        "getBonuses": ["hammer", "anvil", "workbench"]
+      },
+      {"typeName": "SteelLeggings", "resources": { "Hide": {"amount": 4}, "BigHide": {"amount": 2}, "SteelIngot": {"amount": 18} },
+        "toolRequired": "hammer", "nearRequired": "anvil",
+        "getBonuses": ["hammer", "anvil", "workbench"]
+      },
+      {"typeName": "SteelGreaves", "resources": { "Hide": {"amount": 10}, "SteelIngot": {"amount": 8} },
+        "toolRequired": "hammer", "nearRequired": "anvil",
+        "getBonuses": ["hammer", "anvil", "workbench"]
+      },
+      {"typeName": "SteelGloves", "resources": { "Hide": {"amount": 8}, "SteelIngot": {"amount": 6} },
+        "toolRequired": "hammer", "nearRequired": "anvil",
+        "getBonuses": ["hammer", "anvil", "workbench"]
+      },
+      {"typeName": "SteelHelmet", "resources": { "Hide": {"amount": 5}, "BigHide": {"amount": 1}, "SteelIngot": {"amount": 9} },
+        "toolRequired": "hammer", "nearRequired": "anvil",
+        "getBonuses": ["hammer", "anvil", "workbench"]
+      }
+    ]}
+  ]},
+  {"name": "Clothing", "children": [
+    {"typeName": "StrawHat", "resources": { "Hay": {"amount": 10}}, "staminaDrain": 10,
+      "getBonuses": ["knife","workbench"]
+    },
+    {"typeName": "LinenCloak", "resources": { "ClothRaw": {"amount": 1}, "FlaxThreads": {"amount": 3}, "NeedleBone": {"amount": 1}},
+      "getBonuses": ["knife","workbench"]
+    }
+  ]},
+  {"name": "Weaving", "children": [
+    {"typeName": "FlaxFibres", "craftAmount": 8, "resources": {"DriedFlax": {"amount": 1}}, "nearRequired": "flaxBreak"},
+    {"typeName": "FlaxThreads", "resources": {"FlaxFibres": {"amount": 10}, "Handles": {"amount": 1}}, "nearRequired": "spinningWheel", "staminaDrain": 10},
+    {"typeName": "Ropes", "resources": {"FlaxThreads": {"amount": 10}}, "staminaDrain": 20, "getBonuses": ["workbench"]},
+    {"typeName": "FlaxCloth", "resources": {"FlaxThreads": {"amount": 5}}, "staminaDrain": 10, "nearRequired": "loom"},
+    {"typeName": "ClothRaw", "resources": {"FlaxThreads": {"amount": 5}}, "staminaDrain": 10 },
+    {"typeName": "BuckleWood", "resources": {"Handles": {"amount": 1}}, "toolRequired": "knife"},
+    {"typeName": "SackHide", "resources": {"Hide": {"amount": 1}, "Veins": {"amount": 3}}, "toolRequired": "knife", "staminaDrain": 5},
+    {"typeName": "BeltRaw", "craftAmount": 3, "resources": {"Hide": {"amount": 1}}, "toolRequired": "knife", "staminaDrain": 5},
+    {"typeName": "BeltFine", "craftAmount": 3, "resources": {"BigLeather": {"amount": 1}}, "toolRequired": "knife", "staminaDrain": 5},
+    {"typeName": "BeltHard", "craftAmount": 3, "resources": {"GluedLeather": {"amount": 1}}, "toolRequired": "knife", "staminaDrain": 5},
+    {"typeName": "PillowFine", "resources": {"Feathers": {"amount": 50}, "FlaxCloth":{"amount": 2}, "FlaxThreads":{"amount": 2}, "NeedleIron":{"amount": 2}}, "staminaDrain": 30},
+    {"typeName": "FeatherBed", "resources": {"Feathers": {"amount": 100}, "FlaxCloth":{"amount": 5}, "FlaxThreads":{"amount": 3}, "NeedleIron":{"amount": 3}}, "staminaDrain": 50},
+    {"typeName": "BeddingFine", "resources": {"FeatherBed": {"amount": 2}, "PillowFine":{"amount": 1}}, "staminaDrain": 5},
+    {"typeName": "PillowRaw", "resources": { "LogPeeled": {"amount": 1}, "Hay": {"amount": 5}, "ClothRaw": {"amount": 1}}, "staminaDrain": 10},
+    {"typeName": "HayMattress", "resources": { "Hay": {"amount": 30}, "ClothRaw": {"amount": 3}, "FlaxThreads":{"amount": 3}, "NeedleBone":{"amount": 5}}, "staminaDrain": 20},
+    {"typeName": "BlanketRaw", "resources": { "ClothRaw": {"amount": 3}, "FlaxThreads":{"amount": 1}, "NeedleBone":{"amount": 3}}, "staminaDrain": 10},
+    {"typeName": "BeddingRaw", "resources": {"HayMattress": {"amount": 1}, "PillowRaw": {"amount": 1}, "BlanketRaw": {"amount": 1}}, "toolRequired": "knife", "staminaDrain": 5}
+  ]},
+  {"name": "Pottery", "children": [
+    {"typeName": "UnfiredClayPot", "resources": {"ClayPrepared": {"amount": 1}, "WoodenBucketWater": {"amount": 1}}, "staminaDrain": 5, "getBonuses": ["workbench"]},
+    {"typeName": "UnfiredBricks", "resources": {"ClayPrepared": {"amount": 1}, "WoodenBucketWater": {"amount": 1}}, "staminaDrain": 2, "getBonuses": ["workbench"]}
+  ]},
+  {"name": "Cookery", "children": [
+    {"typeName": "PumpkinPieces", "craftAmount": 8, "resources": { "Pumpkin": {"amount": 1}},
+      "toolRequired": "knife", "getBonuses": ["knife","workbench"]
+    },
+    {"typeName": "Raisins", "resources": { "Grapes": {"amount": 1}}, "nearRequired": "workbench", "craftTime": 10000, "staminaDrain": 2, "getBonuses": ["workbench"]},
+    {"typeName": "Flour", "resources": { "GrainWheat": {"amount": 5}}, "nearRequired": "millstone", "craftTime": 3000, "staminaDrain": 2, "getBonuses": ["workbench"]},
+    {"typeName": "Dough", "resources": { "Flour": {"amount": 1}, "WoodenBucketWater": {"amount": 1}}, "staminaDrain": 2, "getBonuses": ["workbench"]},
+    {"typeName": "RawVegetableStew", "craftAmount": 10, "resources": { "ClayPot": {"amount": 1}, "cepRawMushrooms": {"amount": 2}, "chanterelleRawMushrooms": {"amount": 2}, "Carrot": {"amount": 4}},
+      "toolRequired": "knife", "getBonuses": ["knife","workbench"]
+    },
+    {"typeName": "RawMeatCarrotPottage", "craftAmount": 10, "resources": { "ClayPot": {"amount": 1}, "Meat": {"amount": 5}, "Carrot": {"amount": 5}, "WoodenBucketWater": {"amount": 1}},
+      "toolRequired": "knife", "getBonuses": ["knife","workbench"]
+    }
+  ]},
+  {"name": "FirstAid", "children": [
+    {"typeName": "Bandage", "craftAmount": 10, "resources": { "Hide": {"amount": 5}}, "toolRequired": "knife",
+      "getBonuses": ["knife", "workbench"]
+    }
+  ]},
+  {"name": "Shields", "children": [
+    {"typeName": "WoodenShield",
+      "resources": { "Hide": {"amount": 5}, "Wood": {"amount": 30} },
+      "toolRequired": "hatchet", "nearRequired": "workbench",
+      "getBonuses": ["hatchet", "workbench"]
+    },
+    {"typeName": "IronShield",
+      "resources": { "Hide": {"amount": 10}, "BigHide": {"amount": 2}, "IronIngot": {"amount": 20} },
+      "toolRequired": "hammer", "nearRequired": "anvil",
+      "getBonuses": ["hammer", "anvil", "workbench"]
+    },
+    {"typeName": "SteelShield",
+      "resources": { "Hide": {"amount": 10}, "BigHide": {"amount": 2}, "SteelIngot": {"amount": 24} },
+      "toolRequired": "hammer", "nearRequired": "anvil",
+      "getBonuses": ["hammer", "anvil", "workbench"]
+    }
+  ]},
+  {"name": "PremiumSet", "children": [
+    {"typeName": "PremiumCuirass", "resources": { "Hide": {"amount": 8}, "BigHide": {"amount": 2}, "SteelIngot": {"amount": 22} },
+      "toolRequired": "hammer", "nearRequired": "anvil",
+      "getBonuses": ["hammer", "anvil", "workbench"]
+    },
+    {"typeName": "PremiumLeggings", "resources": { "Hide": {"amount": 6}, "BigHide": {"amount": 2}, "SteelIngot": {"amount": 20} },
+      "toolRequired": "hammer", "nearRequired": "anvil",
+      "getBonuses": ["hammer", "anvil", "workbench"]
+    },
+    {"typeName": "PremiumGreaves", "resources": {  "Hide": {"amount": 12}, "SteelIngot": {"amount": 10} },
+      "toolRequired": "hammer", "nearRequired": "anvil",
+      "getBonuses": ["hammer", "anvil", "workbench"]
+    },
+    {"typeName": "PremiumGloves", "resources": { "Hide": {"amount": 10}, "SteelIngot": {"amount": 8} },
+      "toolRequired": "hammer", "nearRequired": "anvil",
+      "getBonuses": ["hammer", "anvil", "workbench"]
+    },
+    {"typeName": "PremiumSword", "resources": { "Hide": {"amount": 6}, "SteelIngot": {"amount": 15} },
+      "toolRequired": "hammer", "nearRequired": "anvil",
+      "getBonuses": ["hammer", "anvil", "workbench"]
+    },
+    {"typeName": "PremiumShield", "resources": { "Hide": {"amount": 12}, "BigHide": {"amount": 2}, "SteelIngot": {"amount": 24} },
+      "toolRequired": "hammer", "nearRequired": "anvil",
+      "getBonuses": ["hammer", "anvil", "workbench"]
+    },
+    {"typeName": "PremiumCloak", "resources": { "BigHide": {"amount": 4}, "BearHide": {"amount": 1} },
+      "toolRequired": "knife", "nearRequired": "workbench",
+      "getBonuses": ["knife", "workbench"]
+    }
+  ]},
+  {"name": "HalloweenItems", "children": [
+    {"typeName": "JackLamp", "resources": { "HalloweenSpider": {"amount": 1}, "Pumpkin": {"amount": 1}, "Wood": {"amount": 10}},
+      "toolRequired": "knife",
+      "getBonuses": ["knife", "workbench"]
+    },
+    {"typeName": "PumpkinHelmet", "resources": { "HalloweenSpider": {"amount": 2}, "Pumpkin": {"amount": 1}, "Ropes": {"amount": 1}},
+      "toolRequired": "knife", "nearRequired": "workbench",
+      "getBonuses": ["knife", "workbench"]
+    },
+    {"typeName": "HalloweenGloves", "resources": { "HalloweenSpider": {"amount": 3}, "Leather": {"amount": 10}},
+      "toolRequired": "knife", "nearRequired": "workbench",
+      "getBonuses": ["knife", "workbench"]
+    },
+    {"typeName": "HalloweenBoots", "resources": { "HalloweenSpider": {"amount": 3}, "Leather": {"amount": 12}},
+      "toolRequired": "knife", "nearRequired": "workbench",
+      "getBonuses": ["knife", "workbench"]
+    },
+    {"typeName": "HalloweenPants", "resources": { "HalloweenSpider": {"amount": 4}, "Leather": {"amount": 8}, "BigLeather": {"amount": 4}},
+      "toolRequired": "knife", "nearRequired": "workbench",
+      "getBonuses": ["knife", "workbench"]
+    },
+    {"typeName": "HalloweenJacket", "resources": { "HalloweenSpider": {"amount": 5}, "Leather": {"amount": 8}, "BigLeather": {"amount": 5}},
+      "toolRequired": "knife", "nearRequired": "workbench",
+      "getBonuses": ["knife", "workbench"]
+    },
+    {"typeName": "WitchHat", "resources": { "HalloweenSpider": {"amount": 6}, "FlaxCloth": {"amount": 4}, "BigLeather": {"amount": 1}},
+      "toolRequired": "knife", "nearRequired": "workbench",
+      "getBonuses": ["knife", "workbench"]
+    },
+    {"typeName": "WitchCloak", "resources": { "HalloweenSpider": {"amount": 7}, "BigLeather": {"amount": 4}, "FlaxCloth": {"amount": 8}},
+      "toolRequired": "knife", "nearRequired": "workbench",
+      "getBonuses": ["knife", "workbench"]
+    }
+  ]},
+  {"name": "Ammunition", "noBallistaFlag":false, "children": [
+    {"typeName": "StoneAmmo", "resources": { "Boulder": {"amount": 5}, "BigHide": {"amount": 10}},
+      "craftTime": 5000, "staminaDrain": 5,
+      "toolRequired": "hammer", "nearRequired": "workbench",
+      "getBonuses": ["hammer", "anvil", "workbench"]
+    },
+    {"typeName": "CastIronAmmo", "resources": { "CastIronIngot": {"amount": 10},
+      "BigHide": {"amount": 10}, "BearHide": {"amount":1}}, "craftTime": 9000, "staminaDrain": 10,
+      "toolRequired": "hammer", "nearRequired": "workbench",
+      "getBonuses": ["hammer", "anvil", "workbench"]
+    }
+  ]},
+  {"name": "LeatherWorking", "children": [
+    {"typeName": "Bellows", "resources": { "Hide": {"amount": 4}, "Veins": {"amount": 5}, "Glue": {"amount": 1}}, "nearRequired": "millstone", "craftTime": 5000, "staminaDrain": 10}
+  ]},
+  {"name": "Materials", "children": [
+    {"typeName": "BoneMeal", "resources": { "Bones": {"amount": 5}}, "nearRequired": "millstone", "craftTime": 5000, "staminaDrain": 5},
+    {"typeName": "Glue", "resources": { "BoneMeal": {"amount": 1}, "WoodenBucketWater": {"amount": 1}}, "nearRequired": "workbench", "craftTime": 5000, "staminaDrain": 5},
+    {"typeName": "GluedLeather", "resources": { "Glue": {"amount": 1}, "BigLeather": {"amount": 1}}, "nearRequired": "workbench", "craftTime": 5000, "staminaDrain": 5},
+    {"typeName": "Nails", "craftAmount": 1, "resources": { "IronIngot": {"amount": 5}},
+      "toolRequired": "hammer", "nearRequired": "anvil",
+      "getBonuses": ["hammer", "anvil", "workbench"]
+    },
+    {"typeName": "Planks", "craftAmount": 1, "resources": { "LogPeeled": {"amount": 1}},
+      "toolRequired": "saw", "nearRequired": "workbench", "craftTime": 10000, "staminaDrain": 50,
+      "getBonuses": ["saw", "workbench"]
+    },
+    {"typeName": "Boards", "craftAmount": 10, "resources": { "Wood": {"amount": 10}},
+      "toolRequired": "saw", "craftTime": 10000, "staminaDrain": 10,
+      "getBonuses": ["saw", "workbench"]
+    },
+    {"typeName": "LogPeeled", "craftAmount": 1, "resources": { "Log": {"amount": 1}},
+      "toolRequired": "saw", "nearRequired": "workbench", "craftTime": 10000, "staminaDrain": 10,
+      "getBonuses": ["saw", "workbench"]
+    },
+    {"typeName": "CuttingThread", "craftAmount": 10, "resources": { "Wood": {"amount": 10}},
+      "toolRequired": "hatchet", "craftTime": 5000, "staminaDrain": 20,
+      "getBonuses": ["hatchet", "workbench"]
+    },
+    {"typeName": "PowderBark", "resources": { "Bark": {"amount": 10}}, "nearRequired": "millstone", "craftTime": 3000, "staminaDrain": 10, "getBonuses": ["workbench"]},
+    {"typeName": "Cement", "craftAmount": 1, "resources": { "Eggs" : {"amount": 1} , "ClayPrepared": {"amount": 1}},
+      "toolRequired": "shovel", "craftTime": 10000, "staminaDrain": 5,
+      "getBonuses": ["shovel"]
+    },
+    {"typeName": "ClayPrepared", "resources": { "Clay": {"amount": 5} , "WoodenBucketWater": {"amount": 10}},
+      "toolRequired": "shovel", "craftTime": 10000, "staminaDrain": 10,
+      "getBonuses": ["shovel"]
+    },
+    {"typeName": "TanningLiquor", "craftAmount": 5, "resources": { "ClayPot": {"amount": 1}, "PowderBark": {"amount": 1}, "WoodenBucketWater": {"amount": 20}, "staminaDrain": 10},
+      "getBonuses": ["knife","workbench"]
+    },
+    {"typeName": "Handles", "craftAmount": 10, "resources": { "Wood": {"amount": 10}},
+      "toolRequired": "hatchet", "craftTime": 5000, "staminaDrain": 10,
+      "getBonuses": ["hatchet", "workbench"]
+    },
+    {"typeName": "Wood", "craftAmount": 10, "resources": { "Log": {"amount": 1}},
+      "toolRequired": "hatchet", "craftTime": 5000, "staminaDrain": 5,
+      "getBonuses": ["hatchet", "workbench"]
+    },
+    {"typeName": "Stone", "craftAmount": 10, "resources": { "Boulder": {"amount": 1}},
+      "toolRequired": "pickaxe", "craftTime": 5000, "staminaDrain": 5,
+      "getBonuses": ["pickaxe", "workbench"]
+    },
+    {"typeName": "RawHide", "craftAmount": 3, "resources": { "BigRawHide": {"amount": 1}},
+      "craftTime": 5000, "staminaDrain": 5,
+      "toolRequired": "knife", "getBonuses": ["knife", "workbench"]
+    },
+    {"typeName": "Hide", "craftAmount": 3, "resources": { "BigHide": {"amount": 1}},
+      "craftTime": 5000, "staminaDrain": 5,
+      "toolRequired": "knife", "getBonuses": ["knife", "workbench"]
+    },
+    {"typeName": "BigRawHide", "craftAmount": 2, "resources": { "BearRawHide": {"amount": 1}},
+      "craftTime": 5000, "staminaDrain": 5,
+      "toolRequired": "knife", "getBonuses": ["knife", "workbench"]
+    },
+    {"typeName": "BigHide", "craftAmount": 2, "resources": { "BearHide": {"amount": 1}},
+      "craftTime": 5000, "staminaDrain": 5,
+      "toolRequired": "knife", "getBonuses": ["knife", "workbench"]
+    },
+    {"typeName": "Skulls", "resources": { "WomanCutHead": {"amount": 1}},
+      "craftTime": 5000, "staminaDrain": 5,
+      "toolRequired": "knife", "getBonuses": ["knife", "workbench"]
+    },
+    {"typeName": "BoulderHewn", "resources": { "Boulder": {"amount": 1}},
+      "craftTime": 5000, "staminaDrain": 5,
+      "toolRequired": "hammer", "getBonuses": ["hammer", "workbench"]
+    },
+    {"typeName": "PowderStone", "resources": { "Stone": {"amount": 10}, "SackHide":{"amount": 1}},
+      "craftTime": 5000, "staminaDrain": 30,
+      "toolRequired": "hammer", "getBonuses": ["hammer", "workbench"]
+    },
+    {"typeName": "Plaster", "resources": { "PowderStone": {"amount": 1}, "WoodenBucketWater":{"amount": 20}},
+      "craftTime": 5000, "staminaDrain": 10,
+      "getBonuses": ["shovel"]
+    }
+  ]}
+]
