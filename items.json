@@ -1,0 +1,711 @@
+{
+
+  "tools": {"hatchet": "hatchet", "knife": "knife", "pickaxe": "pickaxe", "shovel": "shovel"},
+  "adminTypes": {"LightSaber":1, "AdminBow":1},
+
+  "Hands": {"name":"Hands", "noDrop": true, "noInventory": true,
+    "attack": {"damage": 5, "range": 0, "startRange": 32, "delayBefore": 200, "delay": 700, "splash": false,
+      "shape": {"name": "circle48", "rotate": false, "anchorX": 0.5, "anchorY": 0.5}
+    }
+  },
+  "StoneAxe": {"name":"Stone hatchet",
+    "attack": {"damage": 10, "range": 0, "startRange": 16, "delayBefore": 300, "delay": 700, "splash": false,
+      "shape": {"name": "arc64", "rotate": true, "anchorX": 0.5, "anchorY": 0.5}
+    },
+    "gatherBaseAmount": 3, "gatherAddAmount": 2,
+    "bonuses": [{"bonusName": "hatchet", "bonusValue": 0.5 }],
+    "actions": { "dress": {"target": "rightHand"}}
+  },
+  "Bow": {
+    "attack": {"damage": 20, "range": 700, "startRange": -16, "delayBefore": 300, "delay": 1200, "splash": false,
+      "play": "bowShot", "noStructureDamage": true,
+      "projectile": {"atlas": "ArrowProjectile", "speed": 1000, "shape": "bar50", "rotate": true, "anchorX": 0.5, "anchorY": 0.5},
+      "ammo": {"typeName": "ArrowGroup"}
+    },
+    "actions": { "dress": {"target": "bothHands"}}
+  },
+  "HuntingBow": {
+    "attack": {"damage": 60, "range": 700, "startRange": -16, "delayBefore": 2000, "delay": 2000, "splash": false,
+      "play": "bowShot", "noStructureDamage": true,
+      "projectile": {"atlas": "ArrowProjectile", "speed": 1000, "shape": "bar50", "rotate": true, "anchorX": 0.5, "anchorY": 0.5},
+      "ammo": {"typeName": "ArrowGroup"}
+    },
+    "actions": { "dress": {"target": "bothHands"}}
+  },
+  "ShortBow": {
+    "attack": {"damage": 25, "range": 700, "startRange": -16, "delayBefore": 150, "delay": 1700, "splash": false,
+      "play": "bowShot", "noStructureDamage": true,
+      "projectile": {"atlas": "ArrowProjectile", "speed": 1000, "shape": "bar50", "rotate": true, "anchorX": 0.5, "anchorY": 0.5},
+      "ammo": {"typeName": "ArrowGroup"}
+    },
+    "actions": { "dress": {"target": "bothHands"}}
+  },
+  "WoodenSpear": {"max": 50,
+    "attack": {"damage": 15, "range": 600, "startRange": -16, "delayBefore": 300, "delay": 1500, "splash": false,
+      "noStructureDamage": true,
+      "projectile": {"atlas": "SpearProjectile", "speed": 800, "shape": "bar90", "rotate": true, "anchorX": 0.5, "anchorY": 0.5},
+      "ammo": {"typeName": "WoodenSpear"}
+    },
+    "actions": { "dress": {"target": "rightHand"}}
+  },
+  "HideSling": {
+    "attack": {"damage": 10, "range": 700, "startRange": 16, "delayBefore": 300, "delay": 1000, "splash": false,
+      "noStructureDamage": true,
+      "projectile": {"atlas": "StoneProjectile", "speed": 900, "shape": "bar50", "rotate": true, "anchorX": 0.5, "anchorY": 0.5},
+      "ammo": {"typeName": "Stone"}
+    },
+    "actions": { "dress": {"target": "rightHand"}}
+  },
+  "HuntingSling": {
+    "attack": {"damage": 20, "range": 700, "startRange": 16, "delayBefore": 100, "delay": 1300, "splash": false,
+      "noStructureDamage": true,
+      "projectile": {"atlas": "StoneProjectile", "speed": 900, "shape": "bar50", "rotate": true, "anchorX": 0.5, "anchorY": 0.5},
+      "ammo": {"typeName": "Stone"}
+    },
+    "actions": { "dress": {"target": "rightHand"}}
+  },
+  "StoneKnife": {
+    "attack": {"damage": 7, "range": 0, "startRange": 32, "delayBefore": 200, "delay": 500, "splash": false,
+      "shape": {"name": "circle48", "rotate": false, "anchorX": 0.5, "anchorY": 0.5}
+    },
+    "gatherBaseAmount": 2, "gatherAddAmount": 2,
+    "bonuses": [{"bonusName": "knife", "bonusValue": 0.5 }],
+    "actions": { "dress": {"target": "rightHand"}}
+  },
+  "IronSword": {
+    "attack": {"damage": 25, "range": 0, "startRange": 16, "delayBefore": 300, "delay": 1500, "splash": true,
+      "shape": {"name": "arc64", "rotate": true, "anchorX": 0.5, "anchorY": 0.5}
+    },
+    "actions": { "dress": {"target": "rightHand"}}
+  },
+  "WoodenShield": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 15 }],
+    "actions": { "dress": {"target": "leftHand"}}
+  },
+  "IronShield": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 20 }, {"bonusName": "slow", "bonusValue": 0.02 }],
+    "actions": { "dress": {"target": "leftHand"}}
+  },
+  "IronAxe": {
+    "attack": {"damage": 20, "range": 0, "startRange": 16, "delayBefore": 300, "delay": 1500, "splash": false,
+      "shape": {"name": "arc64", "rotate": true, "anchorX": 0.5, "anchorY": 0.5}
+    },
+    "gatherBaseAmount": 5, "gatherAddAmount": 3,
+    "bonuses": [{"bonusName": "hatchet", "bonusValue": 1 }],
+    "actions": { "dress": {"target": "rightHand"}}
+  },
+  "IronKnife": {
+    "attack": {"damage": 15, "range": 0, "startRange": 32, "delayBefore": 200, "delay": 1000, "splash": false,
+      "shape": {"name": "circle48", "rotate": false, "anchorX": 0.5, "anchorY": 0.5}
+    },
+    "gatherBaseAmount": 4, "gatherAddAmount": 3,
+    "bonuses": [{"bonusName": "knife", "bonusValue": 1 }],
+    "actions": { "dress": {"target": "rightHand"}}
+  },
+  "StonePick": {
+    "attack": {"damage": 15, "range": 0, "startRange": 16, "delayBefore": 500, "delay": 2000, "splash": false,
+      "shape": {"name": "circle48", "rotate": false, "anchorX": 0.5, "anchorY": 0.5}
+    },
+    "gatherBaseAmount": 3, "gatherAddAmount": 2,
+    "bonuses": [{"bonusName": "pickaxe", "bonusValue": 0.5 }],
+    "actions": { "dress": {"target": "rightHand"}}
+  },
+  "IronPickaxe": {
+    "attack": {"damage": 30, "range": 0, "startRange": 16, "delayBefore": 500, "delay": 2000, "splash": false,
+      "shape": {"name": "circle48", "rotate": false, "anchorX": 0.5, "anchorY": 0.5}
+    },
+    "gatherBaseAmount": 5, "gatherAddAmount": 3,
+    "bonuses": [{"bonusName": "pickaxe", "bonusValue": 1 }],
+    "actions": { "dress": {"target": "rightHand"}}
+  },
+  "AppleTreeSeedling": {"max": 50,
+    "actions": { "dress": {"target": "rightHand"} }
+  },
+  "SteelSword": {
+    "attack": {"damage": 30, "range": 0, "startRange": 16, "delayBefore": 200, "delay": 1600, "splash": true,
+      "shape": {"name": "arc64", "rotate": true, "anchorX": 0.5, "anchorY": 0.5}
+    },
+    "actions": { "dress": {"target": "rightHand"}}
+  },
+  "SteelShield": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 25 }, {"bonusName": "slow", "bonusValue": 0.03 }],
+    "actions": { "dress": {"target": "leftHand"}}
+  },
+  "SteelAxe": {
+    "attack": {"damage": 25, "range": 0, "startRange": 16, "delayBefore": 300, "delay": 1500, "splash": false,
+      "shape": {"name": "arc64", "rotate": true, "anchorX": 0.5, "anchorY": 0.5}
+    },
+    "gatherBaseAmount": 7, "gatherAddAmount": 4,
+    "bonuses": [{"bonusName": "hatchet", "bonusValue": 1.5 }],
+    "actions": { "dress": {"target": "rightHand"}}
+  },
+  "SteelKnife": {
+    "attack": {"damage": 20, "range": 0, "startRange": 32, "delayBefore": 200, "delay": 1000, "splash": false,
+      "shape": {"name": "circle48", "rotate": false, "anchorX": 0.5, "anchorY": 0.5}
+    },
+    "gatherBaseAmount": 7, "gatherAddAmount": 4,
+    "bonuses": [{"bonusName": "knife", "bonusValue": 1.5 }],
+    "actions": { "dress": {"target": "rightHand"}}
+  },
+  "SteelPickaxe": {
+    "attack": {"damage": 35, "range": 0, "startRange": 16, "delayBefore": 500, "delay": 2000, "splash": false,
+      "shape": {"name": "circle48", "rotate": false, "anchorX": 0.5, "anchorY": 0.5}
+    },
+    "gatherBaseAmount": 7, "gatherAddAmount": 4,
+    "bonuses": [{"bonusName": "pickaxe", "bonusValue": 1.5 }],
+    "actions": { "dress": {"target": "rightHand"}}
+  },
+  "CompositeBow": {
+    "attack": {"damage": 30, "range": 700, "startRange": -16, "delayBefore": 100, "delay": 2000, "splash": false,
+      "play": "bowShot", "noStructureDamage": true,
+      "projectile": {"atlas": "ArrowProjectile", "speed": 1000, "shape": "bar50", "rotate": true, "anchorX": 0.5, "anchorY": 0.5},
+      "ammo": {"typeName": "ArrowGroup"}
+    },
+    "actions": { "dress": {"target": "bothHands"}}
+  },
+
+  "LightSaber": {"noDrop": true,
+    "attack": {"damage": 900, "range": 0, "startRange": 16, "delayBefore": 200, "delay": 200, "splash": true, "staminaDrain": 10,
+      "shape": {"name": "arc64", "rotate": true, "anchorX": 0.5, "anchorY": 0.5}
+    },
+    "gatherBaseAmount": 100, "gatherAddAmount": 0,
+    "bonuses": [  {"bonusName": "globalTimeBonus", "bonusValue": 999 },
+      {"bonusName": "slow", "bonusValue": -0.6 },
+      {"bonusName": "hatchet", "bonusValue": 1 },
+      {"bonusName": "knife", "bonusValue": 1 },
+      {"bonusName": "shovel", "bonusValue": 1 },
+      {"bonusName": "saw", "bonusValue": 1 },
+      {"bonusName": "sickle", "bonusValue": 1 },
+      {"bonusName": "hammer", "bonusValue": 1 },
+      {"bonusName": "millstone", "bonusValue": 1 },
+      {"bonusName": "pickaxe", "bonusValue": 1 } ],
+    "actions": { "dress": {"target": "rightHand"}}
+  },
+  "AdminBow": {"noDrop": true,
+    "attack": {"damage": 900, "range": 700, "startRange": -16, "delayBefore": 100, "delay": 100, "splash": false,
+      "play": "bowShot",
+      "projectile": {"atlas": "ArrowProjectile", "speed": 1000, "shape": "bar50", "aniBlock":true, "rotate": true, "anchorX": 0.5, "anchorY": 0.5}
+    },
+    "actions": { "dress": {"target": "bothHands"}}
+  },
+
+
+  "AdminTiara": {"noDrop": true,
+    "effects": [{"effectName": "admin"}],
+    "actions": { "dress": {"target": "head"}}
+  },
+  "AdminVest": {"noDrop": true,
+    "actions": { "dress": {"target": "body"}}
+  },
+  "AdminTrousers": {"noDrop": true,
+    "actions": { "dress": {"target": "legs"}}
+  },
+  "AdminSandals": {"noDrop": true,
+    "actions": { "dress": {"target": "foots"}}
+  },
+
+  "WoodenShovel": {
+    "gatherBaseAmount": 3, "gatherAddAmount": 2,
+    "bonuses": [{"bonusName": "shovel", "bonusValue": 0.5 }],
+    "actions": { "dress": {"target": "rightHand"}}
+  },
+  "IronSaw": {
+    "bonuses": [{"bonusName": "saw", "bonusValue": 1 }],
+    "actions": { "dress": {"target": "rightHand"}}
+  },
+  "IronSickle": {
+    "gatherBaseAmount": 5, "gatherAddAmount": 3,
+    "bonuses": [{"bonusName": "sickle", "bonusValue": 1 }],
+    "actions": { "dress": {"target": "rightHand"}}
+  },
+  "SteelSaw": {
+    "bonuses": [{"bonusName": "saw", "bonusValue": 1.5 }],
+    "actions": { "dress": {"target": "rightHand"}}
+  },
+  "SteelSickle": {
+    "gatherBaseAmount": 7, "gatherAddAmount": 4,
+    "bonuses": [{"bonusName": "sickle", "bonusValue": 1.5 }],
+    "actions": { "dress": {"target": "rightHand"}}
+  },
+  "ForgedBucket": {
+    "gatherBaseAmount": 10, "gatherAddAmount": 0,
+    "bonuses": [{"bonusName": "bucket", "bonusValue": 1 }],
+    "actions": { "dress": {"target": "leftHand"}}
+  },
+  "IronShovel": {
+    "gatherBaseAmount": 5, "gatherAddAmount": 3,
+    "bonuses": [{"bonusName": "shovel", "bonusValue": 1 }],
+    "actions": { "dress": {"target": "rightHand"}}
+  },
+  "StoneHammer": {
+    "bonuses": [{"bonusName": "hammer", "bonusValue": 0.5 }],
+    "actions": { "dress": {"target": "rightHand"}}
+  },
+  "IronHammer": {
+    "bonuses": [{"bonusName": "hammer", "bonusValue": 1 }],
+    "actions": { "dress": {"target": "rightHand"}}
+  },
+  "SteelHammer": {
+    "bonuses": [{"bonusName": "hammer", "bonusValue": 1.5 }],
+    "actions": { "dress": {"target": "rightHand"}}
+  },
+  "SnareGroup": {
+    "group": {"WoodenSnare":1}
+  },
+  "WoodenSnare": {
+    "range": 300,
+    "bonuses": [{"bonusName": "snare", "bonusValue": 0.5 }],
+    "actions": { "dress": {"target": "rightHand"}}
+  },
+  "HenInCage": {
+    "actions": { "free": {"typeName": "Hen"}}
+  },
+  "Feathers": {"max": 50},
+
+  "Flour": {"max": 50},
+  "Wood": {"max": 50},
+  "Log": {"max": 5},
+
+  "IronOre": {"name":"Iron Ore", "max": 50},
+  "Stone": {"name":"Stone", "max": 50,
+    "attack": {"damage": 4, "range": 600, "startRange": -16, "delayBefore": 200, "delay": 500, "splash": false,
+      "noStructureDamage": true,
+      "projectile": {"atlas": "StoneProjectile", "speed": 700, "shape": "bar50", "rotate": true, "anchorX": 0.5, "anchorY": 0.5},
+      "ammo": {"typeName": "Stone"}
+    },
+    "actions": { "dress": {"target": "rightHand"}}
+  },
+  "Boulder": {"max": 5},
+
+  "Meat": {"max": 50},
+  "RawHide": {"max": 50},
+  "BigRawHide": {"max": 20},
+  "BearRawHide": {},
+  "HareHead": {},
+  "DeerHead": {},
+  "BoarHead": {},
+  "WolfHead": {},
+  "BearHead": {},
+
+  "Hide": {"max": 50},
+  "BigHide": {"max": 20},
+  "BearHide": {},
+
+  "Leather": {"max": 50},
+  "BigLeather": {"max": 20},
+
+  "IronIngot": {"max": 50},
+  "SteelIngot": {"max": 50},
+  "CastIronIngot": {"max": 50},
+  "CharCoal": {"max": 5},
+  "Dough": {"max": 50},
+  "WoodenBucketWater": {"max": 50,
+    "actions": { "dress": {"target": "leftHand"}}},
+
+  "ClothCap": {
+    "actions": { "dress": {"target": "head"}}
+  },
+  "ClothVest": {
+    "actions": { "dress": {"target": "body"}}
+  },
+  "ClothTrousers": {
+    "actions": { "dress": {"target": "legs"}}
+  },
+  "ClothSandals": {
+    "actions": { "dress": {"target": "foots"}}
+  },
+
+  "RawHideCap": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 5 }],
+    "actions": { "dress": {"target": "head"}}
+  },
+  "RawHideVest": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 5 }],
+    "actions": { "dress": {"target": "body"}}
+  },
+  "RawHideLoincloth": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 5 }],
+    "actions": { "dress": {"target": "legs"}}
+  },
+  "RawHideBoots": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 5 }],
+    "actions": { "dress": {"target": "foots"}}
+  },
+  "RawHideGloves": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 5 }],
+    "actions": { "dress": {"target": "gloves"}}
+  },
+
+  "HareHeadHelmet": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 13 }],
+    "actions": { "dress": {"target": "head"}}
+  },
+  "DeerHeadHelmet": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 15 }],
+    "actions": { "dress": {"target": "head"}}
+  },
+  "BoarHeadHelmet": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 17 }],
+    "actions": { "dress": {"target": "head"}}
+  },
+  "WolfHeadHelmet": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 20 }],
+    "actions": { "dress": {"target": "head"}}
+  },
+  "BearHeadHelmet": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 25 }],
+    "actions": { "dress": {"target": "head"}}
+  },
+  "BearHideCloak": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 10 }],
+    "actions": { "dress": {"target": "cloak"}}
+  },
+
+  "HideHelmet": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 10 }],
+    "actions": { "dress": {"target": "head"}}
+  },
+  "HideJacket": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 10 }],
+    "actions": { "dress": {"target": "body"}}
+  },
+  "HidePants": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 10 }],
+    "actions": { "dress": {"target": "legs"}}
+  },
+  "HideBoots": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 10 }],
+    "actions": { "dress": {"target": "foots"}}
+  },
+  "HideGloves": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 10 }],
+    "actions": { "dress": {"target": "gloves"}}
+  },
+
+  "LeatherHelmet": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 12 }],
+    "actions": { "dress": {"target": "head"}}
+  },
+  "LeatherJacket": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 12 }],
+    "actions": { "dress": {"target": "body"}}
+  },
+  "LeatherPants": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 12 }],
+    "actions": { "dress": {"target": "legs"}}
+  },
+  "LeatherBoots": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 12 }],
+    "actions": { "dress": {"target": "foots"}}
+  },
+  "LeatherGloves": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 12 }],
+    "actions": { "dress": {"target": "gloves"}}
+  },
+
+  "IronHelmet": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 20 }, {"bonusName": "slow", "bonusValue": 0.02 } ],
+    "actions": { "dress": {"target": "head"}}
+  },
+  "IronCuirass": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 20 }, {"bonusName": "slow", "bonusValue": 0.02 }],
+    "actions": { "dress": {"target": "body"}}
+  },
+  "IronLeggings": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 20 }, {"bonusName": "slow", "bonusValue": 0.02 }],
+    "actions": { "dress": {"target": "legs"}}
+  },
+  "IronGreaves": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 20 }, {"bonusName": "slow", "bonusValue": 0.02 }],
+    "actions": { "dress": {"target": "foots"}}
+  },
+  "IronGloves": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 20 }, {"bonusName": "slow", "bonusValue": 0.02 }],
+    "actions": { "dress": {"target": "gloves"}}
+  },
+
+  "SteelHelmet": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 25 }, {"bonusName": "slow", "bonusValue": 0.03 } ],
+    "actions": { "dress": {"target": "head"}}
+  },
+  "SteelCuirass": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 25 }, {"bonusName": "slow", "bonusValue": 0.03 }],
+    "actions": { "dress": {"target": "body"}}
+  },
+  "SteelLeggings": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 25 }, {"bonusName": "slow", "bonusValue": 0.03 }],
+    "actions": { "dress": {"target": "legs"}}
+  },
+  "SteelGreaves": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 25 }, {"bonusName": "slow", "bonusValue": 0.03 }],
+    "actions": { "dress": {"target": "foots"}}
+  },
+  "SteelGloves": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 25 }, {"bonusName": "slow", "bonusValue": 0.03 }],
+    "actions": { "dress": {"target": "gloves"}}
+  },
+
+
+  "LinenCloak": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 3 }],
+    "actions": { "dress": {"target": "cloak"}}
+  },
+
+  "WitchCloak": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 7 }],
+    "actions": { "dress": {"target": "cloak"}}
+  },
+
+  "PumpkinHelmet": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 5 }],
+    "actions": { "dress": {"target": "head"}}
+  },
+
+  "WitchHat": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 10 }],
+    "actions": { "dress": {"target": "head"}}
+  },
+  "HalloweenJacket": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 12 }],
+    "actions": { "dress": {"target": "body"}}
+  },
+  "HalloweenPants": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 12 }],
+    "actions": { "dress": {"target": "legs"}}
+  },
+  "HalloweenBoots": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 12 }],
+    "actions": { "dress": {"target": "foots"}}
+  },
+  "HalloweenGloves": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 12 }],
+    "actions": { "dress": {"target": "gloves"}}
+  },
+
+  "Torch": {
+    "bonuses": [{"bonusName": "light", "bonusValue": 0.5 }],
+    "actions": { "dress": {"target": "leftHand"}, "use": true}
+  },
+  "WomanCutHead": {},
+  "ManCutHead": {},
+
+  "StrawHat": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 1 }],
+    "actions": { "dress": {"target": "head"}}
+  },
+
+  "HalloweenSpider": {"max": 50},
+  "JackLamp": {},
+  "VictoryFlag": {},
+
+  "PumpkinSeeds": {"max": 50,
+    "actions": {"dress": {"target": "rightHand"}}},
+  "GrapesSeeds": {"max": 50,
+    "actions": {"dress": {"target": "rightHand"}}},
+  "Pumpkin": {"max": 10},
+  "PumpkinPieces": {"max": 50,
+    "actions": {"eat": {"staminaReplenish": 10,
+      "onActionCreate": {"typeName": "PumpkinSeeds"}
+    }
+    }
+  },
+  "Grapes": {"max": 50,
+    "actions": { "eat": {"staminaReplenish": 12,
+      "onActionCreate": {"typeName": "GrapesSeeds"}
+    }}},
+  "Raisins": {"max": 50,
+    "actions": { "eat": {"staminaReplenish": 15,
+      "onActionCreate": {"typeName": "GrapesSeeds"}
+    }}},
+  "Bones": {"max": 50},
+  "BoneMeal": {"max": 50},
+  "Glue": {"max": 20},
+  "GluedLeather": {"max": 20},
+  "HardenedLeather": {"max": 20},
+
+  "FlaxCloth": {"max": 50},
+  "FlaxThreads": {"max": 50},
+  "Ropes": {"max": 50},
+  "Handles": {"max": 50},
+  "Skulls": {"max": 50},
+  "Veins": {"max": 50},
+  "StrangeSkull": {},
+
+  "cepRawMushrooms": {"max": 50,
+    "actions": { "eat": {"staminaReplenish": 5}}
+  },
+  "BakedCeps": {"max": 50,
+    "actions": { "eat": {"staminaReplenish": 12}}
+  },
+  "chanterelleRawMushrooms": {"max": 50,
+    "actions": { "eat": {"staminaReplenish": 3}}
+  },
+  "BakedChanterelles": {"max": 50,
+    "actions": { "eat": {"staminaReplenish": 8}}
+  },
+  "RawVegetableStew": {"max": 50,
+    "actions": { "eat": {"staminaReplenish": 20}}
+  },
+  "VegetableStew": {"max": 50,
+    "actions": { "eat": {"staminaReplenish": 40}}
+  },
+  "Planks": {"max": 10},
+  "UnfiredBricks": {"max": 50},
+  "Bricks": {"max": 50},
+  "Cement": {"max": 50},
+  "Nails": {"max": 50},
+  "Seeds": {"max": 50,
+    "actions": {"dress": {"target": "rightHand"}}
+  },
+  "FlaxSeeds": {"max": 50,
+    "actions": {"dress": {"target": "rightHand"}}
+  },
+  "RawFlax": {"max": 50},
+  "DriedFlax": {"max": 50},
+  "FlaxFibres": {"max": 50},
+  "Hay": {"max": 10},
+
+  "Clay": {"max": 50},
+  "Bark": {"max": 50},
+  "UnfiredClayPot": {"max": 10},
+  "ClayPot": {},
+  "TanningLiquor": {"max": 50},
+  "RawMeatCarrotPottage": {"max": 50},
+  "MeatCarrotPottage": {"max": 50,
+    "actions": { "eat": {"staminaReplenish": 50}}
+  },
+
+  "RoastMeat": {"max": 50,
+    "actions": { "eat": {"staminaReplenish": 15}}
+  },
+  "GrainWheat": {"max": 50,
+    "actions": { "eat": {"staminaReplenish": 3},
+      "dress": {"target": "rightHand"}}
+  },
+  "Carrot": {"max": 50,
+    "actions": { "eat": {"staminaReplenish": 5},
+      "dress": {"target": "rightHand"}}
+  },
+  "Eggs": {"max": 50,
+    "actions": { "eat": {"staminaReplenish": 8}}
+  },
+  "ShirredEggs": {"max": 50,
+    "actions": { "eat": {"staminaReplenish": 25}}
+  },
+  "Apple": {"max": 50,
+    "actions": { "eat": {"staminaReplenish": 10}}
+  },
+
+  "ashTreeSeedling": {"max": 50,
+    "actions": { "dress": {"target": "rightHand"} }
+  },
+  "alderTreeSeedling": {"max": 50,
+    "actions": { "dress": {"target": "rightHand"} }
+  },
+  "pineTreeSeedling": {"max": 50,
+    "actions": { "dress": {"target": "rightHand"} }
+  },
+  "willowTreeSeedling": {"max": 50,
+    "actions": { "dress": {"target": "rightHand"} }
+  },
+  "mapleTreeSeedling": {"max": 50,
+    "actions": { "dress": {"target": "rightHand"} }
+  },
+  "aspenTreeSeedling": {"max": 50,
+    "actions": { "dress": {"target": "rightHand"} }
+  },
+  "firTreeSeedling": {"max": 50,
+    "actions": { "dress": {"target": "rightHand"} }
+  },
+  "birchTreeSeedling": {"max": 50,
+    "actions": { "dress": {"target": "rightHand"} }
+  },
+  "Bannock": {"max": 50,
+    "actions": { "eat": {"staminaReplenish": 30}}
+  },
+  "Bandage": {"max": 50,
+    "actions": { "bandage": true}
+  },
+
+  "FindDrawing": {},
+  "FindBook": {},
+
+  "PremiumCuirass": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 27 }, {"bonusName": "slow", "bonusValue": 0.03 }],
+    "actions": { "dress": {"target": "body"}}
+  },
+  "PremiumLeggings": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 27 }, {"bonusName": "slow", "bonusValue": 0.03 }],
+    "actions": { "dress": {"target": "legs"}}
+  },
+  "PremiumGreaves": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 27 }, {"bonusName": "slow", "bonusValue": 0.03 }],
+    "actions": { "dress": {"target": "foots"}}
+  },
+  "PremiumGloves": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 27 }, {"bonusName": "slow", "bonusValue": 0.03 }],
+    "actions": { "dress": {"target": "gloves"}}
+  },
+  "PremiumSword": {
+    "attack": {"damage": 30, "range": 0, "startRange": 16, "delayBefore": 200, "delay": 1600, "splash": true,
+      "bleedingChance": 0.2,
+      "shape": {"name": "arc64", "rotate": true, "anchorX": 0.5, "anchorY": 0.5}
+    },
+    "actions": { "dress": {"target": "rightHand"}}
+  },
+  "PremiumShield": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 27 }, {"bonusName": "slow", "bonusValue": 0.03 }],
+    "actions": { "dress": {"target": "leftHand"}}
+  },
+  "PremiumCloak": {
+    "bonuses": [{"bonusName": "armor", "bonusValue": 11 }],
+    "actions": { "dress": {"target": "cloak"}}
+  },
+
+  "BallistaAmmoGroup": {
+    "group": {"StoneAmmo":1, "CastIronAmmo": 1}
+  },
+
+  "StoneAmmo": {
+    "actions": { "dress": {"target": "rightHand"}},
+    "max": 10
+  },
+  "CastIronAmmo": {
+    "damage": 5000,
+    "actions": { "dress": {"target": "rightHand"}},
+    "max": 10
+  },
+
+  "LogPeeled": { "max": 5},
+  "CuttingThread": { "max": 50},
+  "PowderBark": {"max": 10},
+  "Boards": {"max": 10},
+  "BuckleWood": {"max": 25},
+
+  "SackHide": {"max": 5},
+  "BeltRaw": {"max": 5},
+  "BeltFine": {"max": 5},
+  "BeltHard": {"max": 5},
+  "BoulderHewn": {"max": 5},
+  "BeddingRaw": {"max": 2},
+  "BeddingFine": {"max": 2},
+  "NeedleBone": {"max": 10},
+  "NeedleIron": {"max": 10},
+  "PillowFine": {"max": 5},
+  "PillowRaw": {"max": 5},
+  "FeatherBed": {"max": 5},
+  "ClothRaw": {"max": 50},
+  "HayMattress": {"max": 5},
+  "BlanketRaw": {"max": 5},
+  "PowderStone": {"max": 10},
+  "Plaster": {"max": 10},
+  "Bellows": {"max": 3},
+  "ClayPrepared": {"max": 50},
+
+  "ArrowGroup": {
+    "group": {"SteelTippedArrow":1, "IronTippedArrow": 1, "StoneTippedArrow": 1}
+  },
+  "IronTippedArrow": { "damage": 5, "max": 50 },
+  "SteelTippedArrow": { "damage": 10, "max": 50 },
+  "StoneTippedArrow": { "max": 50}
+}
