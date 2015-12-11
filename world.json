@@ -1,0 +1,3950 @@
+{
+
+  "actions": {
+    "PickUp": "PickUp", "Gather": "Gather", "Catch": "Catch", "Shoot": "Shoot",
+    "OpenContainer": "OpenContainer", "NextState": "NextState", "Seed": "Seed", "Sleep": "Sleep",
+    "ClaimManage": "ClaimManage", "ClaimMove": "ClaimMove", "Upgrade": "Upgrade"
+  },
+
+  "borderTypes": {"neg": 1, "pos": 2},
+
+  "animals": ["Hen", "Hare", "Deer", "WildBoar", "Wolf", "Bear"],
+  "resources": ["WildCarrot", "Nest", "Tree", "WoodPile", "Rock", "StonePile", "IronRock", "AppleTree", "ClayPit"],
+  "crops": ["CropAppleTree", "CropTree", "CropCarrot", "CropWheat", "CropFlax", "CropWeeds", "CropVine", "CropPumpkin"],
+  "wildCrops": ["WildCarrot", "WildWeeds"],
+  "wildFood": ["Nest", "AppleTree","Mushrooms"],
+  "lumber": ["Tree", "WoodPile"],
+  "stones": ["Rock", "StonePile"],
+  "mines": ["IronRock"],
+
+  "markerTypeName": "ClaimMarker",
+
+  "PlayerCorpse": {
+    "actionConfig": {
+      "OpenContainer": {"action": "OpenContainer", "title": "Open"},
+      "Gather": {"action": "Gather", "gatherTool": "knife", "title": "Butcher"}
+    },
+    "container": {
+      "slots": 60
+    }
+  },
+
+  "AnimalCorpse": {
+    "actionConfig": {"Gather": {"action": "Gather", "gatherTool": "knife", "title": "Butcher"}}
+  },
+
+  "Corpse": {
+    "actionConfig": {
+      "OpenContainer": {"action": "OpenContainer", "title": "Open"},
+      "Gather": {"action": "Gather", "title": "Butcher"}
+    },
+    "container": {
+      "slots": 25
+    }
+  },
+
+  "FemalePlayer": {
+    "health": 100,
+    "stamina": 100,
+    "body": {"shape": "circle32", "moveBlock": true, "viewBlock": true},
+    "character": true,
+    "speed": 250,
+    "inventory": {
+      "slots": 30
+    },
+    "toolbar": {},
+    "wear": {
+      "slots": 7
+    },
+    "resGroups": {
+      "knife": {
+        "resTypes": [{"typeName": "WomanCutHead", "amount": 1}],
+        "oneClickGather": true,
+        "requiredOnLessThan": 999,
+        "onDeplete": {"removeObject": true}, "gatherTime": 10000
+      }
+    }
+  },
+
+  "FemaleAdmin": {
+    "health": 100,
+    "stamina": 100,
+    "body": {"shape": "circle32", "moveBlock": true, "viewBlock": true},
+    "character": true,
+    "speed": 250,
+    "inventory": {
+      "slots": 130
+    },
+    "toolbar": {},
+    "wear": {
+      "slots": 7
+    },
+    "resGroups": {
+      "knife": {
+        "resTypes": [{"typeName": "WomanCutHead", "amount": 1}],
+        "oneClickGather": true,
+        "requiredOnLessThan": 999,
+        "onDeplete": {"removeObject": true}, "gatherTime": 10000
+      }
+    }
+  },
+  "WoodenSnare": {},
+  "HenInCage": {},
+  "Hen": {
+    "health": 15, "body": {"shape": "circle24", "moveBlock": true, "viewBlock": true},
+    "character": true, "speed": 200, "runSpeed": 400, "respawnDelay": 600000,
+    "move": {"distance": 400, "delay": 6000, "rndDelay": 2000},
+    "runAway": {"distance": 800, "delay": 5000, "run": true},
+    "fright": {"distance": 200},
+    "actionConfig": {
+      "Catch": {"action": "Catch", "title": "Catch", "catchTool": "snare"}
+    },
+    "catchExpenses": {"SnareGroup": {"amount": 1}},
+    "catchResult": {"HenInCage": {"amount": 1}},
+    "catchTime": 6000,
+    "catchTool": "snare",
+    "resGroups": {
+      "knife": {
+        "resTypes": [{"typeName": "Meat", "amount": 1}, {"typeName": "Feathers", "amount": 1, "amountAdd": 1}],
+        "oneClickGather": true,
+        "requiredOnLessThan": 999,
+        "onDeplete": {"removeObject": true,
+          "resTypes": [
+            {"typeName": "Bones", "chance": 0.2, "amount": 1}
+          ]}, "gatherTime": 15000
+      }
+    }
+  },
+  "Hare": {
+    "health": 20, "body": {"shape": "circle32", "moveBlock": true, "viewBlock": true},
+    "character": true, "speed": 300, "respawnDelay": 400000,
+    "move": {"distance": 400, "delay": 6000, "rndDelay": 5000},
+    "runAway": {"distance": 700, "delay": 5000},
+    "fright": {"distance": 200},
+    "resGroups": {
+      "knife": {
+        "resTypes": [{"typeName": "RawHide", "amount": 1}, {"typeName": "Meat", "amount": 2, "amountAdd": 1}],
+        "oneClickGather": true,
+        "requiredOnLessThan": 999,
+        "onDeplete": {"removeObject": true,
+          "resTypes": [
+            {"typeName": "Veins", "chance": 0.2, "amount": 1},
+            {"typeName": "Bones", "chance": 0.5, "amount": 1},
+            {"typeName": "HareHead", "chance": 0.01, "amount": 1}
+          ]},
+        "gatherTime": 15000
+      }
+    }
+  },
+  "Deer": {
+    "health": 60, "body": {"shape": "circle64", "moveBlock": true, "viewBlock": true},
+    "character": true, "speed": 450, "respawnDelay": 800000,
+    "move": {"distance": 800, "delay": 3000, "rndDelay": 3000},
+    "runAway": {"distance": 1200, "delay": 10000},
+    "fright": {"distance": 300},
+    "resGroups": {
+      "knife": {
+        "resTypes": [{"typeName": "BigRawHide", "amount": 1}, {"typeName": "Meat", "amount": 3, "amountAdd": 2}],
+        "oneClickGather": true,
+        "requiredOnLessThan": 999,
+        "onDeplete": {"removeObject": true,
+          "resTypes": [
+            {"typeName": "Veins", "chance": 0.3, "amount": 1},
+            {"typeName": "Bones", "chance": 0.5, "amount": 1, "amountAdd": 1},
+            {"typeName": "DeerHead", "chance": 0.01, "amount": 1}]},
+        "gatherTime": 20000
+      }
+    }
+  },
+  "WildBoar": {
+    "health": 100, "body": {"shape": "circle56", "moveBlock": true, "viewBlock": true},
+    "character": true, "speed": 330, "respawnDelay": 800000,
+    "attack": {
+      "damage": 10, "range": 0, "startRange": 64, "delayBefore": 0, "delay": 1000, "splash": false,
+      "pursuitDelay": 5000, "bleedingChance": 0.3,
+      "shape": {"name": "circle72", "rotate": false, "anchorX": 0.5, "anchorY": 0.5}
+    },
+    "move": {"distance": 300, "delay": 5000, "rndDelay": 3000},
+    "resGroups": {
+      "knife": {
+        "resTypes": [{"typeName": "BigRawHide", "amount": 1}, {"typeName": "Meat", "amount": 4, "amountAdd": 2}],
+        "oneClickGather": true,
+        "requiredOnLessThan": 999,
+        "onDeplete": {"removeObject": true,
+          "resTypes": [
+            {"typeName": "Veins", "chance": 0.3, "amount": 1},
+            {"typeName": "Bones", "chance": 1, "amount": 1, "amountAdd": 1},
+            {"typeName": "BoarHead", "chance": 0.01, "amount": 1}]},
+        "gatherTime": 25000
+      }
+    }
+  },
+  "Wolf": {
+    "health": 160, "body": {"shape": "circle56", "moveBlock": true, "viewBlock": true},
+    "character": true, "speed": 400, "respawnDelay": 1200000,
+    "aggressive": {"distance": 300},
+    "attack": {
+      "damage": 10, "range": 0, "startRange": 64, "delayBefore": 0, "delay": 1000, "splash": false,
+      "pursuitDelay": 7000, "bleedingChance": 1,
+      "shape": {"name": "circle72", "rotate": false, "anchorX": 0.5, "anchorY": 0.5}
+    },
+    "move": {"distance": 400, "delay": 7000, "rndDelay": 5000},
+    "resGroups": {
+      "knife": {
+        "resTypes": [{"typeName": "BigRawHide", "amount": 1}, {"typeName": "Meat", "amount": 2, "amountAdd": 1}],
+        "oneClickGather": true,
+        "requiredOnLessThan": 999,
+        "onDeplete": {"removeObject": true,
+          "resTypes": [
+            {"typeName": "Veins", "chance": 0.4, "amount": 1},
+            {"typeName": "Bones", "chance": 1, "amount": 1, "amountAdd": 2},
+            {"typeName": "WolfHead", "chance": 0.01, "amount": 1}]},
+        "gatherTime": 30000
+      }
+    }
+  },
+  "Bear": {
+    "health": 320, "body": {"shape": "circle64", "moveBlock": true, "viewBlock": true},
+    "character": true, "speed": 250, "runSpeed": 420, "respawnDelay": 3600000,
+    "aggressive": {"distance": 350},
+    "attack": {
+      "damage": 20, "range": 0, "startRange": 64, "delayBefore": 0, "delay": 1000, "splash": true,
+      "pursuitDelay": 10000, "bleedingChance": 1, "run": true,
+      "shape": {"name": "circle72", "rotate": false, "anchorX": 0.5, "anchorY": 0.5}
+    },
+    "move": {"distance": 600, "delay": 3000, "rndDelay": 5000},
+    "resGroups": {
+      "knife": {
+        "resTypes": [{"typeName": "BearRawHide", "amount": 1}, {"typeName": "Meat", "amount": 6, "amountAdd": 4}],
+        "oneClickGather": true,
+        "requiredOnLessThan": 999,
+        "onDeplete": {"removeObject": true,
+          "resTypes": [
+            {"typeName": "Veins", "chance": 0.5, "amount": 1},
+            {"typeName": "Bones", "chance": 1, "amount": 3, "amountAdd": 2},
+            {"typeName": "BearHead", "chance": 0.01, "amount": 1}]},
+        "gatherTime": 40000
+      }
+    }
+  },
+
+  "Flour": {},
+  "Wood": {},
+  "Log": {},
+  "IronOre": {},
+  "Stone": {},
+  "Boulder": {},
+  "Meat": {},
+  "RawHide": {},
+  "BigRawHide": {},
+  "BearRawHide": {},
+  "HareHead": {},
+  "DeerHead": {},
+  "BoarHead": {},
+  "WolfHead": {},
+  "BearHead": {},
+  "Hide": {},
+  "BigHide": {},
+  "BearHide": {},
+  "IronIngot": {},
+  "SteelIngot": {},
+  "CastIronIngot": {},
+  "CharCoal": {},
+  "Dough": {},
+  "WoodenBucketWater": {},
+
+  "StoneKnife": {},
+  "StoneAxe": {},
+  "Bow": {},
+  "HuntingBow": {},
+  "ShortBow": {},
+  "HideSling": {},
+  "HuntingSling": {},
+  "IronSword": {},
+  "IronShield": {},
+  "IronAxe": {},
+  "IronKnife": {},
+  "IronPickaxe": {},
+  "WoodenShovel": {},
+  "IronSaw": {},
+  "IronShovel": {},
+  "StoneHammer": {},
+  "StonePick": {},
+  "IronHammer": {},
+  "IronSickle": {},
+  "ForgedBucket": {},
+  "LightSaber": {},
+  "AdminBow": {},
+
+  "AdminTiara": {},
+  "AdminVest": {},
+  "AdminTrousers": {},
+  "AdminSandals": {},
+
+
+  "ClothCap": {},
+  "ClothVest": {},
+  "ClothTrousers": {},
+  "ClothSandals": {},
+  "RawHideCap": {},
+  "RawHideVest": {},
+  "RawHideLoincloth": {},
+  "RawHideBoots": {},
+  "RawHideGloves": {},
+  "HideHelmet": {},
+  "HideJacket": {},
+  "HidePants": {},
+  "HideBoots": {},
+  "HideGloves": {},
+  "LeatherHelmet": {},
+  "LeatherJacket": {},
+  "LeatherPants": {},
+  "LeatherBoots": {},
+  "LeatherGloves": {},
+  "HareHeadHelmet": {},
+  "DeerHeadHelmet": {},
+  "BoarHeadHelmet": {},
+  "WolfHeadHelmet": {},
+  "BearHeadHelmet": {},
+  "BearHideCloak": {},
+
+  "IronHelmet": {},
+  "IronCuirass": {},
+  "IronLeggings": {},
+  "IronGreaves": {},
+  "IronGloves": {},
+
+  "SteelHelmet": {},
+  "SteelCuirass": {},
+  "SteelLeggings": {},
+  "SteelGreaves": {},
+  "SteelGloves": {},
+
+  "Torch": {},
+  "WoodenSpear": {},
+  "Bandage": {},
+  "StoneTippedArrow": {},
+  "IronTippedArrow": {},
+  "StoneAmmo": {},
+  "WomanCutHead": {},
+  "ManCutHead": {},
+
+  "RoastMeat": {},
+  "GrainWheat": {},
+  "Carrot": {},
+  "Eggs": {},
+  "Feathers": {},
+  "ShirredEggs": {},
+  "ashTreeSeedling": {},
+  "alderTreeSeedling": {},
+  "pineTreeSeedling": {},
+  "willowTreeSeedling": {},
+  "mapleTreeSeedling": {},
+  "aspenTreeSeedling": {},
+  "firTreeSeedling": {},
+  "birchTreeSeedling": {},
+  "Apple": {},
+  "Bannock": {},
+
+  "AppleTreeSeedling": {},
+  "SteelSword": {},
+  "SteelPickaxe": {},
+  "CompositeBow": {},
+
+
+  "PremiumCuirass": {},
+  "PremiumLeggings": {},
+  "PremiumGreaves": {},
+  "PremiumGloves": {},
+  "PremiumSword": {},
+  "PremiumShield": {},
+  "PremiumCloak": {},
+
+  "StrawHat": {},
+  "LinenCloak": {},
+
+  "WoodenShield": {},
+
+  "WitchHat": {},
+  "WitchCloak": {},
+  "PumpkinHelmet": {},
+  "HalloweenJacket": {},
+  "HalloweenPants": {},
+  "HalloweenBoots": {},
+  "HalloweenGloves": {},
+  "HalloweenSpider": {},
+  "JackLamp": {},
+  "VictoryFlag": {},
+
+  "PumpkinSeeds": {},
+  "GrapesSeeds": {},
+  "Pumpkin": {},
+  "PumpkinPieces": {},
+  "Grapes": {},
+  "Raisins": {},
+  "Bones": {},
+  "BoneMeal": {},
+  "Glue": {},
+  "GluedLeather": {},
+  "HardenedLeather": {},
+
+  "FlaxCloth": {},
+  "FlaxThreads": {},
+  "Ropes": {},
+  "Handles": {},
+  "Skulls": {},
+  "Veins": {},
+  "StrangeSkull": {
+    "noOpacity": true
+  },
+
+  "cepRawMushrooms": {},
+  "BakedCeps": {},
+  "chanterelleRawMushrooms": {},
+  "BakedChanterelles": {},
+  "RawVegetableStew": {},
+  "VegetableStew": {},
+  "Planks": {},
+  "UnfiredBricks": {},
+  "Bricks": {},
+  "Cement": {},
+  "Nails": {},
+  "Seeds": {},
+  "FlaxSeeds": {},
+  "RawFlax": {},
+  "DriedFlax": {},
+  "FlaxFibres": {},
+  "Hay": {},
+
+  "Clay": {},
+  "Bark": {},
+  "Leather": {},
+  "BigLeather": {},
+  "UnfiredClayPot": {},
+  "ClayPot": {},
+  "TanningLiquor": {},
+  "RawMeatCarrotPottage": {},
+  "MeatCarrotPottage": {},
+
+  "SteelKnife": {},
+  "SteelAxe": {},
+  "SteelHammer": {},
+  "SteelTippedArrow": {},
+
+  "SteelSaw": {},
+  "SteelSickle": {},
+  "CastIronAmmo": {},
+  "SteelShield": {},
+
+  "LogPeeled": {},
+  "CuttingThread": {},
+  "PowderBark": {},
+  "Boards": {},
+  "BuckleWood": {},
+
+  "SackHide": {},
+  "BeltRaw": {},
+  "BeltFine": {},
+  "BeltHard": {},
+  "BoulderHewn": {},
+  "BeddingRaw": {},
+  "BeddingFine": {},
+  "NeedleBone": {},
+  "NeedleIron": {},
+  "PillowFine": {},
+  "PillowRaw": {},
+  "FeatherBed": {},
+  "ClothRaw": {},
+  "HayMattress": {},
+  "BlanketRaw": {},
+  "PowderStone": {},
+  "Plaster": {},
+  "Bellows": {},
+  "ClayPrepared": {},
+
+  "DebugChest": {
+    "body": {"shape": "circle64", "frame": 0, "moveBlock": true, "viewBlock": false},
+    "container": {"slots": 100},
+    "actionConfig": {
+      "OpenContainer": {"action": "OpenContainer", "title": "Open"}
+    },
+    "noOpacity": true,
+    "removeOnEmpty": true,
+    "findItems": [
+      {"chance": 1, "list": [{"typeName": "HalloweenSpider", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "StrangeSkull"}]},
+      {"chance": 1, "list": [{"typeName": "VictoryFlag", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "FindDrawing"}]},
+      {"chance": 1, "list": [{"typeName": "FindBook"}]},
+      {"chance": 1, "list": [{"typeName": "CharCoal", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "HenInCage", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "ashTreeSeedling", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "alderTreeSeedling", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "pineTreeSeedling", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "willowTreeSeedling", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "mapleTreeSeedling", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "aspenTreeSeedling", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "firTreeSeedling", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "birchTreeSeedling", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "AppleTreeSeedling", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "Carrot", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "GrainWheat", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "Seeds", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "FlaxSeeds", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "PumpkinSeeds", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "GrapesSeeds", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "Pumpkin", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "PumpkinPieces", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "Grapes", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "Raisins", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "Bones", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "BoneMeal", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "Clay", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "Glue", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "GluedLeather", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "HardenedLeather", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "Wood", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "FlaxCloth", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "FlaxThreads", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "Ropes", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "Handles", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "Skulls", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "Veins", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "JackLamp", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "WitchHat"}]},
+      {"chance": 1, "list": [{"typeName": "WitchCloak"}]},
+      {"chance": 1, "list": [{"typeName": "PumpkinHelmet"}]},
+      {"chance": 1, "list": [{"typeName": "HalloweenJacket"}]},
+      {"chance": 1, "list": [{"typeName": "HalloweenPants"}]},
+      {"chance": 1, "list": [{"typeName": "HalloweenBoots"}]},
+      {"chance": 1, "list": [{"typeName": "HalloweenGloves"}]},
+      {"chance": 1, "list": [{"typeName": "BearHide"}]}
+    ]
+  },
+
+  "BattleChest": {
+    "body": {"shape": "circle64", "frame": 0, "moveBlock": true, "viewBlock": false},
+    "container": {"slots": 100},
+    "actionConfig": {
+      "OpenContainer": {"action": "OpenContainer", "title": "Open"}
+    },
+    "noOpacity": true,
+    "removeOnEmpty": true,
+    "findItems": [
+      {"chance": 1, "list": [{"typeName": "SteelSword"}]},
+      {"chance": 1, "list": [{"typeName": "SteelShield"}]},
+      {"chance": 1, "list": [{"typeName": "CompositeBow"}]},
+      {"chance": 1, "list": [{"typeName": "HuntingBow"}]},
+      {"chance": 1, "list": [{"typeName": "IronTippedArrow", "amount": 999}]},
+      {"chance": 1, "list": [{"typeName": "MeatCarrotPottage", "amount": 999}]},
+      {"chance": 1, "list": [{"typeName": "Bandage", "amount": 999}]},
+
+      {"chance": 1, "list": [{"typeName": "SteelHelmet"}]},
+      {"chance": 1, "list": [{"typeName": "SteelCuirass"}]},
+      {"chance": 1, "list": [{"typeName": "SteelLeggings"}]},
+      {"chance": 1, "list": [{"typeName": "SteelGreaves"}]},
+      {"chance": 1, "list": [{"typeName": "SteelGloves"}]},
+      {"chance": 1, "list": [{"typeName": "PremiumCloak"}]},
+
+      {"chance": 1, "list": [{"typeName": "LeatherHelmet"}]},
+      {"chance": 1, "list": [{"typeName": "LeatherJacket"}]},
+      {"chance": 1, "list": [{"typeName": "LeatherPants"}]},
+      {"chance": 1, "list": [{"typeName": "LeatherBoots"}]},
+      {"chance": 1, "list": [{"typeName": "LeatherGloves"}]},
+      {"chance": 1, "list": [{"typeName": "BearHideCloak"}]},
+
+
+      {"chance": 1, "list": [{"typeName": "Wood", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "Stone", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "Log", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "Boulder", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "Clay", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "Bricks", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "Cement", "amount": 9999}]},
+
+      {"chance": 1, "list": [{"typeName": "IronIngot", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "Ropes", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "HardenedLeather", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "Planks", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "Nails", "amount": 9999}]},
+      {"chance": 1, "list": [{"typeName": "BigLeather", "amount": 9999}]},
+
+      {"chance": 1, "list": [{"typeName": "CastIronAmmo", "amount": 99}]}
+
+    ]
+  },
+
+  "BattleDebugChest": {
+    "body": {"shape": "circle64", "frame": 0, "moveBlock": true, "viewBlock": false},
+    "container": {"slots": 100},
+    "actionConfig": {
+      "OpenContainer": {"action": "OpenContainer", "title": "Open"}
+    },
+    "noOpacity": true,
+    "removeOnEmpty": true
+  },
+
+  "FindChest": {
+    "container": {"slots": 30},
+    "actionConfig": {
+      "OpenContainer": {"action": "OpenContainer", "title": "Open"}
+    },
+    "defaults": {
+      "layout": "random"
+    },
+    "layouts": {
+      "skeleton": {
+        "body": {"shape": "circle32", "frame": 0, "moveBlock": false, "viewBlock": false}
+      },
+      "corpse": {
+        "body": {"shape": "circle32", "frame": 0, "moveBlock": false, "viewBlock": false}
+      },
+      "waggon": {
+        "body": {"shape": "circle64", "frame": 0, "moveBlock": true, "viewBlock": false}
+      }
+    },
+    "noOpacity": true,
+    "removeOnEmpty": true,
+    "respawnDelay": 1200000,
+    "findItems": [
+      {
+        "chance": 0.005,
+        "list": [
+          {"typeName": "SteelSword"},
+          {"typeName": "SteelHelmet"},
+          {"typeName": "SteelCuirass"},
+          {"typeName": "SteelLeggings"},
+          {"typeName": "SteelGreaves"},
+          {"typeName": "SteelGloves"},
+          {"typeName": "SteelPickaxe"},
+          {"typeName": "CompositeBow"}
+        ]
+      },
+      {
+        "chance": 1,
+        "list": [
+          {"typeName": "Bannock", "amount": 1, "amountAdd": 2},
+          {"typeName": "ShirredEggs", "amount": 2, "amountAdd": 2},
+          {"typeName": "GrainWheat", "amount": 3, "amountAdd": 3},
+          {"typeName": "PumpkinSeeds", "amount": 3, "amountAdd": 3},
+          {"typeName": "GrapesSeeds", "amount": 3, "amountAdd": 3},
+          {"typeName": "Raisins", "amount": 3, "amountAdd": 3},
+          {"typeName": "Bandage", "amount": 3, "amountAdd": 3},
+          {"typeName": "IronTippedArrow", "amount": 5, "amountAdd": 5}
+        ]
+      },
+      {
+        "chance": 0.5,
+        "list": [
+          {"typeName": "Nails", "amount": 2, "amountAdd": 2},
+          {"typeName": "ClayPot"},
+          {"typeName": "Planks", "amount": 2, "amountAdd": 2},
+          {"typeName": "FlaxCloth", "amount": 2, "amountAdd": 2},
+          {"typeName": "Glue", "amount": 2, "amountAdd": 2},
+          {"typeName": "HardenedLeather", "amount": 1, "amountAdd": 1},
+          {"typeName": "Ropes", "amount": 1, "amountAdd": 2},
+          {"typeName": "IronIngot", "amount": 1, "amountAdd": 2}
+        ]
+      },
+      {
+        "chance": 0.05,
+        "list": [
+          {"typeName": "Bow"},
+          {"typeName": "HideHelmet"},
+          {"typeName": "HideJacket"},
+          {"typeName": "HidePants"},
+          {"typeName": "HideBoots"},
+          {"typeName": "HideGloves"}
+        ]
+      },
+      {
+        "chance": 0.03,
+        "list": [
+          {"typeName": "IronAxe"},
+          {"typeName": "IronKnife"},
+          {"typeName": "IronPickaxe"},
+          {"typeName": "IronSaw"},
+          {"typeName": "IronSickle"},
+          {"typeName": "ForgedBucket"},
+          {"typeName": "IronShovel"},
+          {"typeName": "IronHammer"}
+        ]
+      },
+      {
+        "chance": 0.01,
+        "list": [
+          {"typeName": "IronSword"},
+          {"typeName": "IronShield"},
+          {"typeName": "HuntingBow"},
+          {"typeName": "ShortBow"},
+          {"typeName": "HuntingSling"},
+          {"typeName": "IronHelmet"},
+          {"typeName": "IronCuirass"},
+          {"typeName": "IronLeggings"},
+          {"typeName": "IronGreaves"},
+          {"typeName": "IronGloves"}
+        ]
+      },
+      {
+        "chance": 0.7,
+        "knowledgeInChestsFlag": true,
+        "list": [
+          {"typeName": "FindDrawing"}
+        ]
+      },
+      {
+        "chance": 0.6,
+        "knowledgeInChestsFlag": true,
+        "list": [
+          {"typeName": "FindBook"}
+        ]
+      }
+    ]
+  },
+
+  "Mushrooms": {
+    "respawnDelay": 600000,
+    "body": {"shape": "circle32", "moveBlock": false, "viewBlock": false},
+    "defaults": {
+      "layout": "random"
+    },
+    "actionConfig": {
+      "GatherKnife": {"action": "Gather", "gatherTool": "knife", "title": "Gather"}
+    },
+    "layouts": {
+      "cep": {},
+      "chanterelle": {}
+    },
+    "resGroups": {
+      "knife": {
+        "resTypes": [{"typeName": "RawMushrooms", "typeNameLayoutAdd": true, "amount": 1, "amountAdd": 1}],
+        "oneClickGather": true,
+        "onDeplete": {"removeObject": true}, "gatherTime": 5000
+      }
+    }
+  },
+  "Tree": {
+    "respawnDelay": 3600000,
+    "body": {"shape": "circle16", "moveBlock": true, "viewBlock": true},
+    "defaults": {
+      "layout": "random"
+    },
+    "actionConfig": {
+      "GatherHatchet": {"action": "Gather", "gatherTool": "hatchet", "title": "GatherWoodAndLog"},
+      "GatherKnife": {"action": "Gather", "gatherTool": "knife", "title": "GatherBarkAndSeedling"}
+    },
+    "layouts": {
+      "ash": {},
+      "alder": {},
+      "pine": {},
+      "willow": {},
+      "maple": {},
+      "aspen": {},
+      "fir": {},
+      "birch": {}
+    },
+    "resGroups": {
+      "hatchet": {
+        "resTypes": [{"typeName": "Wood", "amount": 10, "amountAdd": 10}],
+        "oneClickGather": true,
+        "requiredOnLessThan": 10,
+        "onDeplete": {"removeObject": true, "resTypes": [{"typeName": "Log", "chance": 1, "amount": 1, "amountAdd": 1}]},
+        "gatherTime": 20000
+      },
+      "knife": {
+        "resTypes": [{"typeName": "TreeSeedling", "typeNameLayoutAdd": true, "amount": 2, "amountAdd": 1}],
+        "oneClickGather": true,
+        "requiredOnLessThan": 999,
+        "onDeplete": {"resTypes": [{"typeName": "Bark", "chance": 1, "amount": 2, "amountAdd": 1}]},
+        "gatherTime": 15000
+      }
+    }
+  },
+  "ClayPit": {
+    "respawnDelay": 600000,
+    "noOpacity": true,
+    "changeFloorIndex": -1,
+    "body": {"shape": "circle56", "moveBlock": true, "viewBlock": false},
+    "actionConfig": {"Gather": {"action": "Gather", "gatherTool": "shovel", "title": "Gather"}},
+    "resGroups": {
+      "shovel": {
+        "resTypes": [{"typeName": "Clay", "amount": 20, "amountAdd": 20}],
+        "oneClickGather": true,
+        "onDeplete": {"removeObject": true}, "gatherTime": 30000
+      }
+    }
+  },
+  "WoodPile": {
+    "respawnDelay": 600000,
+    "noOpacity": true,
+    "body": {"shape": "circle32", "moveBlock": false},
+    "actionConfig": {"Gather": {"action": "Gather", "gatherTool": "hatchet", "title": "Gather"}},
+    "resGroups": {
+      "hatchet": {
+        "resTypes": [{"typeName": "Wood", "amount": 2, "amountAdd": 2}],
+        "oneClickGather": true,
+        "onDeplete": {"removeObject": true}, "gatherTime": 10000
+      }
+    }
+  },
+  "Rock": {
+    "respawnDelay": 3600000,
+    "body": {"shape": "circle48", "moveBlock": true, "viewBlock": false},
+    "actionConfig": {"Gather": {"action": "Gather", "gatherTool": "pickaxe", "title": "Gather"}},
+    "resGroups": {
+      "pickaxe": {
+        "resTypes": [{"typeName": "Stone", "amount": 10, "amountAdd": 10}],
+        "oneClickGather": true,
+        "requiredOnLessThan": 999,
+        "onDeplete": {
+          "removeObject": true,
+          "resTypes": [
+            {"typeName": "Boulder", "chance": 1, "amount": 1, "amountAdd": 2},
+            {"typeName": "IronOre", "chance": 0.2, "amount": 2, "amountAdd": 1}
+          ]
+        }, "gatherTime": 20000
+      }
+    }
+  },
+  "Cliff": {
+    "defaults": {
+      "state": "Normal"
+    },
+    "body": {"shape": "collision", "frame": 0, "moveBlock": true, "viewBlock": true},
+    "stateConfig": {
+      "Normal": {},
+      "Depleted": {"nextState": "Normal", "timerNextState": 3600000}
+    },
+    "states": {
+      "Normal": {
+        "body": {"shape": "collision", "frame": 0, "moveBlock": true, "viewBlock": true}
+      },
+      "Depleted": {
+        "body": {"shape": "collision", "frame": 0, "moveBlock": false, "viewBlock": false}
+      }
+    },
+
+    "actionConfig": {"Gather": {"action": "Gather", "gatherTool": "pickaxe", "title": "Gather", "onState": "Normal"}},
+    "resGroups": {
+      "pickaxe": {
+        "resTypes": [{"typeName": "Boulder", "amount": 5}],
+        "oneClickGather": true,
+        "requiredOnLessThan": 999,
+        "onDeplete": {
+          "nextState": "Depleted",
+          "resTypes": [
+            {"typeName": "IronOre", "chance": 0.3, "amount": 10, "amountAdd": 10}
+          ]
+        }, "gatherTime": 60000
+      }
+    }
+  },
+  "IronRock": {
+    "respawnDelay": 7200000,
+    "body": {"shape": "circle48", "moveBlock": true, "viewBlock": true},
+    "actionConfig": {"Gather": {"action": "Gather", "gatherTool": "pickaxe", "title": "Gather"}},
+    "resGroups": {
+      "pickaxe": {
+        "resTypes": [{"typeName": "IronOre", "amount": 10, "amountAdd": 10}],
+        "oneClickGather": true,
+        "requiredOnLessThan": 999,
+        "onDeplete": {"removeObject": true}, "gatherTime": 20000
+      }
+    }
+  },
+  "StonePile": {
+    "respawnDelay": 600000,
+    "noOpacity": true,
+    "body": {"shape": "circle32", "moveBlock": false},
+    "actionConfig": {"Gather": {"action": "Gather", "gatherTool": "pickaxe", "title": "Gather"}},
+    "resGroups": {
+      "pickaxe": {
+        "resTypes": [{"typeName": "Stone", "amount": 2, "amountAdd": 2}],
+        "oneClickGather": true,
+        "onDeplete": {"removeObject": true}, "gatherTime": 10000
+      }
+    }
+  },
+  "WildWeeds": {
+    "respawnDelay": 600000,
+    "noOpacity": true,
+    "body": {"shape": "circle16", "moveBlock": false},
+    "actionConfig": {"Gather": {"action": "Gather", "gatherTool": "sickle", "title": "Gather"}},
+    "resGroups": {
+      "sickle": {
+        "resTypes": [{"typeName": "Seeds", "amount": 1, "amountAdd": 1}],
+        "oneClickGather": true,
+        "onDeplete": {"removeObject": true}, "gatherTime": 10000
+      }
+    }
+  },
+  "WildCarrot": {
+    "respawnDelay": 1800000,
+    "noOpacity": true,
+    "body": {"shape": "circle16", "moveBlock": false},
+    "actionConfig": {"Gather": {"action": "Gather", "gatherTool": "shovel", "title": "Gather"}},
+    "resGroups": {
+      "shovel": {
+        "resTypes": [{"typeName": "Carrot", "amount": 2, "amountAdd": 1}],
+        "oneClickGather": true,
+        "onDeplete": {"removeObject": true}, "gatherTime": 10000
+      }
+    }
+  },
+  "Nest": {
+    "respawnDelay": 2400000,
+    "noOpacity": true,
+    "body": {"shape": "circle32", "moveBlock": false},
+    "actionConfig": {"Gather": {"action": "Gather", "gatherTool": "default", "title": "Gather"}},
+    "resGroups": {
+      "default": {
+        "resTypes": [{"typeName": "Eggs", "amount": 1, "amountAdd": 1}],
+        "oneClickGather": true,
+        "onDeplete": {"removeObject": true}, "gatherTime": 4000
+      }
+    }
+  },
+  "PavedGround": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "simpleObject": true, "changeFloorIndex": -1,
+    "changeOnlyBackgroundIndex": 7
+  },
+  "GrassedGround": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "simpleObject": true, "changeFloorIndex": -1,
+    "changeOnlyBackgroundIndex": 0
+  },
+  "SoiledGround": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "simpleObject": true, "changeFloorIndex": -1,
+    "changeOnlyBackgroundIndex": 6
+  },
+  "PavedGround3x3": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "section": [{"typeName": "PavedGround"},
+      {"typeName": "PavedGround", "anchorX": -1, "anchorY": 0},
+      {"typeName": "PavedGround", "anchorX": 0, "anchorY": -1},
+      {"typeName": "PavedGround", "anchorX": 1, "anchorY": 0},
+      {"typeName": "PavedGround", "anchorX": 0, "anchorY": 1},
+      {"typeName": "PavedGround", "anchorX": -0.5, "anchorY": -0.5},
+      {"typeName": "PavedGround", "anchorX": -0.5, "anchorY": 0.5},
+      {"typeName": "PavedGround", "anchorX": 0.5, "anchorY": -0.5},
+      {"typeName": "PavedGround", "anchorX": 0.5, "anchorY": 0.5}]
+  },
+  "GrassedGround3x3": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "section": [{"typeName": "GrassedGround"},
+      {"typeName": "GrassedGround", "anchorX": -1, "anchorY": 0},
+      {"typeName": "GrassedGround", "anchorX": 0, "anchorY": -1},
+      {"typeName": "GrassedGround", "anchorX": 1, "anchorY": 0},
+      {"typeName": "GrassedGround", "anchorX": 0, "anchorY": 1},
+      {"typeName": "GrassedGround", "anchorX": -0.5, "anchorY": -0.5},
+      {"typeName": "GrassedGround", "anchorX": -0.5, "anchorY": 0.5},
+      {"typeName": "GrassedGround", "anchorX": 0.5, "anchorY": -0.5},
+      {"typeName": "GrassedGround", "anchorX": 0.5, "anchorY": 0.5}]
+  },
+  "SoiledGround3x3": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "section": [{"typeName": "SoiledGround"},
+      {"typeName": "SoiledGround", "anchorX": -1, "anchorY": 0},
+      {"typeName": "SoiledGround", "anchorX": 0, "anchorY": -1},
+      {"typeName": "SoiledGround", "anchorX": 1, "anchorY": 0},
+      {"typeName": "SoiledGround", "anchorX": 0, "anchorY": 1},
+      {"typeName": "SoiledGround", "anchorX": -0.5, "anchorY": -0.5},
+      {"typeName": "SoiledGround", "anchorX": -0.5, "anchorY": 0.5},
+      {"typeName": "SoiledGround", "anchorX": 0.5, "anchorY": -0.5},
+      {"typeName": "SoiledGround", "anchorX": 0.5, "anchorY": 0.5}]
+  },
+
+  "PloughedGround": {
+    "body": {"shape": "circle64", "moveBlock": false, "viewBlock": false},
+    "hitPoints": 100,
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "changeFloorIndex": -1,
+    "actionConfig": {
+      "Seed": {
+        "action": "Seed",
+        "title": "Seed",
+        "seedMaterialInHand": {
+          "ashTreeSeedling": {"amount": 1, "changeTypeName": "CropTree", "changeLayout": "ash"},
+          "alderTreeSeedling": {"amount": 1, "changeTypeName": "CropTree", "changeLayout": "alder"},
+          "pineTreeSeedling": {"amount": 1, "changeTypeName": "CropTree", "changeLayout": "pine"},
+          "willowTreeSeedling": {"amount": 1, "changeTypeName": "CropTree", "changeLayout": "willow"},
+          "mapleTreeSeedling": {"amount": 1, "changeTypeName": "CropTree", "changeLayout": "maple"},
+          "aspenTreeSeedling": {"amount": 1, "changeTypeName": "CropTree", "changeLayout": "aspen"},
+          "firTreeSeedling": {"amount": 1, "changeTypeName": "CropTree", "changeLayout": "fir"},
+          "birchTreeSeedling": {"amount": 1, "changeTypeName": "CropTree", "changeLayout": "birch"},
+          "AppleTreeSeedling": {"amount": 1, "changeTypeName": "CropAppleTree"},
+          "Seeds": {"amount": 1, "changeTypeName": "CropWeeds"},
+          "FlaxSeeds": {"amount": 1, "changeTypeName": "CropFlax"},
+          "PumpkinSeeds": {"amount": 1, "changeTypeName": "CropPumpkin"},
+          "GrapesSeeds": {"amount": 1, "changeTypeName": "CropVine"},
+          "GrainWheat": {"amount": 1, "changeTypeName": "CropWheat"},
+          "Carrot": {"amount": 1, "changeTypeName": "CropCarrot"}
+        }
+      }
+    }
+  },
+
+  "PloughedGround3x3": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "section": [{"typeName": "PloughedGround"},
+      {"typeName": "PloughedGround", "anchorX": -1, "anchorY": 0},
+      {"typeName": "PloughedGround", "anchorX": 0, "anchorY": -1},
+      {"typeName": "PloughedGround", "anchorX": 1, "anchorY": 0},
+      {"typeName": "PloughedGround", "anchorX": 0, "anchorY": 1},
+      {"typeName": "PloughedGround", "anchorX": -0.5, "anchorY": -0.5},
+      {"typeName": "PloughedGround", "anchorX": -0.5, "anchorY": 0.5},
+      {"typeName": "PloughedGround", "anchorX": 0.5, "anchorY": -0.5},
+      {"typeName": "PloughedGround", "anchorX": 0.5, "anchorY": 0.5}]
+  },
+
+  "AppleTree": {
+    "respawnDelay": 2400000,
+    "body": {"shape": "circle16", "moveBlock": true, "viewBlock": true},
+    "actionConfig": {
+      "GatherBucket": {"action": "Gather", "gatherTool": "bucket", "title": "GatherApples"},
+      "GatherHatchet": {"action": "Gather", "gatherTool": "hatchet", "title": "GatherWood"},
+      "GatherKnife": {"action": "Gather", "gatherTool": "knife", "title": "GatherSeedling"}
+    },
+    "defaults": {
+      "state": "Normal"
+    },
+    "stateConfig": {
+      "Normal": {},
+      "Depleted": {"nextState": "Normal", "timerNextState": 2400000}
+    },
+    "resGroups": {
+      "bucket": {
+        "resTypes": [{"typeName": "Apple", "amount": 2, "amountAdd": 1}],
+        "oneClickGather": true,
+        "onDeplete": {"nextState": "Depleted"},
+        "gatherTime": 10000
+      },
+      "hatchet": {
+        "resTypes": [{"typeName": "Wood", "amount": 10, "amountAdd": 10}],
+        "oneClickGather": true,
+        "requiredOnLessThan": 999,
+        "onDeplete": {"removeObject": true},
+        "gatherTime": 20000
+      },
+      "knife": {
+        "resTypes": [{"typeName": "AppleTreeSeedling", "amount": 2, "amountAdd": 1}],
+        "oneClickGather": true,
+        "requiredOnLessThan": 999,
+        "gatherTime": 15000
+      }
+    }
+  },
+
+  "CropAppleTree": {
+    "body": {"shape": "circle16", "moveBlock": true, "viewBlock": true},
+    "hitPoints": 100,
+    "defaults": {
+      "state": "Seeded"
+    },
+    "stateConfig": {
+      "Seeded": {"nextState": "Grow", "nextStateMaterial": {"WoodenBucketWater": {"amount": 1}}},
+      "Grow": {"nextState": "Ripe", "timerNextState": 7200000},
+      "Ripe": {},
+      "Depleted": {"nextState": "Ripe", "timerNextState": 3600000}
+    },
+    "states": {
+      "Seeded": {"body": {"shape": "circle16", "moveBlock": false, "viewBlock": false}},
+      "Grow": {"body": {"shape": "circle16", "moveBlock": true, "viewBlock": false}},
+      "Ripe": {"body": {"shape": "circle16", "moveBlock": true, "viewBlock": true}},
+      "Depleted": {"body": {"shape": "circle16", "moveBlock": true, "viewBlock": true}}
+    },
+    "actionConfig": {
+      "NextState": {"action": "NextState", "title": "NextState", "onState": "Seeded"},
+      "GatherBucket": {"action": "Gather", "gatherTool": "bucket", "title": "GatherApples", "onState": "Ripe"},
+      "GatherHatchet": {"action": "Gather", "gatherTool": "hatchet", "title": "GatherWood", "onState": "Ripe"},
+      "GatherKnife": {"action": "Gather", "gatherTool": "knife", "title": "GatherSeedling", "onState": "Ripe"},
+      "GatherBucket2": {"action": "Gather", "gatherTool": "bucket", "title": "GatherApples", "onState": "Depleted"},
+      "GatherHatchet2": {"action": "Gather", "gatherTool": "hatchet", "title": "GatherWood", "onState": "Depleted"},
+      "GatherKnife2": {"action": "Gather", "gatherTool": "knife", "title": "GatherSeedling", "onState": "Depleted"}
+    },
+    "resGroups": {
+      "bucket": {
+        "resTypes": [{"typeName": "Apple", "amount": 3, "amountAdd": 4}],
+        "oneClickGather": true,
+        "onDeplete": {"nextState": "Depleted"},
+        "gatherTime": 10000
+      },
+      "hatchet": {
+        "resTypes": [{"typeName": "Wood", "amount": 10, "amountAdd": 10}],
+        "oneClickGather": true,
+        "requiredOnLessThan": 999,
+        "onDeplete": {"removeObject": true},
+        "gatherTime": 20000
+      },
+      "knife": {
+        "resTypes": [{"typeName": "AppleTreeSeedling", "amount": 2, "amountAdd": 1}],
+        "oneClickGather": true,
+        "requiredOnLessThan": 999,
+        "gatherTime": 15000
+      }
+    }
+  },
+
+  "CropTree": {
+    "body": {"shape": "circle16", "moveBlock": true, "viewBlock": true},
+    "hitPoints": 100,
+    "defaults": {
+      "state": "Seeded"
+    },
+    "stateConfig": {
+      "Seeded": {"nextState": "Grow", "nextStateMaterial": {"WoodenBucketWater": {"amount": 1}}},
+      "Grow": {"nextState": "Ripe", "timerNextState": 7200000},
+      "Ripe": {}
+    },
+    "states": {
+      "Seeded": {"body": {"shape": "circle16", "moveBlock": false, "viewBlock": false}},
+      "Grow": {"body": {"shape": "circle16", "moveBlock": true, "viewBlock": false}},
+      "Ripe": {"body": {"shape": "circle16", "moveBlock": true, "viewBlock": true}}
+    },
+    "actionConfig": {
+      "NextState": {"action": "NextState", "title": "NextState", "onState": "Seeded"},
+      "GatherHatchet": {"action": "Gather", "gatherTool": "hatchet", "title": "GatherWoodAndLog", "onState": "Ripe"},
+      "GatherKnife": {"action": "Gather", "gatherTool": "knife", "title": "GatherBarkAndSeedling", "onState": "Ripe"}
+    },
+    "layouts": {
+      "ash": {},
+      "alder": {},
+      "pine": {},
+      "willow": {},
+      "maple": {},
+      "aspen": {},
+      "fir": {},
+      "birch": {}
+    },
+    "resGroups": {
+      "hatchet": {
+        "resTypes": [{"typeName": "Wood", "amount": 10, "amountAdd": 10}],
+        "oneClickGather": true,
+        "requiredOnLessThan": 10,
+        "onDeplete": {"removeObject": true, "resTypes": [{"typeName": "Log", "chance": 2, "amount": 1, "amountAdd": 2}]},
+        "gatherTime": 20000
+      },
+      "knife": {
+        "resTypes": [{"typeName": "TreeSeedling", "typeNameLayoutAdd": true, "amount": 3, "amountAdd": 1}],
+        "oneClickGather": true,
+        "requiredOnLessThan": 999,
+        "onDeplete": {"resTypes": [{"typeName": "Bark", "chance": 1, "amount": 2, "amountAdd": 1}]},
+        "gatherTime": 15000
+      }
+    }
+  },
+  "CropWeeds": {
+    "body": {"shape": "circle64", "frame": 0, "moveBlock": false, "viewBlock": false},
+    "hitPoints": 100,
+    "noOpacity": true,
+    "changeFloorIndex": -1,
+    "defaults": {
+      "state": "Seeded"
+    },
+    "stateConfig": {
+      "Seeded": {"nextState": "Grow", "nextStateMaterial": {"WoodenBucketWater": {"amount": 1}}},
+      "Grow": {"nextState": "Ripe", "timerNextState": 1200000},
+      "Ripe": {}
+    },
+    "actionConfig": {
+      "NextState": {"action": "NextState", "title": "NextState", "onState": "Seeded"},
+      "Gather": {"action": "Gather", "gatherTool": "sickle", "title": "Gather", "onState": "Ripe"}
+    },
+    "resGroups": {
+      "sickle": {
+        "resTypes": [{"typeName": "Hay", "amount": 1, "amountAdd": 1}],
+        "oneClickGather": true,
+        "onDeplete": {
+          "removeObject": true,
+          "resTypes": [
+            {"typeName": "PumpkinSeeds", "chance": 0.07, "amount": 1},
+            {"typeName": "GrapesSeeds", "chance": 0.03, "amount": 1},
+            {"typeName": "GrainWheat", "chance": 0.15, "amount": 1},
+            {"typeName": "FlaxSeeds", "chance": 0.15, "amount": 1}
+          ]
+        },
+        "gatherTime": 20000
+      }
+    }
+  },
+  "CropPumpkin": {
+    "body": {"shape": "circle64", "frame": 0, "moveBlock": false, "viewBlock": false},
+    "hitPoints": 100,
+    "noOpacity": true,
+    "changeFloorIndex": -1,
+    "defaults": {
+      "state": "Seeded"
+    },
+    "stateConfig": {
+      "Seeded": {"nextState": "Grow", "nextStateMaterial": {"WoodenBucketWater": {"amount": 1}}},
+      "Grow": {"nextState": "Ripe", "timerNextState": 3600000},
+      "Ripe": {}
+    },
+    "states": {
+      "Seeded": {"body": {"shape": "circle64", "moveBlock": false, "viewBlock": false}},
+      "Grow": {"body": {"shape": "circle64", "moveBlock": false, "viewBlock": false}},
+      "Ripe": {"body": {"shape": "circle64", "moveBlock": true, "viewBlock": false}}
+    },
+    "actionConfig": {
+      "NextState": {"action": "NextState", "title": "NextState", "onState": "Seeded"},
+      "Gather": {"action": "Gather", "gatherTool": "knife", "title": "Gather", "onState": "Ripe"}
+    },
+    "resGroups": {
+      "knife": {
+        "resTypes": [{"typeName": "Pumpkin", "amount": 1}],
+        "oneClickGather": true,
+        "onDeplete": {"removeObject": true}, "gatherTime": 10000
+      }
+    }
+  },
+  "CropVine": {
+    "body": {"shape": "circle16", "frame": 0, "moveBlock": false, "viewBlock": false},
+    "hitPoints": 100,
+    "noOpacity": true,
+    "changeFloorIndex": -1,
+    "defaults": {
+      "state": "Seeded"
+    },
+    "stateConfig": {
+      "Seeded": {"nextState": "Grow", "nextStateMaterial": {"WoodenBucketWater": {"amount": 1}}},
+      "Grow": {"nextState": "Ripe", "timerNextState": 3600000},
+      "Ripe": {}
+    },
+    "states": {
+      "Seeded": {"body": {"shape": "circle16", "moveBlock": false, "viewBlock": false}},
+      "Grow": {"body": {"shape": "circle16", "moveBlock": true, "viewBlock": false}},
+      "Ripe": {"body": {"shape": "circle16", "moveBlock": true, "viewBlock": true}}
+    },
+    "actionConfig": {
+      "NextState": {"action": "NextState", "title": "NextState", "onState": "Seeded"},
+      "Gather": {"action": "Gather", "gatherTool": "bucket", "title": "Gather", "onState": "Ripe"}
+    },
+    "resGroups": {
+      "bucket": {
+        "resTypes": [{"typeName": "Grapes", "amount": 4, "amountAdd": 2}],
+        "oneClickGather": true,
+        "onDeplete": {"removeObject": true}, "gatherTime": 20000
+      }
+    }
+  },
+  "CropFlax": {
+    "body": {"shape": "circle64", "frame": 0, "moveBlock": false, "viewBlock": false},
+    "hitPoints": 100,
+    "noOpacity": true,
+    "changeFloorIndex": -1,
+    "defaults": {
+      "state": "Seeded"
+    },
+    "stateConfig": {
+      "Seeded": {"nextState": "Grow", "nextStateMaterial": {"WoodenBucketWater": {"amount": 1}}},
+      "Grow": {"nextState": "Ripe", "timerNextState": 2400000},
+      "Ripe": {}
+    },
+    "actionConfig": {
+      "NextState": {"action": "NextState", "title": "NextState", "onState": "Seeded"},
+      "Gather": {"action": "Gather", "gatherTool": "sickle", "title": "Gather", "onState": "Ripe"}
+    },
+    "resGroups": {
+      "sickle": {
+        "resTypes": [{"typeName": "RawFlax", "amount": 4, "amountAdd": 2}],
+        "oneClickGather": true,
+        "onDeplete": {"removeObject": true}, "gatherTime": 20000
+      }
+    }
+  },
+  "CropWheat": {
+    "body": {"shape": "circle64", "frame": 0, "moveBlock": false, "viewBlock": false},
+    "hitPoints": 100,
+    "noOpacity": true,
+    "changeFloorIndex": -1,
+    "defaults": {
+      "state": "Seeded"
+    },
+    "stateConfig": {
+      "Seeded": {"nextState": "Grow", "nextStateMaterial": {"WoodenBucketWater": {"amount": 1}}},
+      "Grow": {"nextState": "Ripe", "timerNextState": 1800000},
+      "Ripe": {}
+    },
+    "actionConfig": {
+      "NextState": {"action": "NextState", "title": "NextState", "onState": "Seeded"},
+      "Gather": {"action": "Gather", "gatherTool": "sickle", "title": "Gather", "onState": "Ripe"}
+    },
+    "resGroups": {
+      "sickle": {
+        "resTypes": [{"typeName": "GrainWheat", "amount": 10, "amountAdd": 4}],
+        "oneClickGather": true,
+        "onDeplete": {"removeObject": true}, "gatherTime": 20000
+      }
+    }
+  },
+  "CropCarrot": {
+    "body": {"shape": "circle64", "frame": 0, "moveBlock": false, "viewBlock": false},
+    "hitPoints": 100,
+    "changeFloorIndex": -1,
+    "noOpacity": true,
+    "defaults": {
+      "state": "Seeded"
+    },
+    "stateConfig": {
+      "Seeded": {"nextState": "Grow", "nextStateMaterial": {"WoodenBucketWater": {"amount": 1}}},
+      "Grow": {"nextState": "Ripe", "timerNextState": 600000},
+      "Ripe": {}
+    },
+    "actionConfig": {
+      "NextState": {"action": "NextState", "title": "NextState", "onState": "Seeded"},
+      "Gather": {"action": "Gather", "gatherTool": "shovel", "title": "Gather", "onState": "Ripe"}
+    },
+    "resGroups": {
+      "shovel": {
+        "resTypes": [{"typeName": "Carrot", "amount": 5, "amountAdd": 3}],
+        "oneClickGather": true,
+        "onDeplete": {"removeObject": true}, "gatherTime": 20000
+      }
+    }
+  },
+
+
+  "FlaxStack": {
+    "body": {"shape": "circle64", "frame": 0, "moveBlock": true, "viewBlock": true},
+    "hitPoints": 100,
+    "defaults": {
+      "state": "Grow"
+    },
+    "stateConfig": {
+      "Grow": {"nextState": "Ripe", "timerNextState": 2400000},
+      "Ripe": {}
+    },
+    "actionConfig": {
+      "Gather": {"action": "Gather", "gatherTool": "sickle", "title": "Gather", "onState": "Ripe"}
+    },
+    "resGroups": {
+      "sickle": {
+        "resTypes": [{"typeName": "DriedFlax", "amount": 8}],
+        "oneClickGather": true,
+        "onDeplete": {
+          "removeObject": true,
+          "resTypes": [
+            {"typeName": "FlaxSeeds", "chance": 1, "amount": 1, "amountAdd": 2}
+          ]
+        }, "gatherTime": 20000
+      }
+    }
+  },
+
+
+  "staticWaggon": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "body": {"shape": "circle150", "frame": 0, "moveBlock": true, "viewBlock": true},
+    "simpleObject": true
+  },
+  "staticCliff": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "simpleObject": true
+  },
+  "fieldGrassTile": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "noOpacity": true,
+    "simpleObject": true
+  },
+
+  "BranchRoof713": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "hitPoints": 6000, "adsorb": 0, "simpleObject": true, "changeFloorIndex": 1,
+    "canAbandoned": true,
+    "defaults": {
+      "layout": "left"
+    },
+    "layouts": {
+      "left": {},
+      "right": {}
+    }
+  },
+
+  "BranchWall": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 1},
+    "canAbandoned": true,
+    "hitPoints": 6000,
+    "adsorb": 0,
+    "simpleObject": true,
+    "border": 1,
+    "body": {"shape": "wallsDoorsShapes", "moveBlock": true, "viewBlock": true},
+    "defaults": {
+      "layout": "left"
+    },
+    "layouts": {
+      "left": {
+        "body": {"frame": 1, "anchorX": 1, "anchorY": 1}
+      },
+      "right": {
+        "body": {"frame": 0, "anchorX": 0, "anchorY": 1}
+      }
+    }
+  },
+
+  "BranchDoorway": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 1},
+    "canAbandoned": true,
+    "hitPoints": 6000,
+    "adsorb": 0,
+    "simpleObject": true,
+    "border": 1,
+    "body": {"shape": "wallsDoorsShapes", "moveBlock": true, "viewBlock": true},
+    "defaults": {
+      "layout": "left"
+    },
+    "layouts": {
+      "left": {
+        "body": {"frame": 3, "anchorX": 1, "anchorY": 1}
+      },
+      "right": {
+        "body": {"frame": 2, "anchorX": 0, "anchorY": 1}
+      }
+    }
+  },
+
+  "BranchWindow": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 1},
+    "canAbandoned": true,
+    "hitPoints": 6000,
+    "adsorb": 0,
+    "simpleObject": true,
+    "border": 1,
+    "body": {"shape": "wallsDoorsShapes", "moveBlock": true, "viewBlock": false},
+    "defaults": {
+      "layout": "left"
+    },
+    "layouts": {
+      "left": {
+        "body": {"frame": 1, "anchorX": 1, "anchorY": 1}
+      },
+      "right": {
+        "body": {"frame": 0, "anchorX": 0, "anchorY": 1}
+      }
+    }
+  },
+
+  "BranchDoor": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0},
+    "canAbandoned": true,
+    "hitPoints": 4000,
+    "adsorb": 0,
+    "noOpacity": true,
+    "border": 2,
+    "body": {"shape": "wallsDoorsShapes", "moveBlock": true, "viewBlock": true},
+    "defaults": {
+      "state": "ClosedDoor",
+      "layout": "left"
+    },
+    "actionConfig": {
+      "NextState": {"action": "NextState", "title": "OpenClose", "accessCheck": true}
+    },
+    "stateConfig": {
+      "ClosedDoor": {"nextState": "OpenDoor"},
+      "OpenDoor": {"nextState": "ClosedDoor"}
+    },
+    "layouts": {
+      "left": {
+        "states": {
+          "ClosedDoor": {"body": {"frame": 5, "anchorX": 0, "anchorY": 0}},
+          "OpenDoor": {"body": {"frame": 4, "anchorX": 0.6, "anchorY": 0.1}}
+        }
+      },
+      "right": {
+        "states": {
+          "ClosedDoor": {"body": {"frame": 4, "anchorX": 1, "anchorY": 0}},
+          "OpenDoor": {"body": {"frame": 5, "anchorX": 0.4, "anchorY": 0.1}}
+        }
+      }
+    }
+  },
+  "BranchFence": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 1},
+    "canAbandoned": true,
+    "hitPoints": 6000,
+    "adsorb": 0,
+    "simpleObject": true,
+    "border": 1,
+    "body": {"shape": "wallsDoorsShapes", "moveBlock": true, "viewBlock": false},
+    "defaults": {"layout": "left"},
+    "layouts": {
+      "left": {
+        "body": {"frame": 1, "anchorX": 1, "anchorY": 1}
+      },
+      "right": {
+        "body": {"frame": 0, "anchorX": 0, "anchorY": 1}
+      }
+    }
+  },
+
+  "BranchFenceGate": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0},
+    "canAbandoned": true,
+    "hitPoints": 4000,
+    "adsorb": 0,
+    "noOpacity": true,
+    "border": 2,
+    "body": {"shape": "wallsDoorsShapes", "moveBlock": true, "viewBlock": false},
+    "defaults": {
+      "state": "ClosedDoor",
+      "layout": "leftUp"
+    },
+    "actionConfig": {
+      "NextState": {"action": "NextState", "title": "OpenClose", "accessCheck": true}
+    },
+    "stateConfig": {
+      "ClosedDoor": {"nextState": "OpenDoor"},
+      "OpenDoor": {"nextState": "ClosedDoor"}
+    },
+    "layouts": {
+      "leftUp": {
+        "states": {
+          "ClosedDoor": {"body": {"frame": 1, "anchorX": 0, "anchorY": 0}},
+          "OpenDoor": {"body": {"frame": 0, "anchorX": 1, "anchorY": 0}}
+        }
+      },
+      "leftDown": {
+        "states": {
+          "ClosedDoor": {"body": {"frame": 1, "anchorX": 0, "anchorY": 0}},
+          "OpenDoor": {"body": {"frame": 0, "anchorX": 0, "anchorY": -1}}
+        }
+      },
+      "rightUp": {
+        "states": {
+          "ClosedDoor": {"body": {"frame": 0, "anchorX": 1, "anchorY": 0}},
+          "OpenDoor": {"body": {"frame": 1, "anchorX": 0, "anchorY": 0}}
+        }
+      },
+      "rightDown": {
+        "states": {
+          "ClosedDoor": {"body": {"frame": 0, "anchorX": 1, "anchorY": 0}},
+          "OpenDoor": {"body": {"frame": 1, "anchorX": 1, "anchorY": -1}}
+        }
+      }
+    }
+  },
+  "BranchCabinComplex": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 1},
+    "canAbandoned": true,
+    "section": [{"typeName": "BranchWall", "layout": "left"},
+      {"typeName": "BranchWall", "layout": "left", "anchorX": 0.5, "anchorY": 0.5},
+      {"typeName": "BranchWall", "layout": "right", "anchorX": -1, "anchorY": 0},
+      {"typeName": "BranchWall", "layout": "right", "anchorX": -1.5, "anchorY": 0.5},
+      {"typeName": "BranchWindow", "layout": "right", "anchorX": -0.5, "anchorY": 1.5},
+      {"typeName": "BranchWall", "layout": "right", "anchorX": 0, "anchorY": 1},
+      {"typeName": "BranchDoorway", "layout": "left", "anchorX": -1, "anchorY": 1},
+      {"typeName": "BranchWall", "layout": "left", "anchorX": -0.5, "anchorY": 1.5},
+      {"typeName": "BranchRoof713", "layout": "left", "anchorX": -1, "anchorY": 0.5},
+      {"typeName": "BranchRoof713", "layout": "right", "anchorX": -0.5, "anchorY": 0},
+      {"typeName": "BranchRoof713", "layout": "left", "anchorX": -0.5, "anchorY": 1},
+      {"typeName": "BranchRoof713", "layout": "right", "anchorX": 0, "anchorY": 0.5}]
+  },
+  "LogPillar": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 1},
+    "canAbandoned": true,
+    "hitPoints": 10000,
+    "adsorb": 500,
+    "simpleObject": true,
+    "body": {"shape": "circle16", "moveBlock": true, "viewBlock": true}
+  },
+
+  "LogWall": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 1},
+    "canAbandoned": true,
+    "hitPoints": 10000,
+    "adsorb": 500,
+    "simpleObject": true,
+    "border": 1,
+    "body": {"shape": "wallsDoorsShapes", "moveBlock": true, "viewBlock": true},
+    "defaults": {
+      "layout": "left"
+    },
+    "layouts": {
+      "left": {
+        "body": {"frame": 1, "anchorX": 1, "anchorY": 1}
+      },
+      "right": {
+        "body": {"frame": 0, "anchorX": 0, "anchorY": 1}
+      }
+    }
+  },
+  "LogWallCorner": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 1},
+    "canAbandoned": true,
+    "hitPoints": 10000,
+    "adsorb": 500,
+    "simpleObject": true,
+    "border": 1,
+    "body": {"shape": "wallsDoorsShapes", "moveBlock": true, "viewBlock": true},
+    "defaults": {
+      "layout": "leftD"
+    },
+    "layouts": {
+      "leftD": {
+        "body": {"frame": 1, "anchorX": 1, "anchorY": 1}
+      },
+      "rightD": {
+        "body": {"frame": 0, "anchorX": 0, "anchorY": 1}
+      },
+      "leftU": {
+        "body": {"frame": 1, "anchorX": 1, "anchorY": 1}
+      },
+      "rightU": {
+        "body": {"frame": 0, "anchorX": 0, "anchorY": 1}
+      }
+    }
+  },
+  "LogDoorway": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 1},
+    "canAbandoned": true,
+    "hitPoints": 10000,
+    "adsorb": 500,
+    "simpleObject": true,
+    "border": 1,
+    "body": {"shape": "wallsDoorsShapes", "moveBlock": true, "viewBlock": true},
+    "defaults": {
+      "layout": "left"
+    },
+    "layouts": {
+      "left": {
+        "body": {"frame": 3, "anchorX": 1, "anchorY": 1}
+      },
+      "right": {
+        "body": {"frame": 2, "anchorX": 0, "anchorY": 1}
+      }
+    }
+  },
+
+  "LogWindow": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 1},
+    "canAbandoned": true,
+    "hitPoints": 10000,
+    "adsorb": 500,
+    "simpleObject": true,
+    "border": 1,
+    "body": {"shape": "wallsDoorsShapes", "moveBlock": true, "viewBlock": false},
+    "defaults": {
+      "layout": "left"
+    },
+    "layouts": {
+      "left": {
+        "body": {"frame": 1, "anchorX": 1, "anchorY": 1}
+      },
+      "right": {
+        "body": {"frame": 0, "anchorX": 0, "anchorY": 1}
+      }
+    }
+  },
+
+  "WoodenDoor": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0},
+    "canAbandoned": true,
+    "hitPoints": 4000,
+    "adsorb": 10,
+    "noOpacity": true,
+    "border": 2,
+    "body": {"shape": "wallsDoorsShapes", "moveBlock": true, "viewBlock": true},
+    "defaults": {
+      "state": "ClosedDoor",
+      "layout": "left"
+    },
+    "actionConfig": {
+      "NextState": {"action": "NextState", "title": "OpenClose", "accessCheck": true}
+    },
+    "stateConfig": {
+      "ClosedDoor": {"nextState": "OpenDoor"},
+      "OpenDoor": {"nextState": "ClosedDoor"}
+    },
+    "layouts": {
+      "left": {
+        "states": {
+          "ClosedDoor": {"body": {"frame": 5, "anchorX": 0, "anchorY": 0}},
+          "OpenDoor": {"body": {"frame": 4, "anchorX": 0.6, "anchorY": 0.1}}
+        }
+      },
+      "right": {
+        "states": {
+          "ClosedDoor": {"body": {"frame": 4, "anchorX": 1, "anchorY": 0}},
+          "OpenDoor": {"body": {"frame": 5, "anchorX": 0.4, "anchorY": 0.1}}
+        }
+      }
+    }
+  },
+
+  "RobustDoor": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0},
+    "canAbandoned": true,
+    "hitPoints": 5000,
+    "adsorb": 15,
+    "noOpacity": true,
+    "border": 2,
+    "body": {"shape": "wallsDoorsShapes", "moveBlock": true, "viewBlock": true},
+    "defaults": {
+      "state": "ClosedDoor",
+      "layout": "left"
+    },
+    "actionConfig": {
+      "NextState": {"action": "NextState", "title": "OpenClose", "accessCheck": true}
+    },
+    "stateConfig": {
+      "ClosedDoor": {"nextState": "OpenDoor"},
+      "OpenDoor": {"nextState": "ClosedDoor"}
+    },
+    "layouts": {
+      "left": {
+        "states": {
+          "ClosedDoor": {"body": {"frame": 5, "anchorX": 0, "anchorY": 0}},
+          "OpenDoor": {"body": {"frame": 4, "anchorX": 0.6, "anchorY": 0.1}}
+        }
+      },
+      "right": {
+        "states": {
+          "ClosedDoor": {"body": {"frame": 4, "anchorX": 1, "anchorY": 0}},
+          "OpenDoor": {"body": {"frame": 5, "anchorX": 0.4, "anchorY": 0.1}}
+        }
+      }
+    }
+  },
+
+  "WoodenIronedDoor": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0},
+    "canAbandoned": true,
+    "hitPoints": 6000,
+    "adsorb": 25,
+    "noOpacity": true,
+    "border": 2,
+    "body": {"shape": "wallsDoorsShapes", "moveBlock": true, "viewBlock": true},
+    "defaults": {
+      "state": "ClosedDoor",
+      "layout": "left"
+    },
+    "actionConfig": {
+      "NextState": {"action": "NextState", "title": "OpenClose", "accessCheck": true}
+    },
+    "stateConfig": {
+      "ClosedDoor": {"nextState": "OpenDoor"},
+      "OpenDoor": {"nextState": "ClosedDoor"}
+    },
+    "layouts": {
+      "left": {
+        "states": {
+          "ClosedDoor": {"body": {"frame": 5, "anchorX": 0, "anchorY": 0}},
+          "OpenDoor": {"body": {"frame": 4, "anchorX": 0.6, "anchorY": 0.1}}
+        }
+      },
+      "right": {
+        "states": {
+          "ClosedDoor": {"body": {"frame": 4, "anchorX": 1, "anchorY": 0}},
+          "OpenDoor": {"body": {"frame": 5, "anchorX": 0.4, "anchorY": 0.1}}
+        }
+      }
+    }
+  },
+
+  "IronDoor": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0},
+    "canAbandoned": true,
+    "hitPoints": 8000,
+    "adsorb": 30,
+    "noOpacity": true,
+    "border": 2,
+    "body": {"shape": "wallsDoorsShapes", "moveBlock": true, "viewBlock": true},
+    "defaults": {
+      "state": "ClosedDoor",
+      "layout": "left"
+    },
+    "actionConfig": {
+      "NextState": {"action": "NextState", "title": "OpenClose", "accessCheck": true}
+    },
+    "stateConfig": {
+      "ClosedDoor": {"nextState": "OpenDoor"},
+      "OpenDoor": {"nextState": "ClosedDoor"}
+    },
+    "layouts": {
+      "left": {
+        "states": {
+          "ClosedDoor": {"body": {"frame": 5, "anchorX": 0, "anchorY": 0}},
+          "OpenDoor": {"body": {"frame": 4, "anchorX": 0.6, "anchorY": 0.1}}
+        }
+      },
+      "right": {
+        "states": {
+          "ClosedDoor": {"body": {"frame": 4, "anchorX": 1, "anchorY": 0}},
+          "OpenDoor": {"body": {"frame": 5, "anchorX": 0.4, "anchorY": 0.1}}
+        }
+      }
+    }
+  },
+
+  "LogFoundation": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "hitPoints": 10000, "adsorb": 0, "simpleObject": true, "changeFloorIndex": -1
+  },
+  "LogCeiling": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "hitPoints": 10000, "adsorb": 0, "simpleObject": true, "changeFloorIndex": 1
+  },
+
+  "LogRoofFlat": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "hitPoints": 10000, "adsorb": 0, "simpleObject": true, "changeFloorIndex": 1,
+    "defaults": {"layout": "ceiling"},
+    "layouts": {
+      "ceiling": {},
+      "low": {},
+      "high": {}
+    }
+  },
+
+  "LogRoofSlope": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "hitPoints": 10000,
+    "adsorb": 0,
+    "simpleObject": true,
+    "changeFloorIndex": 1,
+    "defaults": {"layout": "leftNearLow"},
+    "layouts": {
+      "leftNearLow": {},
+      "leftDistantLow": {},
+      "rightNearLow": {},
+      "rightDistantLow": {}
+    }
+  },
+
+  "LogRoofSlopeHigh": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "hitPoints": 10000,
+    "adsorb": 0,
+    "simpleObject": true,
+    "changeFloorIndex": 1,
+    "defaults": {"layout": "leftNearHigh"},
+    "layouts": {
+      "leftNearHigh": {},
+      "leftDistantHigh": {},
+      "rightNearHigh": {},
+      "rightDistantHigh": {}
+    }
+  },
+
+  "LogRoofCorner": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "hitPoints": 10000,
+    "adsorb": 0,
+    "simpleObject": true,
+    "changeFloorIndex": 1,
+    "defaults": {"layout": "leftNearLow"},
+    "layouts": {
+      "leftNearLow": {},
+      "leftDistantLow": {},
+      "rightNearLow": {},
+      "rightDistantLow": {}
+    }
+  },
+
+  "LogRoofCornerHigh": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "hitPoints": 10000,
+    "adsorb": 0,
+    "simpleObject": true,
+    "changeFloorIndex": 1,
+    "defaults": {"layout": "leftNearHigh"},
+    "layouts": {
+      "leftNearHigh": {},
+      "leftDistantHigh": {},
+      "rightNearHigh": {},
+      "rightDistantHigh": {}
+    }
+  },
+
+  "HTFoundation": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "hitPoints": 10000, "adsorb": 20, "simpleObject": true, "changeFloorIndex": -1
+  },
+  "HTWall": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 1},
+    "canAbandoned": true,
+    "hitPoints": 10000,
+    "adsorb": 4000,
+    "simpleObject": true,
+    "border": 1,
+    "body": {"shape": "wallsDoorsShapes", "moveBlock": true, "viewBlock": true},
+    "defaults": {
+      "layout": "left"
+    },
+    "layouts": {
+      "left": {
+        "body": {"frame": 1, "anchorX": 1, "anchorY": 1}
+      },
+      "right": {
+        "body": {"frame": 0, "anchorX": 0, "anchorY": 1}
+      }
+    }
+  },
+
+  "HTDoorway": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 1},
+    "canAbandoned": true,
+    "hitPoints": 10000,
+    "adsorb": 4000,
+    "simpleObject": true,
+    "border": 1,
+    "body": {"shape": "wallsDoorsShapes", "moveBlock": true, "viewBlock": true},
+    "defaults": {
+      "layout": "left"
+    },
+    "layouts": {
+      "left": {
+        "body": {"frame": 3, "anchorX": 1, "anchorY": 1}
+      },
+      "right": {
+        "body": {"frame": 2, "anchorX": 0, "anchorY": 1}
+      }
+    }
+  },
+
+  "HTWindow": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 1},
+    "canAbandoned": true,
+    "hitPoints": 10000,
+    "adsorb": 4000,
+    "simpleObject": true,
+    "border": 1,
+    "body": {"shape": "wallsDoorsShapes", "moveBlock": true, "viewBlock": false},
+    "defaults": {
+      "layout": "left"
+    },
+    "layouts": {
+      "left": {
+        "body": {"frame": 1, "anchorX": 1, "anchorY": 1}
+      },
+      "right": {
+        "body": {"frame": 0, "anchorX": 0, "anchorY": 1}
+      }
+    }
+  },
+
+  "HTRoof": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "hitPoints": 10000,
+    "adsorb": 0,
+    "simpleObject": true,
+    "changeFloorIndex": 1,
+    "defaults": {"layout": "leftNearLow"},
+    "layouts": {
+      "leftNearLow": {},
+      "leftDistantLow": {},
+      "leftNearHigh": {},
+      "leftDistantHigh": {}
+    }
+  },
+
+  "WoodenFence": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 1},
+    "canAbandoned": true,
+    "hitPoints": 5000,
+    "adsorb": 10,
+    "simpleObject": true,
+    "border": 1,
+    "body": {"shape": "wallsDoorsShapes", "moveBlock": true, "viewBlock": false},
+    "defaults": {"layout": "left"},
+    "layouts": {
+      "left": {
+        "body": {"frame": 1, "anchorX": 1, "anchorY": 1}
+      },
+      "right": {
+        "body": {"frame": 0, "anchorX": 0, "anchorY": 1}
+      }
+    }
+  },
+
+  "WoodenFenceSection": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 1},
+    "canAbandoned": true,
+    "defaults": {"layout": "left"},
+    "layouts": {
+      "left": {
+        "section": [{"typeName": "WoodenFence", "layout": "left"},
+          {"typeName": "WoodenFence", "layout": "left", "anchorX": -0.5, "anchorY": -0.5},
+          {"typeName": "WoodenFence", "layout": "left", "anchorX": 0.5, "anchorY": 0.5}]
+      },
+      "right": {
+        "section": [{"typeName": "WoodenFence", "layout": "right"},
+          {"typeName": "WoodenFence", "layout": "right", "anchorX": -0.5, "anchorY": 0.5},
+          {"typeName": "WoodenFence", "layout": "right", "anchorX": 0.5, "anchorY": -0.5}]
+      }
+    }
+  },
+
+  "FenceGate": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0},
+    "canAbandoned": true,
+    "hitPoints": 4000,
+    "adsorb": 10,
+    "noOpacity": true,
+    "border": 2,
+    "body": {"shape": "wallsDoorsShapes", "moveBlock": true, "viewBlock": false},
+    "defaults": {
+      "state": "ClosedDoor",
+      "layout": "leftUp"
+    },
+    "actionConfig": {
+      "NextState": {"action": "NextState", "title": "OpenClose", "accessCheck": true}
+    },
+    "stateConfig": {
+      "ClosedDoor": {"nextState": "OpenDoor"},
+      "OpenDoor": {"nextState": "ClosedDoor"}
+    },
+    "layouts": {
+      "leftUp": {
+        "states": {
+          "ClosedDoor": {"body": {"frame": 1, "anchorX": 0, "anchorY": 0}},
+          "OpenDoor": {"body": {"frame": 0, "anchorX": 1, "anchorY": 0}}
+        }
+      },
+      "leftDown": {
+        "states": {
+          "ClosedDoor": {"body": {"frame": 1, "anchorX": 0, "anchorY": 0}},
+          "OpenDoor": {"body": {"frame": 0, "anchorX": 0, "anchorY": -1}}
+        }
+      },
+      "rightUp": {
+        "states": {
+          "ClosedDoor": {"body": {"frame": 0, "anchorX": 1, "anchorY": 0}},
+          "OpenDoor": {"body": {"frame": 1, "anchorX": 0, "anchorY": 0}}
+        }
+      },
+      "rightDown": {
+        "states": {
+          "ClosedDoor": {"body": {"frame": 0, "anchorX": 1, "anchorY": 0}},
+          "OpenDoor": {"body": {"frame": 1, "anchorX": 1, "anchorY": -1}}
+        }
+      }
+    }
+  },
+
+  "FenceGateSection": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0},
+    "canAbandoned": true,
+    "defaults": {"layout": "left"},
+    "layouts": {
+      "left": {
+        "section": [{"typeName": "FenceGate", "layout": "leftUp"},
+          {"typeName": "FenceGate", "layout": "leftDown", "anchorX": 0.5, "anchorY": 0.5}
+        ]
+      },
+      "right": {
+        "section": [{"typeName": "FenceGate", "layout": "rightUp"},
+          {"typeName": "FenceGate", "layout": "rightDown", "anchorX": -0.5, "anchorY": 0.5}
+        ]
+      }
+    }
+  },
+
+  "Palisade": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 1},
+    "canAbandoned": true,
+    "hitPoints": 15000,
+    "adsorb": 2000,
+    "simpleObject": true,
+    "border": 1,
+    "body": {"shape": "wallsDoorsShapes", "moveBlock": true, "viewBlock": true},
+    "defaults": {"layout": "left"},
+    "layouts": {
+      "left": {
+        "body": {"frame": 1, "anchorX": 1, "anchorY": 1}
+      },
+      "right": {
+        "body": {"frame": 0, "anchorX": 0, "anchorY": 1}
+      }
+    }
+  },
+  "StoneFence": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 1},
+    "canAbandoned": true,
+    "hitPoints": 15000,
+    "adsorb": 4500,
+    "simpleObject": true,
+    "border": 1,
+    "body": {"shape": "wallsDoorsShapes", "moveBlock": true, "viewBlock": true},
+    "defaults": {"layout": "left"},
+    "layouts": {
+      "left": {
+        "body": {"frame": 1, "anchorX": 1, "anchorY": 1}
+      },
+      "right": {
+        "body": {"frame": 0, "anchorX": 0, "anchorY": 1}
+      }
+    }
+  },
+  "StoneSlit": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 1},
+    "canAbandoned": true,
+    "hitPoints": 10000,
+    "adsorb": 4500,
+    "simpleObject": true,
+    "border": 1,
+    "body": {"shape": "wallsDoorsShapes", "moveBlock": true, "viewBlock": false},
+    "defaults": {"layout": "left"},
+    "layouts": {
+      "left": {
+        "body": {"frame": 1, "anchorX": 1, "anchorY": 1}
+      },
+      "right": {
+        "body": {"frame": 0, "anchorX": 0, "anchorY": 1}
+      }
+    }
+  },
+  "StoneBlock": {
+    "body": {"shape": "tileOne", "frame": 0, "moveBlock": true, "viewBlock": true},
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "hitPoints": 25000,
+    "adsorb": 4500,
+    "simpleObject": true
+  },
+  "StoneSlope": {
+    "body": {"shape": "tileOne", "frame": 0, "moveBlock": true, "viewBlock": true},
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "hitPoints": 20000,
+    "adsorb": 4500,
+    "simpleObject": true,
+    "defaults": {"layout": "left"},
+    "layouts": {
+      "left": {},
+      "right": {}
+    }
+  },
+  "BrickBlock": {
+    "body": {"shape": "tileOne", "frame": 0, "moveBlock": true, "viewBlock": true},
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "hitPoints": 25000,
+    "adsorb": 8000,
+    "simpleObject": true,
+    "defaults": {"layout": "left"},
+    "layouts": {
+      "left": {},
+      "right": {},
+      "empty": {}
+    }
+  },
+  "BrickTower": {
+    "body": {"shape": "tileOne", "frame": 0, "moveBlock": true, "viewBlock": true},
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "hitPoints": 25000,
+    "adsorb": 8000,
+    "simpleObject": true,
+    "defaults": {"layout": "full"},
+    "layouts": {
+      "full": {},
+      "empty": {}
+    }
+  },
+  "BrickSlope": {
+    "body": {"shape": "tileOne", "frame": 0, "moveBlock": true, "viewBlock": true},
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "hitPoints": 20000,
+    "adsorb": 8000,
+    "simpleObject": true,
+    "defaults": {"layout": "left"},
+    "layouts": {
+      "left": {},
+      "right": {}
+    }
+  },
+
+  "BarbicanTower": {
+    "body": {"shape": "tileBB", "moveBlock": true, "viewBlock": true},
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "hitPoints": 30000,
+    "adsorb": 8000,
+    "simpleObject": true,
+    "defaults": {"layout": "leftUp"},
+    "layouts": {
+      "leftUp": {"body": {"frame": 2, "anchorX": 0.333, "anchorY": 0.667}},
+      "leftDown": {"body": {"frame": 1, "anchorX": 0.333, "anchorY": 0.667}},
+      "rightUp": {"body": {"frame": 3, "anchorX": 0.667, "anchorY": 0.667}},
+      "rightDown": {"body": {"frame": 0, "anchorX": 0.667, "anchorY": 0.667}}
+    }
+  },
+
+  "BarbicanComplex": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "defaults": {"layout": "left"},
+    "layouts": {
+      "left": {
+        "section": [{"typeName": "BarbicanTower", "layout": "leftUp"},
+          {"typeName": "BarbicanTower", "layout": "leftDown", "anchorX": -1.5, "anchorY": 1.5}]
+      },
+      "right": {
+        "section": [{"typeName": "BarbicanTower", "layout": "rightUp"},
+          {"typeName": "BarbicanTower", "layout": "rightDown", "anchorX": 1.5, "anchorY": 1.5}]
+      }
+    }
+  },
+
+  "IronGrate": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0},
+    "canAbandoned": true,
+    "hitPoints": 10000,
+    "adsorb": 4900,
+    "noOpacity": true,
+    "border": 1,
+    "body": {"shape": "gates2", "moveBlock": true, "viewBlock": false},
+    "defaults": {
+      "state": "ClosedDoor",
+      "layout": "left"
+    },
+    "actionConfig": {
+      "NextState": {"action": "NextState", "title": "OpenClose", "accessCheck": true}
+    },
+    "stateConfig": {
+      "ClosedDoor": {"nextState": "OpenDoor"},
+      "OpenDoor": {"nextState": "ClosedDoor"}
+    },
+    "layouts": {
+      "left": {
+        "states": {
+          "ClosedDoor": {"body": {"frame": 0, "anchorX": 0, "anchorY": 0}},
+          "OpenDoor": {"body": {"frame": 0, "anchorX": 0, "anchorY": 0, "moveBlock": false}}
+        }
+      },
+      "right": {
+        "states": {
+          "ClosedDoor": {"body": {"frame": 1, "anchorX": 1, "anchorY": 0}},
+          "OpenDoor": {"body": {"frame": 1, "anchorX": 1, "anchorY": 0, "moveBlock": false}}
+        }
+      }
+    }
+  },
+  "Drawbridge": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0},
+    "canAbandoned": true,
+    "hitPoints": 10000,
+    "adsorb": 4900,
+    "noOpacity": true,
+    "border": 1,
+    "body": {"shape": "gates2", "moveBlock": true, "viewBlock": true},
+    "defaults": {
+      "state": "ClosedDoor",
+      "layout": "leftOne"
+    },
+    "actionConfig": {
+      "NextState": {"action": "NextState", "title": "OpenClose", "accessCheck": true}
+    },
+    "stateConfig": {
+      "ClosedDoor": {"nextState": "OpenDoor"},
+      "OpenDoor": {"nextState": "ClosedDoor"}
+    },
+    "layouts": {
+      "leftOne": {
+        "states": {
+          "ClosedDoor": {"body": {"frame": 0, "anchorX": -0.1, "anchorY": -0.1}},
+          "OpenDoor": {"body": {"frame": 0, "anchorX": -0.1, "anchorY": -0.1, "moveBlock": false, "viewBlock": false}}
+        }
+      },
+      "leftTwo": {
+        "states": {
+          "ClosedDoor": {"body": {"frame": 0, "anchorX": -0.1, "anchorY": -0.1}},
+          "OpenDoor": {"body": {"frame": 0, "anchorX": -0.1, "anchorY": -0.1, "moveBlock": false, "viewBlock": false}}
+        }
+      },
+      "rightOne": {
+        "states": {
+          "ClosedDoor": {"body": {"frame": 1, "anchorX": 1.1, "anchorY": -0.1}},
+          "OpenDoor": {"body": {"frame": 1, "anchorX": 1.1, "anchorY": -0.1, "moveBlock": false, "viewBlock": false}}
+        }
+      },
+      "rightTwo": {
+        "states": {
+          "ClosedDoor": {"body": {"frame": 1, "anchorX": 1.1, "anchorY": -0.1}},
+          "OpenDoor": {"body": {"frame": 1, "anchorX": 1.1, "anchorY": -0.1, "moveBlock": false, "viewBlock": false}}
+        }
+      }
+    }
+  },
+
+  "StoneArch": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "hitPoints": 15000,
+    "adsorb": 0,
+    "simpleObject": true,
+    "changeFloorIndex": 1,
+    "defaults": {"layout": "left"},
+    "layouts": {
+      "left": {},
+      "right": {}
+    }
+  },
+  "StoneArchComplex": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "defaults": {"layout": "left"},
+    "layouts": {
+      "left": {
+        "section": [{"typeName": "StoneArch", "layout": "left"},
+          {"typeName": "StoneBlock", "anchorX": -0.5, "anchorY": -0.5},
+          {"typeName": "StoneBlock", "anchorX": 1, "anchorY": 1}]
+      },
+      "right": {
+        "section": [{"typeName": "StoneArch", "layout": "right"},
+          {"typeName": "StoneBlock", "anchorX": 0.5, "anchorY": -0.5},
+          {"typeName": "StoneBlock", "anchorX": -1, "anchorY": 1}]
+      }
+    }
+  },
+  "PalisadeSection": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 1},
+    "canAbandoned": true,
+    "defaults": {"layout": "left"},
+    "layouts": {
+      "left": {
+        "section": [{"typeName": "Palisade", "layout": "left"},
+          {"typeName": "Palisade", "layout": "left", "anchorX": -0.5, "anchorY": -0.5},
+          {"typeName": "Palisade", "layout": "left", "anchorX": 0.5, "anchorY": 0.5}]
+      },
+      "right": {
+        "section": [{"typeName": "Palisade", "layout": "right"},
+          {"typeName": "Palisade", "layout": "right", "anchorX": -0.5, "anchorY": 0.5},
+          {"typeName": "Palisade", "layout": "right", "anchorX": 0.5, "anchorY": -0.5}]
+      }
+    }
+  },
+
+  "PalisadeGate": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0},
+    "canAbandoned": true,
+    "hitPoints": 8000,
+    "adsorb": 2000,
+    "border": 2,
+    "body": {"shape": "wallsDoorsShapes", "moveBlock": true, "viewBlock": true},
+    "defaults": {
+      "state": "ClosedDoor",
+      "layout": "leftUp"
+    },
+    "actionConfig": {
+      "NextState": {"action": "NextState", "title": "OpenClose", "accessCheck": true}
+    },
+    "stateConfig": {
+      "ClosedDoor": {"nextState": "OpenDoor"},
+      "OpenDoor": {"nextState": "ClosedDoor"}
+    },
+    "layouts": {
+      "leftUp": {
+        "states": {
+          "ClosedDoor": {"body": {"frame": 1, "anchorX": 0, "anchorY": 0}},
+          "OpenDoor": {"body": {"frame": 0, "anchorX": 1, "anchorY": 0}}
+        }
+      },
+      "leftDown": {
+        "states": {
+          "ClosedDoor": {"body": {"frame": 1, "anchorX": 0, "anchorY": 0}},
+          "OpenDoor": {"body": {"frame": 0, "anchorX": 0, "anchorY": -1}}
+        }
+      },
+      "rightUp": {
+        "states": {
+          "ClosedDoor": {"body": {"frame": 0, "anchorX": 1, "anchorY": 0}},
+          "OpenDoor": {"body": {"frame": 1, "anchorX": 0, "anchorY": 0}}
+        }
+      },
+      "rightDown": {
+        "states": {
+          "ClosedDoor": {"body": {"frame": 0, "anchorX": 1, "anchorY": 0}},
+          "OpenDoor": {"body": {"frame": 1, "anchorX": 1, "anchorY": -1}}
+        }
+      }
+    }
+  },
+  "PalisadeGateSection": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0},
+    "canAbandoned": true,
+    "defaults": {"layout": "left"},
+    "layouts": {
+      "left": {
+        "section": [{"typeName": "PalisadeGate", "layout": "leftUp"},
+          {"typeName": "PalisadeGate", "layout": "leftDown", "anchorX": 0.5, "anchorY": 0.5}
+        ]
+      },
+      "right": {
+        "section": [{"typeName": "PalisadeGate", "layout": "rightUp"},
+          {"typeName": "PalisadeGate", "layout": "rightDown", "anchorX": -0.5, "anchorY": 0.5}
+        ]
+      }
+    }
+  },
+
+  "IronedGate": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0},
+    "canAbandoned": true,
+    "hitPoints": 10000,
+    "adsorb": 4500,
+    "border": 2,
+    "body": {"shape": "wallsDoorsShapes", "moveBlock": true, "viewBlock": true},
+    "defaults": {
+      "state": "ClosedDoor",
+      "layout": "leftUp"
+    },
+    "actionConfig": {
+      "NextState": {"action": "NextState", "title": "OpenClose", "accessCheck": true}
+    },
+    "stateConfig": {
+      "ClosedDoor": {"nextState": "OpenDoor"},
+      "OpenDoor": {"nextState": "ClosedDoor"}
+    },
+    "layouts": {
+      "leftUp": {
+        "states": {
+          "ClosedDoor": {"body": {"frame": 1, "anchorX": 0, "anchorY": 0}},
+          "OpenDoor": {"body": {"frame": 0, "anchorX": 1, "anchorY": 0}}
+        }
+      },
+      "leftDown": {
+        "states": {
+          "ClosedDoor": {"body": {"frame": 1, "anchorX": 0, "anchorY": 0}},
+          "OpenDoor": {"body": {"frame": 0, "anchorX": 0, "anchorY": -1}}
+        }
+      },
+      "rightUp": {
+        "states": {
+          "ClosedDoor": {"body": {"frame": 0, "anchorX": 1, "anchorY": 0}},
+          "OpenDoor": {"body": {"frame": 1, "anchorX": 0, "anchorY": 0}}
+        }
+      },
+      "rightDown": {
+        "states": {
+          "ClosedDoor": {"body": {"frame": 0, "anchorX": 1, "anchorY": 0}},
+          "OpenDoor": {"body": {"frame": 1, "anchorX": 1, "anchorY": -1}}
+        }
+      }
+    }
+  },
+  "IronedGateSection": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0},
+    "canAbandoned": true,
+    "defaults": {"layout": "left"},
+    "layouts": {
+      "left": {
+        "section": [
+          {"typeName": "IronedGate", "layout": "leftUp"},
+          {"typeName": "IronedGate", "layout": "leftDown", "anchorX": 0.5, "anchorY": 0.5}
+        ]
+      },
+      "right": {
+        "section": [
+          {"typeName": "IronedGate", "layout": "rightUp"},
+          {"typeName": "IronedGate", "layout": "rightDown", "anchorX": -0.5, "anchorY": 0.5}
+        ]
+      }
+    }
+  },
+  "FullIronGate": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0},
+    "canAbandoned": true,
+    "hitPoints": 12000,
+    "adsorb": 4800,
+    "border": 2,
+    "body": {"shape": "wallsDoorsShapes", "moveBlock": true, "viewBlock": true},
+    "defaults": {
+      "state": "ClosedDoor",
+      "layout": "leftUp"
+    },
+    "actionConfig": {
+      "NextState": {"action": "NextState", "title": "OpenClose", "accessCheck": true}
+    },
+    "stateConfig": {
+      "ClosedDoor": {"nextState": "OpenDoor"},
+      "OpenDoor": {"nextState": "ClosedDoor"}
+    },
+    "layouts": {
+      "leftUp": {
+        "states": {
+          "ClosedDoor": {"body": {"frame": 1, "anchorX": 0, "anchorY": 0}},
+          "OpenDoor": {"body": {"frame": 0, "anchorX": 1, "anchorY": 0}}
+        }
+      },
+      "leftDown": {
+        "states": {
+          "ClosedDoor": {"body": {"frame": 1, "anchorX": 0, "anchorY": 0}},
+          "OpenDoor": {"body": {"frame": 0, "anchorX": 0, "anchorY": -1}}
+        }
+      },
+      "rightUp": {
+        "states": {
+          "ClosedDoor": {"body": {"frame": 0, "anchorX": 1, "anchorY": 0}},
+          "OpenDoor": {"body": {"frame": 1, "anchorX": 0, "anchorY": 0}}
+        }
+      },
+      "rightDown": {
+        "states": {
+          "ClosedDoor": {"body": {"frame": 0, "anchorX": 1, "anchorY": 0}},
+          "OpenDoor": {"body": {"frame": 1, "anchorX": 1, "anchorY": -1}}
+        }
+      }
+    }
+  },
+  "FullIronGateSection": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0},
+    "canAbandoned": true,
+    "defaults": {"layout": "left"},
+    "layouts": {
+      "left": {
+        "section": [
+          {"typeName": "FullIronGate", "layout": "leftUp"},
+          {"typeName": "FullIronGate", "layout": "leftDown", "anchorX": 0.5, "anchorY": 0.5}
+        ]
+      },
+      "right": {
+        "section": [
+          {"typeName": "FullIronGate", "layout": "rightUp"},
+          {"typeName": "FullIronGate", "layout": "rightDown", "anchorX": -0.5, "anchorY": 0.5}
+        ]
+      }
+    }
+  },
+  "SteelGate": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0},
+    "canAbandoned": true,
+    "hitPoints": 18000,
+    "adsorb": 9000,
+    "border": 2,
+    "body": {"shape": "wallsDoorsShapes", "moveBlock": true, "viewBlock": true},
+    "defaults": {
+      "state": "ClosedDoor",
+      "layout": "leftUp"
+    },
+    "actionConfig": {
+      "NextState": {"action": "NextState", "title": "OpenClose", "accessCheck": true}
+    },
+    "stateConfig": {
+      "ClosedDoor": {"nextState": "OpenDoor"},
+      "OpenDoor": {"nextState": "ClosedDoor"}
+    },
+    "layouts": {
+      "leftUp": {
+        "states": {
+          "ClosedDoor": {"body": {"frame": 1, "anchorX": 0, "anchorY": 0}},
+          "OpenDoor": {"body": {"frame": 0, "anchorX": 1, "anchorY": 0}}
+        }
+      },
+      "leftDown": {
+        "states": {
+          "ClosedDoor": {"body": {"frame": 1, "anchorX": 0, "anchorY": 0}},
+          "OpenDoor": {"body": {"frame": 0, "anchorX": 0, "anchorY": -1}}
+        }
+      },
+      "rightUp": {
+        "states": {
+          "ClosedDoor": {"body": {"frame": 0, "anchorX": 1, "anchorY": 0}},
+          "OpenDoor": {"body": {"frame": 1, "anchorX": 0, "anchorY": 0}}
+        }
+      },
+      "rightDown": {
+        "states": {
+          "ClosedDoor": {"body": {"frame": 0, "anchorX": 1, "anchorY": 0}},
+          "OpenDoor": {"body": {"frame": 1, "anchorX": 1, "anchorY": -1}}
+        }
+      }
+    }
+  },
+  "SteelGateSection": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0},
+    "canAbandoned": true,
+    "defaults": {"layout": "left"},
+    "layouts": {
+      "left": {
+        "section": [
+          {"typeName": "SteelGate", "layout": "leftUp"},
+          {"typeName": "SteelGate", "layout": "leftDown", "anchorX": 0.5, "anchorY": 0.5}
+        ]
+      },
+      "right": {
+        "section": [
+          {"typeName": "SteelGate", "layout": "rightUp"},
+          {"typeName": "SteelGate", "layout": "rightDown", "anchorX": -0.5, "anchorY": 0.5}
+        ]
+      }
+    }
+  },
+
+  "Roost": {
+    "body": {"shape": "circle72", "moveBlock": true, "viewBlock": true},
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "hitPoints": 2000,
+    "adsorb": 0,
+    "tool": {
+      "interval": 240000,
+      "autoProduction": true,
+      "resources": {
+        "GrainWheat": {"amount": 5}
+      }
+    },
+    "sources": {
+      "slots": 1
+    },
+    "products": {
+      "slots": 5
+    },
+    "resources": {
+      "slots": 3
+    },
+    "actionConfig": {
+      "OpenContainer": {"action": "OpenContainer", "title": "Open"}
+    },
+    "defaults": {
+      "state": "Normal", "layout": "left"
+    },
+    "layouts": {
+      "left": {},
+      "right": {}
+    },
+    "stateConfig": {
+      "Normal": {"nextState": "Production"},
+      "Production": {"nextState": "Normal"}
+    }
+  },
+
+  "HenHouse712": {
+    "body": {"shape": "tileTowByTowIn", "frame": 0, "moveBlock": true, "viewBlock": true},
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0},
+    "canAbandoned": true,
+    "hitPoints": 2000,
+    "adsorb": 0,
+    "tool": {
+      "interval": 240000,
+      "autoProduction": true,
+      "resources": {
+        "GrainWheat": {"amount": 10}
+      }
+    },
+    "sources": {
+      "slots": 4
+    },
+    "products": {
+      "slots": 5
+    },
+    "resources": {
+      "slots": 5
+    },
+    "actionConfig": {
+      "OpenContainer": {"action": "OpenContainer", "title": "Open"}
+    },
+    "defaults": {
+      "state": "Normal", "layout": "left"
+    },
+    "layouts": {
+      "left": {},
+      "right": {}
+    },
+    "stateConfig": {
+      "Normal": {"nextState": "Production"},
+      "Production": {"nextState": "Normal"}
+    }
+  },
+
+  "HTMill": {
+    "body": {"shape": "tileTowByTowIn", "frame": 0, "moveBlock": true, "viewBlock": true},
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0},
+    "canAbandoned": true,
+    "hitPoints": 5000,
+    "adsorb": 0,
+    "tool": {
+      "interval": 25000,
+      "autoProduction": true
+    },
+    "sources": {
+      "slots": 5
+    },
+    "products": {
+      "slots": 5
+    },
+    "actionConfig": {
+      "OpenContainer": {"action": "OpenContainer", "title": "Open"}
+    },
+    "defaults": {
+      "state": "Normal"
+    },
+    "stateConfig": {
+      "Normal": {"nextState": "Production"},
+      "Production": {"nextState": "Normal"}
+    }
+  },
+
+  "Campfire": {
+    "body": {"shape": "circle56", "moveBlock": true, "viewBlock": false},
+    "noOpacity": true,
+    "hitPoints": 100,
+    "adsorb": 0,
+    "tool": {
+      "interval": 7000,
+      "resources": {
+        "Wood": {"amount": 1}
+      }
+    },
+    "sources": {
+      "slots": 3
+    },
+    "resources": {
+      "withItems": {"Wood": {"amount": 3}},
+      "slots": 3
+    },
+    "products": {
+      "slots": 5
+    },
+    "defaults": {
+      "state": "Normal"
+    },
+    "actionConfig": {
+      "Fire": {"action": "NextState", "title": "Fire", "onState": "Normal"},
+      "Extinguish": {"action": "NextState", "title": "Extinguish", "onState": "Production"},
+      "OpenContainer": {"action": "OpenContainer", "title": "Open"}
+    },
+    "productionEffect": "warm",
+    "stateConfig": {
+      "Normal": {"nextState": "Production"},
+      "Production": {"nextState": "Normal"}
+    }
+  },
+  "SmallWoodenBasket": {
+    "body": {"shape": "circle48", "moveBlock": true, "viewBlock": false},
+    "canAbandoned": true,
+    "hitPoints": 500,
+    "adsorb": 0,
+    "container": {"slots": 5},
+    "actionConfig": {
+      "OpenContainer": {"action": "OpenContainer", "title": "Open"}
+    }
+  },
+
+  "LargeWoodenBox": {
+    "body": {"shape": "circle48", "moveBlock": true, "viewBlock": false},
+    "canAbandoned": true,
+    "hitPoints": 1000,
+    "adsorb": 0,
+    "container": {"slots": 10},
+    "defaults": {"layout": "left"},
+    "layouts": {
+      "left": {},
+      "right": {}
+    },
+    "actionConfig": {
+      "OpenContainer": {"action": "OpenContainer", "title": "Open"}
+    }
+  },
+
+  "WoodenShed": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "body": {"shape": "tile08by15", "moveBlock": true, "viewBlock": true},
+    "canAbandoned": true,
+    "hitPoints": 2000,
+    "adsorb": 0,
+    "container": {"slots": 20},
+    "defaults": {"layout": "left"},
+    "layouts": {
+      "left": {
+        "body": {"frame": 1, "anchorX": 0.75, "anchorY": 0.33}
+      },
+      "right": {
+        "body": {"frame": 0, "anchorX": 0.25, "anchorY": 0.33}
+      }
+    },
+    "actionConfig": {
+      "OpenContainer": {"action": "OpenContainer", "title": "Open"}
+    }
+  },
+  "LogShed": {
+    "body": {"shape": "tileTowByTowIn", "frame": 0, "moveBlock": true, "viewBlock": true},
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0},
+    "canAbandoned": true,
+    "hitPoints": 8000,
+    "adsorb": 0,
+    "container": {"slots": 80},
+    "defaults": {"layout": "left"},
+    "layouts": {
+      "left": {},
+      "right": {}
+    },
+    "actionConfig": {
+      "OpenContainer": {"action": "OpenContainer", "title": "Open"}
+    }
+  },
+  "StoneShed": {
+    "body": {"shape": "tileTowByTowIn", "frame": 0, "moveBlock": true, "viewBlock": true},
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0},
+    "canAbandoned": true,
+    "hitPoints": 12000,
+    "adsorb": 0,
+    "container": {"slots": 120},
+    "defaults": {"layout": "left"},
+    "layouts": {
+      "left": {},
+      "right": {}
+    },
+    "actionConfig": {
+      "OpenContainer": {"action": "OpenContainer", "title": "Open"}
+    }
+  },
+
+  "Well": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "hitPoints": 2000,
+    "adsorb": 0,
+    "body": {"shape": "circle72", "moveBlock": true, "viewBlock": true},
+    "defaults": {"layout": "left"},
+    "layouts": {
+      "left": {},
+      "right": {}
+    },
+    "actionConfig": {"Gather": {"action": "Gather", "gatherTool": "bucket", "title": "Gather"}},
+    "resGroups": {
+      "bucket": {
+        "resTypes": [{"typeName": "WoodenBucketWater", "amount": "unlimited"}],
+        "gatherTime": 10000
+      }
+    }
+  },
+
+  "TownFountain": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "hitPoints": 9000,
+    "adsorb": 0,
+    "body": {"shape": "circle150", "moveBlock": true, "viewBlock": false},
+    "defaults": {"layout": "left"},
+    "layouts": {
+      "left": {},
+      "right": {}
+    },
+    "actionConfig": {"Gather": {"action": "Gather", "gatherTool": "bucket", "title": "Gather"}},
+    "resGroups": {
+      "bucket": {
+        "resTypes": [{"typeName": "WoodenBucketWater", "amount": "unlimited"}],
+        "gatherTime": 6000
+      }
+    }
+  },
+
+  "HunterBed": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0},
+    "canAbandoned": true,
+    "hitPoints": 1000,
+    "adsorb": 0,
+    "body": {"shape": "tileOneAndHalf", "moveBlock": true, "viewBlock": false},
+    "defaults": {"layout": "left"},
+    "layouts": {
+      "left": {
+        "body": {"frame": 0, "anchorX": 0.4, "anchorY": 0}
+      },
+      "right": {
+        "body": {"frame": 1, "anchorX": 0.6, "anchorY": 0}
+      }
+    },
+    "actionConfig": {
+      "Sleep": {
+        "action": "Sleep",
+        "title": "Sleep",
+        "warning": "changeReviveSpot",
+        "accessCheck": true,
+        "addHealthOnRevive": 20
+      }
+    }
+  },
+  "Bed": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0},
+    "canAbandoned": true,
+    "hitPoints": 2000,
+    "adsorb": 0,
+    "body": {"shape": "tileOneAndHalf", "moveBlock": true, "viewBlock": false},
+    "defaults": {"layout": "left"},
+    "layouts": {
+      "left": {
+        "body": {"frame": 0, "anchorX": 0.4, "anchorY": 0}
+      },
+      "right": {
+        "body": {"frame": 1, "anchorX": 0.6, "anchorY": 0}
+      }
+    },
+    "actionConfig": {
+      "Sleep": {
+        "action": "Sleep",
+        "title": "Sleep",
+        "warning": "changeReviveSpot",
+        "accessCheck": true,
+        "addHealthOnRevive": 30
+      }
+    }
+  },
+
+  "ClaimMarker": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "noOpacity": true,
+    "simpleObject": true,
+    "defaults": {"layout": "up"},
+    "layouts": {
+      "up": {},
+      "left": {},
+      "down": {},
+      "right": {}
+    }
+  },
+
+
+  "DominiumBasic": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "body": {"shape": "circle40", "moveBlock": true, "viewBlock": true},
+    "hitPoints": 10000,
+    "adsorb": 20000,
+    "claimConfig": {"halfSize": 2},
+    "addPlayerNameTo": "DominiumName",
+    "ownerUseCheck": true,
+    "canBeMoved": true,
+    "actionConfig": {
+      "ClaimManage": {"action": "ClaimManage", "title": "ClaimManage"},
+      "ClaimMove": {"action": "ClaimMove", "title": "ClaimMove"},
+      "Upgrade": {"action": "Upgrade", "title": "ClaimUpgrade", "upgradeToType": "DominiumSmall"}
+    }
+  },
+
+  "DominiumSmall": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "body": {"shape": "circle64", "moveBlock": true, "viewBlock": true},
+    "hitPoints": 15000,
+    "adsorb": 20000,
+    "claimConfig": {"halfSize": 4},
+    "addPlayerNameTo": "DominiumName",
+    "ownerUseCheck": true,
+    "canBeMoved": true,
+    "actionConfig": {
+      "ClaimManage": {"action": "ClaimManage", "title": "ClaimManage"},
+      "ClaimMove": {"action": "ClaimMove", "title": "ClaimMove"},
+      "Upgrade": {"action": "Upgrade", "title": "ClaimUpgrade", "upgradeToType": "DominiumMedium"}
+    }
+  },
+
+  "DominiumMedium": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "body": {"shape": "circle64", "moveBlock": true, "viewBlock": true},
+    "hitPoints": 30000,
+    "adsorb": 20000,
+    "claimConfig": {"halfSize": 7},
+    "addPlayerNameTo": "DominiumName",
+    "ownerUseCheck": true,
+    "canBeMoved": true,
+    "actionConfig": {
+      "ClaimManage": {"action": "ClaimManage", "title": "ClaimManage"},
+      "ClaimMove": {"action": "ClaimMove", "title": "ClaimMove"},
+      "Upgrade": {"action": "Upgrade", "title": "ClaimUpgrade", "upgradeToType": "DominiumLarge"}
+    }
+  },
+
+  "DominiumLarge": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "body": {"shape": "circle72", "moveBlock": true, "viewBlock": true},
+    "hitPoints": 50000,
+    "adsorb": 20000,
+    "claimConfig": {"halfSize": 11},
+    "addPlayerNameTo": "DominiumName",
+    "ownerUseCheck": true,
+    "canBeMoved": true,
+    "actionConfig": {
+      "ClaimManage": {"action": "ClaimManage", "title": "ClaimManage"},
+      "ClaimMove": {"action": "ClaimMove", "title": "ClaimMove"},
+      "Upgrade": { "action": "Upgrade", "title": "ClaimUpgrade", "upgradeToType": "DominiumNoble"}
+    }
+  },
+
+  "DominiumNoble": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "body": {"shape": "circle72", "moveBlock": true, "viewBlock": true},
+    "hitPoints": 70000,
+    "adsorb": 20000,
+    "claimConfig": {"halfSize": 14},
+    "addPlayerNameTo": "DominiumName",
+    "ownerUseCheck": true,
+    "canBeMoved": true,
+    "actionConfig": {
+      "ClaimManage": {"action": "ClaimManage", "title": "ClaimManage"},
+      "ClaimMove": {"action": "ClaimMove", "title": "ClaimMove"}
+    }
+  },
+
+  "BoughBed": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "body": {"shape": "circle64", "moveBlock": false, "viewBlock": false},
+    "noOpacity": true,
+    "hitPoints": 500,
+    "adsorb": 0,
+    "defaults": {"layout": "left"},
+    "layouts": {
+      "left": {},
+      "right": {}
+    },
+    "actionConfig": {
+      "Sleep": {"action": "Sleep", "title": "Sleep", "warning": "changeReviveSpot", "accessCheck": true}
+    }
+  },
+
+  "KipBench": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "body": {"shape": "circle64", "moveBlock": false, "viewBlock": false},
+    "noOpacity": true,
+    "hitPoints": 500,
+    "adsorb": 0,
+    "defaults": {"layout": "left"},
+    "layouts": {
+      "left": {},
+      "right": {}
+    },
+    "actionConfig": {
+      "Sleep": {
+        "action": "Sleep",
+        "title": "Sleep",
+        "warning": "changeReviveSpot",
+        "accessCheck": true,
+        "addHealthOnRevive": 10
+      }
+    }
+  },
+
+  "Scarecrow": {
+    "canAbandoned": true,
+    "hitPoints": 2000,
+    "adsorb": 0,
+    "simpleObject": true,
+    "body": {"shape": "circle16", "moveBlock": true, "viewBlock": true},
+    "defaults": {"layout": "left"},
+    "layouts": {
+      "left": {},
+      "right": {},
+      "up": {},
+      "down": {}
+    }
+  },
+  "PumpkinScarecrow": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "hitPoints": 2000,
+    "adsorb": 0,
+    "simpleObject": true,
+    "body": {"shape": "circle72", "moveBlock": true, "viewBlock": true},
+    "defaults": {"layout": "left"},
+    "layouts": {
+      "left": {},
+      "right": {}
+    }
+  },
+
+  "HalloweenTree": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "hitPoints": 300,
+    "adsorb": 0,
+    "simpleObject": true,
+    "body": {"shape": "circle32", "moveBlock": true, "viewBlock": true}
+  },
+
+  "KnightStatue": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "hitPoints": 5000,
+    "adsorb": 0,
+    "simpleObject": true,
+    "body": {"shape": "circle72", "moveBlock": true, "viewBlock": true},
+    "defaults": {"layout": "one"},
+    "layouts": {
+      "one": {},
+      "two": {},
+      "three": {},
+      "four": {},
+      "five": {},
+      "six": {},
+      "seven": {},
+      "eight": {}
+    }
+  },
+
+  "SkullStick": {
+    "hitPoints": 70,
+    "adsorb": 0,
+    "simpleObject": true,
+    "body": {"shape": "circle16", "moveBlock": true, "viewBlock": false},
+    "defaults": {"layout": "one"},
+    "layouts": {
+      "one": {},
+      "two": {},
+      "three": {},
+      "four": {},
+      "five": {},
+      "six": {}
+    }
+  },
+
+  "SkullHump": {
+    "hitPoints": 100,
+    "adsorb": 0,
+    "simpleObject": true,
+    "body": {"shape": "circle32", "moveBlock": true, "viewBlock": false}
+  },
+
+  "SkullPile": {
+    "hitPoints": 100,
+    "adsorb": 0,
+    "simpleObject": true,
+    "body": {"shape": "circle64", "moveBlock": true, "viewBlock": false}
+  },
+
+  "Gobelin": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0},
+    "canAbandoned": true,
+    "hitPoints": 100,
+    "adsorb": 0,
+    "simpleObject": true,
+    "border": 2,
+    "body": {"shape": "wallsDoorsShapes", "moveBlock": true, "viewBlock": true},
+    "defaults": {"layout": "leftOne"},
+    "layouts": {
+      "leftOne": {"body": {"frame": 4, "anchorX": 1, "anchorY": -0.02}},
+      "rightOne": {"body": {"frame": 5, "anchorX": 0, "anchorY": -0.02}},
+      "leftTwo": {"body": {"frame": 4, "anchorX": 1, "anchorY": -0.02}},
+      "rightTwo": {"body": {"frame": 5, "anchorX": 0, "anchorY": -0.02}},
+      "leftThree": {"body": {"frame": 4, "anchorX": 1, "anchorY": -0.02}},
+      "rightThree": {"body": {"frame": 5, "anchorX": 0, "anchorY": -0.02}},
+      "leftFour": {"body": {"frame": 4, "anchorX": 1, "anchorY": -0.02}},
+      "rightFour": {"body": {"frame": 5, "anchorX": 0, "anchorY": -0.02}}
+    }
+  },
+
+  "StoneStatueGargoyle": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "hitPoints": 5000,
+    "adsorb": 0,
+    "simpleObject": true,
+    "body": {"shape": "tileOneIn", "frame": 0, "moveBlock": true, "viewBlock": true},
+    "defaults": {"layout": "left"},
+    "layouts": {
+      "left": {},
+      "right": {},
+      "up": {},
+      "down": {}
+    }
+  },
+  "StoneStatueChimera": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "hitPoints": 5000,
+    "adsorb": 0,
+    "simpleObject": true,
+    "body": {"shape": "tileOneIn", "frame": 0, "moveBlock": true, "viewBlock": true},
+    "defaults": {"layout": "left"},
+    "layouts": {
+      "left": {},
+      "right": {},
+      "up": {},
+      "down": {}
+    }
+  },
+  "StoneStatueLion": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "hitPoints": 5000,
+    "adsorb": 0,
+    "simpleObject": true,
+    "body": {"shape": "tileOneIn", "frame": 0, "moveBlock": true, "viewBlock": true},
+    "defaults": {"layout": "left"},
+    "layouts": {
+      "left": {},
+      "right": {},
+      "up": {},
+      "down": {}
+    }
+  },
+  "Ballista": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "noOpacity": true,
+    "hitPoints": 100,
+    "adsorb": 0,
+    "attack": {
+      "damage": 10000, "range": 1000, "startRange": 0, "delayBefore": 100, "delay": 100, "splash": false,
+      "play": "balShot",
+      "explosion": {
+        "shape": {"name": "circle256", "rotate": false, "anchorX": 0.5, "anchorY": 0.5},
+        "worldEffect": "balExpl"
+      },
+      "projectile": {
+        "atlas": "BigStoneProjectile",
+        "speed": 1000,
+        "shape": "circle40",
+        "rotate": false,
+        "aniBlock": true,
+        "anchorX": 0.5,
+        "anchorY": 0.5
+      }
+    },
+    "body": {"shape": "tileBl", "moveBlock": true, "viewBlock": true},
+    "defaults": {"layout": "leftup", "state": "Laid"},
+    "actionConfig": {
+      "NextState": {"action": "NextState", "title": "Arm", "onState": "Disarmed"},
+      "Shoot": {"action": "Shoot", "title": "Shoot", "onState": "Armed"}
+    },
+    "stateConfig": {
+      "Laid": {"nextState": "Disarmed", "timerNextState": 28800000},
+      "Disarmed": {"nextState": "Armed", "nextStateMaterial": {"BallistaAmmoGroup": {"amount": 1}}, "timer": 5000},
+      "Armed": {"nextState": "Disarmed", "timer": 2000}
+    },
+
+    "layouts": {
+      "leftup": {
+        "body": {"frame": 1}
+      },
+      "upright": {
+        "body": {"frame": 0}
+      },
+      "rightdown": {
+        "body": {"frame": 2}
+      },
+      "downleft": {
+        "body": {"frame": 3}
+      }
+    }
+  },
+  "BatteringRam": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "noOpacity": true,
+    "hitPoints": 100,
+    "adsorb": 0,
+    "attack": {
+      "damage": 5000, "range": 128, "startRange": 0, "delayBefore": 100, "delay": 100, "splash": true,
+      "play": "balShot",
+      "projectile": {
+        "speed": 1000,
+        "shape": "circle40",
+        "rotate": false,
+        "aniBlock": true,
+        "anchorX": 0.5,
+        "anchorY": 0.5
+      }
+    },
+    "body": {"shape": "tileTowByOne", "moveBlock": true, "viewBlock": true},
+    "defaults": {"layout": "leftup", "state": "Laid"},
+    "actionConfig": {
+      "Shoot": {"action": "Shoot", "title": "Shoot", "onState": "Armed"}
+    },
+    "stateConfig": {
+      "Laid": {"nextState": "Armed", "timerNextState": 28800000},
+      "Armed": {"timer": 5000}
+    },
+
+    "layouts": {
+      "leftup": {
+        "body": {"frame": 1, "anchorX": 0.333, "anchorY": 0.333}
+      },
+      "upright": {
+        "body": {"frame": 0, "anchorX": 0.667, "anchorY": 0.333}
+      },
+      "rightdown": {
+        "body": {"frame": 1, "anchorX": 0.333, "anchorY": 0.333}
+      },
+      "downleft": {
+        "body": {"frame": 0, "anchorX": 0.667, "anchorY": 0.333}
+      }
+    }
+  },
+
+  "Cupboard": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0},
+    "canAbandoned": true,
+    "hitPoints": 2000,
+    "adsorb": 0,
+    "body": {"shape": "tileHalf", "moveBlock": true, "viewBlock": true},
+    "defaults": {"layout": "left"},
+    "layouts": {
+      "left": {
+        "body": {"frame": 1, "anchorX": 0.333, "anchorY": 0}
+      },
+      "right": {
+        "body": {"frame": 0, "anchorX": 0.667, "anchorY": 0}
+      }
+    },
+    "container": {"slots": 25},
+    "actionConfig": {
+      "OpenContainer": {"action": "OpenContainer", "title": "Open"}
+    }
+  },
+
+  "DryingFrame": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0},
+    "canAbandoned": true,
+    "hitPoints": 2000,
+    "adsorb": 0,
+    "body": {"shape": "tileHalf", "moveBlock": true, "viewBlock": false},
+    "tool": {
+      "interval": 180000,
+      "autoProduction": true
+    },
+    "sources": {
+      "slots": 3
+    },
+    "products": {
+      "slots": 5
+    },
+    "defaults": {"layout": "left", "state": "Normal"},
+    "actionConfig": {
+      "OpenContainer": {"action": "OpenContainer", "title": "Open"}
+    },
+    "stateConfig": {
+      "Normal": {"nextState": "Production"},
+      "Production": {"nextState": "Normal"}
+    },
+    "layouts": {
+      "left": {
+        "body": {"frame": 1, "anchorX": 0.333, "anchorY": 0},
+        "states": {
+          "Normal": {},
+          "Production": {}
+        }
+      },
+      "right": {
+        "body": {"frame": 0, "anchorX": 0.667, "anchorY": 0},
+        "states": {
+          "Normal": {},
+          "Production": {}
+        }
+      }
+    }
+  },
+
+  "Oven711": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "hitPoints": 2000,
+    "adsorb": 0,
+    "body": {"shape": "tileOneIn", "frame": 0, "moveBlock": true, "viewBlock": true},
+    "tool": {
+      "interval": 20000,
+      "resources": {
+        "Wood": {"amount": 3}
+      }
+    },
+    "sources": {
+      "slots": 3
+    },
+    "resources": {
+      "slots": 3
+    },
+    "products": {
+      "slots": 5
+    },
+    "defaults": {"layout": "left", "state": "Normal"},
+    "actionConfig": {
+      "Fire": {"action": "NextState", "title": "Fire", "onState": "Normal"},
+      "Extinguish": {"action": "NextState", "title": "Extinguish", "onState": "Production"},
+      "OpenContainer": {"action": "OpenContainer", "title": "Open"}
+    },
+    "stateConfig": {
+      "Normal": {"nextState": "Production"},
+      "Production": {"nextState": "Normal"}
+    },
+    "layouts": {
+      "left": {},
+      "right": {}
+    }
+  },
+
+  "BrickOven": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "hitPoints": 3000,
+    "adsorb": 0,
+    "body": {"shape": "tileOneIn", "frame": 0, "moveBlock": true, "viewBlock": true},
+    "tool": {
+      "interval": 20000,
+      "resources": {
+        "Wood": {"amount": 3}
+      }
+    },
+    "sources": {
+      "slots": 4
+    },
+    "resources": {
+      "slots": 4
+    },
+    "products": {
+      "slots": 5
+    },
+    "defaults": {"layout": "left", "state": "Normal"},
+    "actionConfig": {
+      "Fire": {"action": "NextState", "title": "Fire", "onState": "Normal"},
+      "Extinguish": {"action": "NextState", "title": "Extinguish", "onState": "Production"},
+      "OpenContainer": {"action": "OpenContainer", "title": "Open"}
+    },
+    "stateConfig": {
+      "Normal": {"nextState": "Production"},
+      "Production": {"nextState": "Normal"}
+    },
+    "layouts": {
+      "left": {},
+      "right": {}
+    }
+  },
+
+  "Smelter711": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "hitPoints": 2000,
+    "adsorb": 0,
+    "body": {"shape": "circle96", "frame": 0, "moveBlock": true, "viewBlock": true},
+    "tool": {
+      "interval": 40000,
+      "resources": {
+        "Wood": {"amount": 5}
+      }
+    },
+    "sources": {
+      "slots": 2
+    },
+    "resources": {
+      "slots": 3
+    },
+    "products": {
+      "slots": 5
+    },
+    "defaults": {"layout": "left", "state": "Normal"},
+    "actionConfig": {
+      "Fire": {"action": "NextState", "title": "Fire", "onState": "Normal"},
+      "Extinguish": {"action": "NextState", "title": "Extinguish", "onState": "Production"},
+      "OpenContainer": {"action": "OpenContainer", "title": "Open"}
+    },
+    "stateConfig": {
+      "Normal": {"nextState": "Production"},
+      "Production": {"nextState": "Normal"}
+    },
+    "layouts": {
+      "left": {},
+      "right": {}
+    }
+  },
+  "RoastFurnace": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "hitPoints": 2000,
+    "adsorb": 0,
+    "body": {"shape": "circle150", "frame": 0, "moveBlock": true, "viewBlock": true},
+    "tool": {
+      "interval": 25000,
+      "resources": {
+        "Wood": {"amount": 5}
+      }
+    },
+    "sources": {
+      "slots": 3
+    },
+    "resources": {
+      "slots": 3
+    },
+    "products": {
+      "slots": 5
+    },
+    "defaults": {"layout": "left", "state": "Normal"},
+    "actionConfig": {
+      "Fire": {"action": "NextState", "title": "Fire", "onState": "Normal"},
+      "Extinguish": {"action": "NextState", "title": "Extinguish", "onState": "Production"},
+      "OpenContainer": {"action": "OpenContainer", "title": "Open"}
+    },
+    "stateConfig": {
+      "Normal": {"nextState": "Production"},
+      "Production": {"nextState": "Normal"}
+    },
+    "layouts": {
+      "left": {},
+      "right": {}
+    }
+  },
+  "BrickKiln": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "hitPoints": 2000,
+    "adsorb": 0,
+    "body": {"shape": "circle150", "frame": 0, "moveBlock": true, "viewBlock": true},
+    "tool": {
+      "interval": 25000,
+      "resources": {
+        "Wood": {"amount": 5}
+      }
+    },
+    "sources": {
+      "slots": 5
+    },
+    "resources": {
+      "slots": 5
+    },
+    "products": {
+      "slots": 5
+    },
+    "defaults": {"layout": "left", "state": "Normal"},
+    "actionConfig": {
+      "Fire": {"action": "NextState", "title": "Fire", "onState": "Normal"},
+      "Extinguish": {"action": "NextState", "title": "Extinguish", "onState": "Production"},
+      "OpenContainer": {"action": "OpenContainer", "title": "Open"}
+    },
+    "stateConfig": {
+      "Normal": {"nextState": "Production"},
+      "Production": {"nextState": "Normal"}
+    },
+    "layouts": {
+      "left": {},
+      "right": {}
+    }
+  },
+  "BigSmelter": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "hitPoints": 3000,
+    "adsorb": 0,
+    "body": {"shape": "circle150", "frame": 0, "moveBlock": true, "viewBlock": true},
+    "tool": {
+      "interval": 60000,
+      "resources": {
+        "CharCoal": {"amount": 2}
+      }
+    },
+    "sources": {
+      "slots": 5
+    },
+    "resources": {
+      "slots": 5
+    },
+    "products": {
+      "slots": 5
+    },
+    "defaults": {"layout": "left", "state": "Normal"},
+    "actionConfig": {
+      "Fire": {"action": "NextState", "title": "Fire", "onState": "Normal"},
+      "Extinguish": {"action": "NextState", "title": "Extinguish", "onState": "Production"},
+      "OpenContainer": {"action": "OpenContainer", "title": "Open"}
+    },
+    "stateConfig": {
+      "Normal": {"nextState": "Production"},
+      "Production": {"nextState": "Normal"}
+    },
+    "layouts": {
+      "left": {},
+      "right": {}
+    }
+  },
+  "BrickSmelter": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "hitPoints": 3000,
+    "adsorb": 0,
+    "body": {"shape": "circle150", "frame": 0, "moveBlock": true, "viewBlock": true},
+    "tool": {
+      "interval": 50000,
+      "resources": {
+        "CharCoal": {"amount": 2}
+      }
+    },
+    "sources": {
+      "slots": 5
+    },
+    "resources": {
+      "slots": 5
+    },
+    "products": {
+      "slots": 5
+    },
+    "defaults": {"layout": "left", "state": "Normal"},
+    "actionConfig": {
+      "Fire": {"action": "NextState", "title": "Fire", "onState": "Normal"},
+      "Extinguish": {"action": "NextState", "title": "Extinguish", "onState": "Production"},
+      "OpenContainer": {"action": "OpenContainer", "title": "Open"}
+    },
+    "stateConfig": {
+      "Normal": {"nextState": "Production"},
+      "Production": {"nextState": "Normal"}
+    },
+    "layouts": {
+      "left": {},
+      "right": {}
+    }
+  },
+  "CrucibleShop": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0},
+    "canAbandoned": true,
+    "hitPoints": 5000,
+    "adsorb": 0,
+    "body": {"shape": "tileThreeByTowIn", "moveBlock": true, "viewBlock": true},
+    "tool": {
+      "interval": 60000,
+      "resources": {
+        "CharCoal": {"amount": 5}
+      }
+    },
+    "sources": {
+      "slots": 5
+    },
+    "resources": {
+      "slots": 5
+    },
+    "products": {
+      "slots": 5
+    },
+    "defaults": {"layout": "left", "state": "Normal"},
+    "actionConfig": {
+      "Fire": {"action": "NextState", "title": "Fire", "onState": "Normal"},
+      "Extinguish": {"action": "NextState", "title": "Extinguish", "onState": "Production"},
+      "OpenContainer": {"action": "OpenContainer", "title": "Open"}
+    },
+    "stateConfig": {
+      "Normal": {"nextState": "Production"},
+      "Production": {"nextState": "Normal"}
+    },
+    "layouts": {
+      "left": {
+        "body": {"frame": 0, "anchorX": 0.4, "anchorY": 0.4}
+      },
+      "right": {
+        "body": {"frame": 1, "anchorX": 0.6, "anchorY": 0.4}
+      }
+    }
+  },
+  "ClayTanning": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "hitPoints": 500,
+    "adsorb": 0,
+    "body": {"shape": "circle72", "frame": 0, "moveBlock": true, "viewBlock": false},
+    "tool": {
+      "interval": 300000,
+      "autoProduction": true,
+      "resources": {
+        "TanningLiquor": {"amount": 5}
+      }
+    },
+    "sources": {
+      "slots": 1
+    },
+    "resources": {
+      "slots": 2
+    },
+    "products": {
+      "slots": 5
+    },
+    "defaults": {"layout": "left", "state": "Normal"},
+    "actionConfig": {
+      "OpenContainer": {"action": "OpenContainer", "title": "Open"}
+    },
+    "stateConfig": {
+      "Normal": {"nextState": "Production"},
+      "Production": {"nextState": "Normal"}
+    },
+    "layouts": {
+      "left": {},
+      "right": {}
+    }
+  },
+  "WoodenTanning": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "hitPoints": 2000,
+    "adsorb": 0,
+    "body": {"shape": "circle72", "frame": 0, "moveBlock": true, "viewBlock": false},
+    "tool": {
+      "interval": 300000,
+      "autoProduction": true,
+      "resources": {
+        "TanningLiquor": {"amount": 5}
+      }
+    },
+    "sources": {
+      "slots": 3
+    },
+    "resources": {
+      "slots": 3
+    },
+    "products": {
+      "slots": 5
+    },
+    "defaults": {"layout": "left", "state": "Normal"},
+    "actionConfig": {
+      "OpenContainer": {"action": "OpenContainer", "title": "Open"}
+    },
+    "stateConfig": {
+      "Normal": {"nextState": "Production"},
+      "Production": {"nextState": "Normal"}
+    },
+    "layouts": {
+      "left": {},
+      "right": {}
+    }
+  },
+  "ClayBoiler": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "hitPoints": 500,
+    "adsorb": 0,
+    "body": {"shape": "circle64", "frame": 0, "moveBlock": true, "viewBlock": false},
+    "tool": {
+      "interval": 600000,
+      "resources": {
+        "Wood": {"amount": 50}
+      }
+    },
+    "sources": {
+      "slots": 1
+    },
+    "resources": {
+      "slots": 2
+    },
+    "products": {
+      "slots": 5
+    },
+    "defaults": {"state": "Normal"},
+    "actionConfig": {
+      "Fire": {"action": "NextState", "title": "Fire", "onState": "Normal"},
+      "Extinguish": {"action": "NextState", "title": "Extinguish", "onState": "Production"},
+      "OpenContainer": {"action": "OpenContainer", "title": "Open"}
+    },
+    "stateConfig": {
+      "Normal": {"nextState": "Production"},
+      "Production": {"nextState": "Normal"}
+    }
+  },
+
+
+  "LargeChest": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0},
+    "canAbandoned": true,
+    "hitPoints": 2000,
+    "adsorb": 0,
+    "body": {"shape": "tileHalf", "moveBlock": true, "viewBlock": false},
+    "defaults": {"layout": "left"},
+    "container": {"slots": 30},
+    "layouts": {
+      "left": {
+        "body": {"frame": 1, "anchorX": 0.333, "anchorY": 0}
+      },
+      "right": {
+        "body": {"frame": 0, "anchorX": 0.667, "anchorY": 0}
+      }
+    },
+    "actionConfig": {
+      "OpenContainer": {"action": "OpenContainer", "title": "Open"}
+    }
+  },
+  "SteelChest": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "hitPoints": 5000,
+    "adsorb": 35,
+    "body": {"shape": "tile075", "moveBlock": true, "viewBlock": false},
+    "defaults": {"layout": "left"},
+    "container": {"slots": 50},
+    "layouts": {
+      "left": {
+        "body": {"frame": 1, "anchorX": 0.43, "anchorY": 0.55}
+      },
+      "right": {
+        "body": {"frame": 0, "anchorX": 0.57, "anchorY": 0.55}
+      }
+    },
+    "actionConfig": {
+      "OpenContainer": {"action": "OpenContainer", "title": "Open"}
+    }
+  },
+
+  "WoodenTable": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0},
+    "canAbandoned": true,
+    "hitPoints": 1000,
+    "adsorb": 0,
+    "body": {"shape": "tileHalfAndHalf", "moveBlock": true, "viewBlock": false},
+    "defaults": {"layout": "left"},
+    "layouts": {
+      "left": {
+        "body": {"frame": 0, "anchorX": 0.25, "anchorY": 0}
+      },
+      "right": {
+        "body": {"frame": 1, "anchorX": 0.75, "anchorY": 0}
+      }
+    }
+  },
+
+  "NobleTable": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "hitPoints": 1500,
+    "adsorb": 0,
+    "body": {"shape": "tileTowByOne", "moveBlock": true, "viewBlock": false},
+    "defaults": {"layout": "left"},
+    "layouts": {
+      "left": {
+        "body": {"frame": 0, "anchorX": 0.667, "anchorY": 0.333}
+      },
+      "leftFull": {
+        "body": {"frame": 0, "anchorX": 0.667, "anchorY": 0.333}
+      },
+      "right": {
+        "body": {"frame": 1, "anchorX": 0.333, "anchorY": 0.333}
+      },
+      "rightFull": {
+        "body": {"frame": 1, "anchorX": 0.333, "anchorY": 0.333}
+      }
+    }
+  },
+
+  "NobleBench": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "hitPoints": 500,
+    "adsorb": 0,
+    "body": {"shape": "tileTowByHalf", "moveBlock": true, "viewBlock": false},
+    "defaults": {"layout": "left"},
+    "layouts": {
+      "left": {
+        "body": {"frame": 0, "anchorX": 0.7, "anchorY": 0.3}
+      },
+      "right": {
+        "body": {"frame": 1, "anchorX": 0.3, "anchorY": 0.3}
+      },
+      "leftDrop": {
+        "body": {"frame": 0, "anchorX": 0.7, "anchorY": 0.3}
+      },
+      "rightDrop": {
+        "body": {"frame": 1, "anchorX": 0.3, "anchorY": 0.3}
+      }
+    }
+  },
+
+  "WorkBench": {
+    "canAbandoned": true,
+    "hitPoints": 2000,
+    "adsorb": 0,
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0},
+    "body": {"shape": "tileHalfAndHalf", "moveBlock": true, "viewBlock": false},
+    "defaults": {"layout": "left"},
+    "layouts": {
+      "left": {
+        "body": {"frame": 0, "anchorX": 0.25, "anchorY": 0}
+      },
+      "right": {
+        "body": {"frame": 1, "anchorX": 0.75, "anchorY": 0}
+      }
+    },
+    "bonuses": [{"bonusName": "workbench", "bonusValue": 1}]
+  },
+
+  "FlaxBreak": {
+    "canAbandoned": true,
+    "hitPoints": 500,
+    "adsorb": 0,
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0},
+    "body": {"shape": "tileHalf", "moveBlock": true, "viewBlock": false},
+    "defaults": {"layout": "left"},
+    "layouts": {
+      "left": {
+        "body": {"frame": 1, "anchorX": 0.333, "anchorY": 0}
+      },
+      "right": {
+        "body": {"frame": 0, "anchorX": 0.667, "anchorY": 0}
+      }
+    },
+    "bonuses": [{"bonusName": "flaxBreak", "bonusValue": 1}]
+  },
+
+
+  "WoodenChair": {
+    "canAbandoned": true,
+    "hitPoints": 1000,
+    "adsorb": 0,
+    "simpleObject": true,
+    "body": {"shape": "circle32", "moveBlock": true, "viewBlock": false},
+    "defaults": {"layout": "left"},
+    "layouts": {
+      "left": {},
+      "right": {}
+    }
+  },
+
+  "StoneAnvil": {
+    "body": {"shape": "circle40", "moveBlock": true, "viewBlock": false},
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "hitPoints": 2000,
+    "adsorb": 0,
+    "bonuses": [{"bonusName": "anvil", "bonusValue": 0.5}]
+  },
+  "Millstones": {
+    "body": {"shape": "circle48", "moveBlock": true, "viewBlock": false},
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "noOpacity": true,
+    "canAbandoned": true,
+    "hitPoints": 2000,
+    "adsorb": 0,
+    "bonuses": [{"bonusName": "millstone", "bonusValue": 1}]
+  },
+
+  "IronAnvil": {
+    "body": {"shape": "circle40", "moveBlock": true, "viewBlock": false},
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "hitPoints": 2500,
+    "adsorb": 0,
+    "bonuses": [{"bonusName": "anvil", "bonusValue": 1}]
+  },
+  "SteelAnvil": {
+    "body": {"shape": "circle40", "moveBlock": true, "viewBlock": false},
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "hitPoints": 3000,
+    "adsorb": 0,
+    "bonuses": [{"bonusName": "anvil", "bonusValue": 1.5}]
+  },
+  "SpinningWheel": {
+    "body": {"shape": "circle40", "moveBlock": true, "viewBlock": false},
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0.5},
+    "canAbandoned": true,
+    "hitPoints": 500,
+    "adsorb": 0,
+    "defaults": {"layout": "left"},
+    "layouts": {
+      "left": {},
+      "right": {}
+    },
+    "bonuses": [{"bonusName": "spinningWheel", "bonusValue": 1}]
+  },
+  "Loom": {
+    "tileAlign": {"anchorX": 0.5, "anchorY": 0},
+    "body": {"shape": "tileOneAndHalf", "moveBlock": true, "viewBlock": true},
+    "canAbandoned": true,
+    "hitPoints": 1000,
+    "adsorb": 0,
+    "defaults": {"layout": "left"},
+    "layouts": {
+      "left": {
+        "body": {"frame": 0, "anchorX": 0.4, "anchorY": 0}
+      },
+      "right": {
+        "body": {"frame": 1, "anchorX": 0.6, "anchorY": 0}
+      }
+    },
+    "bonuses": [{"bonusName": "loom", "bonusValue": 1}]
+  }
+}
