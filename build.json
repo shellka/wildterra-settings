@@ -39,7 +39,7 @@
   ]},
   {"name": "Structures", "children": [
     {"name": "BaseStructures", "children": [
-      {"typeName": "WorkBench", "resources": { "Wood": {"amount": 20}, "Boards": {"amount": 10}, "Handles": {"amount": 5}, "CuttingThread": {"amount": 5},"BeltRaw": {"amount": 1}, "BoulderHewn": {"amount": 1} },
+      {"typeName": "WorkBench", "resources": { "Wood": {"amount": 20}, "Boards": {"amount": 20},  "BeltRaw": {"amount": 1}, "BoulderHewn": {"amount": 1}, "staminaDrain": 20 },
         "toolRequired": "hatchet", "getBonuses": ["hatchet"]
       },
       {"typeName": "DryingFrame", "resources": { "Wood": {"amount": 15}, "RawHide": {"amount": 1} },
@@ -71,7 +71,7 @@
       }
     ]},
     {"name": "Dominiums", "children": [
-      {"typeName": "DominiumSmall", "resources": { "BoulderHewn": {"amount": 5}, "Clay": {"amount": 10}, "RawHide": {"amount": 3}}, "buildTime": 10000,
+      {"typeName": "DominiumSmall", "resources": { "BoulderHewn": {"amount": 5},  "RawHide": {"amount": 3}}, "buildTime": 10000,
         "toolRequired": "hammer", "getBonuses": ["hammer"]
       },
       {"typeName": "DominiumMedium", "resources": { "BoulderHewn": {"amount": 10}, "Cement": {"amount": 2}, "BigHide": {"amount": 5} }, "buildTime": 10000,
@@ -256,7 +256,7 @@
         "getBonuses": ["saw"]
       },
       {"typeName": "WoodenFenceSection"},
-      {"typeName": "FenceGate", "resources": { "Wood": {"amount": 10} },
+      {"typeName": "FenceGate", "resources": { "Wood": {"amount": 10}, "RawHide": {"amount": 1}, "BeltRaw": {"amount": 2} },
         "getBonuses": ["saw"]
       },
       {"typeName": "FenceGateSection"}
