@@ -8,12 +8,12 @@
       "getBonuses": ["hatchet"]
     },
     {"typeName": "BoughBed", "resources": { "Wood": {"amount": 5} }, "buildTime": 5000},
-    {"typeName": "DominiumBasic", "resources": { "Stone": {"amount": 10}, "Clay": {"amount": 3} }, "buildTime": 5000},
+    {"typeName": "DominiumBasic", "resources": { "Stone": {"amount": 10} }, "buildTime": 5000},
     {"typeName": "BranchCabinComplex", "buildTime": 20000, "staminaDrain": 20},
     {"typeName": "BranchDoor", "resources": { "RawHide": {"amount": 2}, "Boards": {"amount": 5} }, "buildTime": 4000,
       "toolRequired": "hatchet", "getBonuses": ["hatchet"]
     },
-    {"typeName": "SmallWoodenBasket", "resources": { "Hay": {"amount": 5} }, "buildTime": 5000,
+    {"typeName": "SmallWoodenBasket", "resources": { "Wood": {"amount": 5} }, "buildTime": 5000,
       "getBonuses": ["hatchet"]
     },
     {"name": "BranchHouseAndFenceParts", "children": [
