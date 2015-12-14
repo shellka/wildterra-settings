@@ -71,7 +71,7 @@
       }
     ]},
     {"name": "Dominiums", "children": [
-      {"typeName": "DominiumSmall", "resources": { "BoulderHewn": {"amount": 5}, "Clay": {"amount": 10}, "RawHide": {"amount": 3}}, "buildTime": 10000,
+      {"typeName": "DominiumSmall", "resources": { "BoulderHewn": {"amount": 5}, "RawHide": {"amount": 3}}, "buildTime": 10000,
         "toolRequired": "hammer", "getBonuses": ["hammer"]
       },
       {"typeName": "DominiumMedium", "resources": { "BoulderHewn": {"amount": 10}, "Cement": {"amount": 2}, "BigHide": {"amount": 5} }, "buildTime": 10000,
