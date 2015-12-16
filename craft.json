@@ -251,23 +251,23 @@
       }
     ]},
     {"name": "LeatherArmor", "children": [
-      {"typeName": "LeatherBoots", "resources": { "Leather": {"amount": 12}, "BuckleWood": {"amount": 4}, "BeltFine": {"amount": 3}, "NeedleBone":{"amount": 3} },
+      {"typeName": "LeatherBoots", "resources": { "Leather": {"amount": 12}, "BuckleWood": {"amount": 4}, "BeltFine": {"amount": 3}, "FlaxThreads":{"amount": 3}, "NeedleBone":{"amount": 3} },
         "toolRequired": "knife", "nearRequired": "workbench",
         "getBonuses": ["knife", "workbench"]
       },
-      {"typeName": "LeatherGloves", "resources": { "Leather": {"amount": 10}, "BuckleWood": {"amount": 4}, "BeltFine": {"amount": 3}, "NeedleBone":{"amount": 3} },
+      {"typeName": "LeatherGloves", "resources": { "Leather": {"amount": 10}, "BuckleWood": {"amount": 4}, "BeltFine": {"amount": 3}, "FlaxThreads":{"amount": 3}, "NeedleBone":{"amount": 3} },
         "toolRequired": "knife",
         "getBonuses": ["knife", "workbench"]
       },
-      {"typeName": "LeatherHelmet", "resources": { "Leather": {"amount": 9}, "BigLeather": {"amount": 1}, "BuckleWood": {"amount": 6}, "BeltFine": {"amount": 3}, "NeedleBone":{"amount": 3} },
+      {"typeName": "LeatherHelmet", "resources": { "Leather": {"amount": 9}, "BigLeather": {"amount": 1}, "BuckleWood": {"amount": 6}, "FlaxThreads":{"amount": 3}, "BeltFine": {"amount": 3}, "NeedleBone":{"amount": 3} },
         "toolRequired": "knife", "nearRequired": "workbench",
         "getBonuses": ["knife", "workbench"]
       },
-      {"typeName": "LeatherJacket", "resources": { "Leather": {"amount": 8}, "BigLeather": {"amount": 5}, "BuckleWood": {"amount": 12}, "BeltFine": {"amount": 3}, "NeedleBone":{"amount": 3} },
+      {"typeName": "LeatherJacket", "resources": { "Leather": {"amount": 8}, "BigLeather": {"amount": 5}, "BuckleWood": {"amount": 12}, "FlaxThreads":{"amount": 5}, "BeltFine": {"amount": 3}, "NeedleBone":{"amount": 3} },
         "toolRequired": "knife", "nearRequired": "workbench",
         "getBonuses": ["knife", "workbench"]
       },
-      {"typeName": "LeatherPants", "resources": { "Leather": {"amount": 8}, "BigLeather": {"amount": 4}, "BuckleWood": {"amount": 10}, "BeltFine": {"amount": 3}, "NeedleBone":{"amount": 3} },
+      {"typeName": "LeatherPants", "resources": { "Leather": {"amount": 8}, "BigLeather": {"amount": 4}, "BuckleWood": {"amount": 10}, "FlaxThreads":{"amount": 5}, "BeltFine": {"amount": 3}, "NeedleBone":{"amount": 3} },
         "toolRequired": "knife", "nearRequired": "workbench",
         "getBonuses": ["knife", "workbench"]
       }
@@ -330,9 +330,10 @@
     {"typeName": "FlaxThreads", "resources": {"FlaxFibres": {"amount": 10}, "Handles": {"amount": 1}}, "nearRequired": "spinningWheel", "staminaDrain": 10},
     {"typeName": "Ropes", "resources": {"FlaxThreads": {"amount": 10}}, "staminaDrain": 20, "getBonuses": ["workbench"]},
     {"typeName": "FlaxCloth", "resources": {"FlaxThreads": {"amount": 5}}, "staminaDrain": 10, "nearRequired": "loom"},
-    {"typeName": "ClothRaw", "resources": {"FlaxThreads": {"amount": 5}}, "staminaDrain": 10 },
+    {"typeName": "ClothRaw", "resources": {"FlaxThreads": {"amount": 5}, "Handles": {"amount": 5}}, "staminaDrain": 10 }, "toolRequired": "knife"},
     {"typeName": "BuckleWood", "resources": {"Handles": {"amount": 1}}, "toolRequired": "knife"},
-    {"typeName": "SackHide", "resources": {"Hide": {"amount": 1}, "Veins": {"amount": 3}}, "toolRequired": "knife", "staminaDrain": 5},
+    {"typeName": "SackHide", "resources": {"BigHide": {"amount": 1}, "Veins": {"amount": 3}}, "toolRequired": "knife", "staminaDrain": 5},
+    {"typeName": "SackHide", "resources": {"ClothRaw": {"amount": 1}, "FlaxThreads": {"amount": 1}, "NeedleBone":{"amount": 3}}, "staminaDrain": 5},
     {"typeName": "BeltRaw", "craftAmount": 3, "resources": {"Hide": {"amount": 1}}, "toolRequired": "knife", "staminaDrain": 5},
     {"typeName": "BeltFine", "craftAmount": 3, "resources": {"BigLeather": {"amount": 1}}, "toolRequired": "knife", "staminaDrain": 5},
     {"typeName": "BeltHard", "craftAmount": 3, "resources": {"GluedLeather": {"amount": 1}}, "toolRequired": "knife", "staminaDrain": 5},
@@ -369,7 +370,7 @@
   ]},
   {"name": "Shields", "children": [
     {"typeName": "WoodenShield",
-      "resources": { "Hide": {"amount": 5}, "Wood": {"amount": 30} },
+      "resources": { "Hide": {"amount": 5}, "Wood": {"amount": 30}, "BeltRaw": {"amount": 3} },
       "toolRequired": "hatchet", "nearRequired": "workbench",
       "getBonuses": ["hatchet", "workbench"]
     },
@@ -461,7 +462,7 @@
     }
   ]},
   {"name": "LeatherWorking", "children": [
-    {"typeName": "Bellows", "resources": { "Hide": {"amount": 4}, "Veins": {"amount": 5}, "Glue": {"amount": 1}}, "nearRequired": "millstone", "craftTime": 5000, "staminaDrain": 10}
+    {"typeName": "Bellows", "resources": { "Hide": {"amount": 4}, "Veins": {"amount": 5}, "Glue": {"amount": 1}, "NeedleBone":{"amount": 3}}, "nearRequired": "millstone", "craftTime": 5000, "staminaDrain": 10}
   ]},
   {"name": "Materials", "children": [
     {"typeName": "BoneMeal", "resources": { "Bones": {"amount": 5}}, "nearRequired": "millstone", "craftTime": 5000, "staminaDrain": 5},
