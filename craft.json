@@ -330,7 +330,7 @@
     {"typeName": "FlaxThreads", "resources": {"FlaxFibres": {"amount": 10}, "Handles": {"amount": 1}}, "nearRequired": "spinningWheel", "staminaDrain": 10},
     {"typeName": "Ropes", "resources": {"FlaxThreads": {"amount": 10}}, "staminaDrain": 20, "getBonuses": ["workbench"]},
     {"typeName": "FlaxCloth", "resources": {"FlaxThreads": {"amount": 5}}, "staminaDrain": 10, "nearRequired": "loom"},
-    {"typeName": "ClothRaw", "resources": {"FlaxThreads": {"amount": 5}, "Handles": {"amount": 5}}, "staminaDrain": 10 }, "toolRequired": "knife"},
+    {"typeName": "ClothRaw", "resources": {"FlaxThreads": {"amount": 5}, "Handles": {"amount": 5}}, "staminaDrain": 10, "toolRequired": "knife"},
     {"typeName": "BuckleWood", "resources": {"Handles": {"amount": 1}}, "toolRequired": "knife"},
     {"typeName": "SackHide", "resources": {"BigHide": {"amount": 1}, "Veins": {"amount": 3}}, "toolRequired": "knife", "staminaDrain": 5},
     {"typeName": "SackHide", "resources": {"ClothRaw": {"amount": 1}, "FlaxThreads": {"amount": 1}, "NeedleBone":{"amount": 3}}, "staminaDrain": 5},
