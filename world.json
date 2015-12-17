@@ -461,6 +461,7 @@
   "Plaster": {},
   "Bellows": {},
   "ClayPrepared": {},
+  "RawSackHide": {},
 
   "DebugChest": {
     "body": {"shape": "circle64", "frame": 0, "moveBlock": true, "viewBlock": false},
