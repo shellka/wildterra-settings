@@ -332,7 +332,7 @@
     {"typeName": "FlaxCloth", "resources": {"FlaxThreads": {"amount": 5}}, "staminaDrain": 10, "nearRequired": "loom"},
     {"typeName": "ClothRaw", "resources": {"FlaxThreads": {"amount": 5}, "Handles": {"amount": 5}}, "staminaDrain": 10, "toolRequired": "knife"},
     {"typeName": "BuckleWood", "resources": {"Handles": {"amount": 1}}, "toolRequired": "knife"},
-    {"typeName": "SackHide", "resources": {"BigHide": {"amount": 1}, "Veins": {"amount": 3}}, "toolRequired": "knife", "staminaDrain": 5},
+    {"typeName": "RawSackHide", "resources": {"BigHide": {"amount": 1}, "Veins": {"amount": 3}}, "toolRequired": "knife", "staminaDrain": 5},
     {"typeName": "SackHide", "resources": {"ClothRaw": {"amount": 1}, "FlaxThreads": {"amount": 1}, "NeedleBone":{"amount": 3}}, "staminaDrain": 5},
     {"typeName": "BeltRaw", "craftAmount": 3, "resources": {"Hide": {"amount": 1}}, "toolRequired": "knife", "staminaDrain": 5},
     {"typeName": "BeltFine", "craftAmount": 3, "resources": {"BigLeather": {"amount": 1}}, "toolRequired": "knife", "staminaDrain": 5},
