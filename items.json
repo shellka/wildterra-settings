@@ -291,6 +291,9 @@
   "BigHide": {"max": 20},
   "BearHide": {},
   "RawSackHide": {},
+  
+  "Sieve": {},
+  "GrainSackHide": {},
 
   "Leather": {"max": 50},
   "BigLeather": {"max": 20},
