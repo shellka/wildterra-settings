@@ -356,7 +356,7 @@
     },
     {"typeName": "Raisins", "resources": { "Grapes": {"amount": 1}}, "nearRequired": "workbench", "craftTime": 10000, "staminaDrain": 2, "getBonuses": ["workbench"]},
     {"typeName": "GrainSackHide", "resources": { "GrainWheat": {"amount": 10}, "Wood": {"amount": 1}, "SackHide": {"amount": 1} }, "craftTime": 10000, "staminaDrain": 2},
-    {"typeName": "Flour", "resources": { "GrainSackHide": {"amount": 1}, }, "nearRequired": "millstone", "craftTime": 3000, "staminaDrain": 2, "getBonuses": ["workbench"]},
+    {"typeName": "Flour", "resources": { "GrainSackHide": {"amount": 1} }, "nearRequired": "millstone", "craftTime": 3000, "staminaDrain": 2, "getBonuses": ["workbench"]},
     {"typeName": "Dough", "craftAmount": 10, "resources": { "Flour": {"amount": 1}, "WoodenBucketWater": {"amount": 10}, "Sieve": {"amount": 1}}, "staminaDrain": 2, "getBonuses": ["workbench"]},
     {"typeName": "RawVegetableStew", "craftAmount": 10, "resources": { "ClayPot": {"amount": 1}, "cepRawMushrooms": {"amount": 2}, "chanterelleRawMushrooms": {"amount": 2}, "Carrot": {"amount": 4}},
       "toolRequired": "knife", "getBonuses": ["knife","workbench"]
