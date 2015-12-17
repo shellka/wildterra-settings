@@ -499,7 +499,7 @@
       "toolRequired": "shovel", "craftTime": 10000, "staminaDrain": 10,
       "getBonuses": ["shovel"]
     },
-    {"typeName": "TanningLiquor", "craftAmount": 5, "resources": { "ClayPot": {"amount": 1}, "PowderBark": {"amount": 1}, "WoodenBucketWater": {"amount": 20}, "staminaDrain": 10},
+    {"typeName": "TanningLiquor", "craftAmount": 5, "resources": { "ClayPot": {"amount": 1}, "PowderBark": {"amount": 1}, "WoodenBucketWater": {"amount": 20}}, "staminaDrain": 10,
       "getBonuses": ["knife","workbench"]
     },
     {"typeName": "Handles", "craftAmount": 10, "resources": { "Wood": {"amount": 10}},
