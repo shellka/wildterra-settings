@@ -2,6 +2,7 @@
   {"name": "Hidden", "hidden": true, "children": [
     {"typeName": "RoastMeat", "resources": { "Meat": {"amount": 1} }, "hidden": true,  "inside": { "Campfire": 1, "Oven711":1, "BrickOven":1 } },
     {"typeName": "Hide", "resources": { "RawHide": {"amount": 1} }, "hidden": true,  "inside": { "DryingFrame": 1 } },
+    {"typeName": "SackHide", "resources": { "RawSackHide": {"amount": 1} }, "hidden": true,  "inside": { "DryingFrame": 1 } },
     {"typeName": "BigHide", "resources": { "BigRawHide": {"amount": 1} }, "hidden": true,  "inside": { "DryingFrame": 1 } },
     {"typeName": "Leather", "resources": { "Hide": {"amount": 1} }, "hidden": true,  "inside": { "ClayTanning": 1, "WoodenTanning":1 } },
     {"typeName": "BigLeather", "resources": { "BigHide": {"amount": 1} }, "hidden": true,  "inside": { "ClayTanning": 1, "WoodenTanning":1 } },
