@@ -290,6 +290,7 @@
   "Hide": {"max": 50},
   "BigHide": {"max": 20},
   "BearHide": {},
+  "RawSackHide": {},
 
   "Leather": {"max": 50},
   "BigLeather": {"max": 20},
