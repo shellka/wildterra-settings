@@ -14,7 +14,7 @@
     {"typeName": "ShirredEggs", "resources": { "Eggs": {"amount": 1} }, "hidden": true,  "inside": { "Campfire": 1, "Oven711":1, "BrickOven":1 } },
     {"typeName": "BakedCeps", "resources": { "Eggs": {"cepRawMushrooms": 1} }, "hidden": true,  "inside": { "Campfire": 1, "Oven711":1, "BrickOven":1 } },
     {"typeName": "BakedChanterelles", "resources": { "chanterelleRawMushrooms": {"amount": 1} }, "hidden": true,  "inside": { "Campfire": 1, "Oven711":1, "BrickOven":1 } },
-    {"typeName": "Flour", "resources": { "GrainWheat": {"amount": 5} }, "hidden": true,  "inside": { "HTMill":1 } },
+    {"typeName": "Flour", "resources": { "GrainSackHide": {"amount": 1} }, "hidden": true,  "inside": { "HTMill":1 } },
     {"typeName": "Eggs", "craftAmount": 5, "resources": { "HenInCage": {"amount": 1} }, "hidden": true,  "inside": { "Roost":1 }},
     {"typeName": "Eggs", "craftAmount": 10, "resources": { "HenInCage": {"amount": 2} }, "hidden": true,  "inside": { "HenHouse712":1 },
       "spawn": { "typeName": "Hen", "amount": 3, "startRange": 2 }
@@ -355,8 +355,9 @@
       "toolRequired": "knife", "getBonuses": ["knife","workbench"]
     },
     {"typeName": "Raisins", "resources": { "Grapes": {"amount": 1}}, "nearRequired": "workbench", "craftTime": 10000, "staminaDrain": 2, "getBonuses": ["workbench"]},
-    {"typeName": "Flour", "resources": { "GrainWheat": {"amount": 5}}, "nearRequired": "millstone", "craftTime": 3000, "staminaDrain": 2, "getBonuses": ["workbench"]},
-    {"typeName": "Dough", "resources": { "Flour": {"amount": 1}, "WoodenBucketWater": {"amount": 1}}, "staminaDrain": 2, "getBonuses": ["workbench"]},
+    {"typeName": "GrainSackHide", "resources": { "GrainWheat": {"amount": 10}, "Wood": {"amount": 1}, "SackHide": {"amount": 1} }, "craftTime": 10000, "staminaDrain": 2},
+    {"typeName": "Flour", "resources": { "GrainSackHide": {"amount": 1}, }, "nearRequired": "millstone", "craftTime": 3000, "staminaDrain": 2, "getBonuses": ["workbench"]},
+    {"typeName": "Dough", "resources": { "Flour": {"amount": 1}, "WoodenBucketWater": {"amount": 10}, "Sieve": {"amount": 1}}, "staminaDrain": 2, "getBonuses": ["workbench"]},
     {"typeName": "RawVegetableStew", "craftAmount": 10, "resources": { "ClayPot": {"amount": 1}, "cepRawMushrooms": {"amount": 2}, "chanterelleRawMushrooms": {"amount": 2}, "Carrot": {"amount": 4}},
       "toolRequired": "knife", "getBonuses": ["knife","workbench"]
     },
@@ -466,8 +467,8 @@
     {"typeName": "Bellows", "resources": { "Hide": {"amount": 4}, "Veins": {"amount": 5}, "Glue": {"amount": 1}, "NeedleBone":{"amount": 3}}, "nearRequired": "millstone", "craftTime": 5000, "staminaDrain": 10}
   ]},
   {"name": "Materials", "children": [
-    {"typeName": "BoneMeal", "resources": { "Bones": {"amount": 5}}, "nearRequired": "millstone", "craftTime": 5000, "staminaDrain": 5},
-    {"typeName": "Glue", "resources": { "BoneMeal": {"amount": 1}, "WoodenBucketWater": {"amount": 1}}, "nearRequired": "workbench", "craftTime": 5000, "staminaDrain": 5},
+    {"typeName": "BoneMeal", "resources": { "Bones": {"amount": 10}, "SackHide": {"amount": 1}}, "nearRequired": "millstone", "craftTime": 5000, "staminaDrain": 5},
+    {"typeName": "Glue", "resources": { "BoneMeal": {"amount": 1}, "WoodenBucketWater": {"amount": 20}, "ClayPot": {"amount": 1}}, "nearRequired": "workbench", "craftTime": 5000, "staminaDrain": 5},
     {"typeName": "GluedLeather", "resources": { "Glue": {"amount": 1}, "BigLeather": {"amount": 1}}, "nearRequired": "workbench", "craftTime": 5000, "staminaDrain": 5},
     {"typeName": "Nails", "craftAmount": 1, "resources": { "IronIngot": {"amount": 5}},
       "toolRequired": "hammer", "nearRequired": "anvil",
@@ -530,6 +531,10 @@
       "toolRequired": "knife", "getBonuses": ["knife", "workbench"]
     },
     {"typeName": "Skulls", "resources": { "WomanCutHead": {"amount": 1}},
+      "craftTime": 5000, "staminaDrain": 5,
+      "toolRequired": "knife", "getBonuses": ["knife", "workbench"]
+    },
+    {"typeName": "Sieve", "resources": { "Handles": {"amount": 2}, "FlaxThreads":{"amount": 2}},
       "craftTime": 5000, "staminaDrain": 5,
       "toolRequired": "knife", "getBonuses": ["knife", "workbench"]
     },
