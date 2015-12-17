@@ -44,9 +44,7 @@
       },
       {"typeName": "DryingFrame", "resources": { "Wood": {"amount": 15}, "RawHide": {"amount": 1} },
         "toolRequired": "hatchet", "getBonuses": ["hatchet"]
-      },
-      {"typeName": "DryingFrame", "resources": { "Wood": {"amount": 15}, "RawHide": {"amount": 1} },
-        "toolRequired": "hatchet", "getBonuses": ["hatchet"]
+      
       },
       {"typeName": "Smelter711", "resources": { "BoulderHewn": {"amount": 50}, "Cement": {"amount": 5}, "Bellows": {"amount": 1}}, "staminaDrain": 25},
       {"typeName": "StoneAnvil", "resources": { "Boulder": {"amount": 2}, "Handles": {"amount": 10}, "Cement": {"amount": 1} },
